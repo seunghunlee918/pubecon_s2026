@@ -1,0 +1,892 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 3: Inequality across time and countries}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{March 10th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{What is inequality?} 
+Unequal distribution of income, wealth, and opportunities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Income: Differences in flow of money (e.g. labor earnings)
+\item Wealth: Differences in value (stock) of assets accumulated over time (stock, homes etc)
+\item Opportunities: Life chances determined by circumstances beyond individual effort
+\end{itemize}\medskip
+How are they measured?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Classical: Gini Coefficient, Lorenz curve, ratio of top 20\% over bottom 80\% etc
+\item Problem: Large inequality even within the top
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increasing share of wealth and income  by top 1\%, skewing classical measurements further
+
+\end{itemize}
+\item Increasing focus on share of income and wealth of top 10\%, 1\% and 0.1\%  
+\begin{itemize}\setlength\itemsep{3pt}
+\item Very few people take up significant share of income and taxes
+\end{itemize}
+\item Problem: Income measures may not be consistent 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Different tax laws, income-earning opportunities, social contexts, and data availability
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{We are even talking about top 0.01\% nowadays}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{fig1.png}
+\end{figure}
+\begin{small}
+Source: ``Never mind the 1 percent. Let's talk about 0.01 percent'', \textit{Chicago Booth Review} \href{https://www.chicagobooth.edu/review/never-mind-1-percent-lets-talk-about-001-percent}{(link)}
+\end{small}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why does it matter?} 
+
+
+     Efficiency losses: Inequality constrains investment in human capital
+    \begin{itemize}
+        \item Talented but poor individuals cannot invest in education or businesses
+        \item Aggregate productivity suffers even if top earners are highly productive
+    \end{itemize}\medskip
+     Political economy: Wealthy groups gain outsized influence over policy
+    \begin{itemize}
+        \item Redistribution becomes harder precisely when it is most needed
+        \item May even lead to lack of accountability on those with power
+        \item Risk of self-reinforcing cycle: inequality $\to$ political power $\to$ more inequality
+    \end{itemize}\medskip
+     Social cohesion: High inequality linked to lower trust, worse health, higher crime
+    \begin{itemize}
+        \item Effects felt across the income distribution, not just at the bottom
+    \end{itemize}\bigskip
+    Ultimately, Rising inequality $\Rightarrow$ concentration of opportunities and resources on few people
+\end{frame}
+
+
+\begin{frame}
+\frametitle{How are inequality passed on?}
+Across generations 
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Parental income and wealth strongly predict children's economic outcomes
+    \begin{itemize}\setlength\itemsep{3pt}
+      \item Direct wealth transfers: bequests and inheritances  
+      \item Better schooling, networks, and risk-taking capacity 
+    \end{itemize}
+    \item Thus, many cases where wealth begets wealth
+\end{itemize} \medskip
+Across different groups within same generation
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Technology reshapes labor demand, favoring some workers over others
+    \begin{itemize}
+        \item Automation displaces workers with skills substitutable with technology 
+    \end{itemize}
+    \item Returns to education and skills have risen, widening the college wage premium
+    \item Dispersed resources also explains inequality across gender, regions, race and etc
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Income distribution across education attainment (US example)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{fig2.png}
+\end{figure}
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+\section{Measuring Inequality}
+\subsection{Atkinson, Piketty, Saez (2011): The Top Incomes in the Long Run of History}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Atkinson, Piketty, Saez (2011): \\ The Top Incomes in the Long Run of History
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: What can we learn from top income shares} 
+Do top income shares matter?
+\begin{itemize}\setlength\itemsep{3pt}
+\item If highly unequal, command of resource and growth concentrated at the top
+\item Sizeable impact on \textit{overall} inequality 
+\item Thus, top income shares carry a sizable implications for policy designs
+\end{itemize}\medskip
+This paper surveys trends in top incomes and discusses the methodology
+\begin{itemize}\setlength\itemsep{3pt}
+\item Identifies differential trends in top shares across the globe
+\item Explores what factors drive the trends in top income shares
+\item Faces challenges regarding consistency of income definition across time and globe
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Top income shares generally show a U-shape}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.75\textwidth]{aps(2011)_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{With different trends in some places}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.75\textwidth]{aps(2011)_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Primarily driven by labor earnings and capital gains}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{aps(2011)_f3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Challenges faced in identifying top income shares} 
+Challenges faced within the same country
+\begin{itemize}\setlength\itemsep{3pt}
+\item How many tax filers? Family + single individuals $\to$ Difficult to trace individuals
+\item What is income? Definition differs across time and jurisdictions
+\begin{itemize}
+\item Especially true for capital gains (profits from sale of capital goods and assets)
+\item Some countries treat it as income, others do not
+\end{itemize}
+\item Past data: Not available at all or with significant gaps
+\end{itemize}\medskip
+Other potential problems
+\begin{itemize}\setlength\itemsep{3pt}
+\item Top income possibly underreported
+\item This is due to tax avoidance (legal) or tax evasion (illegal)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Where are we now in our understanding of top shares?} 
+Widespread usage of tax data then before
+\begin{itemize}\setlength\itemsep{3pt}
+\item One source with long time periods and wide coverage of population
+\item Useful for distributional analysis (despite limits on point-estimates)
+\item More economics papers using tax data to study income and wealth
+\end{itemize}\medskip
+What needs to be done
+\begin{itemize}\setlength\itemsep{3pt}
+\item Inclusion of developing countries (many still missing)
+\item Complement tax data with inherited wealth or company data
+\item Consistent defintion of income that takes into account well-defined tax units and income categories
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Saez, Zucman (2016): Wealth Inequality in the United States Since 1913: Evidence from Capitalized Income Tax Data}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Saez, Zucman (2016): \\ Wealth Inequality in the United States Since 1913: Evidence from Capitalized Income Tax Data
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How did inequality of wealth in US change over time?}
+Currently available evidence on wealth inequality is mixed
+\begin{itemize}\setlength\itemsep{3pt}
+\item Survey of Consumer Finances, SCF: top 1\% has 35\% of wealth in 2013, (30\% in 1992)
+\item Estate tax returns: top 1\% has 20\% of wealth in early 2010s (less than DEN, FIN, FRA)
+\item While wealth inequality has risen since 1970s, no concensus on exact figures
+\end{itemize}\medskip
+This paper sheds new light on evolution of wealth inequality with income tax data from IRS
+\begin{itemize}\setlength\itemsep{3pt}
+\item Based on capital income reported by taxpayers (dividens, interest, rents, profits etc)
+\item Computes capitalization factor mapping flow of tax income to amount of wealth recorded in household balance sheets
+\item Creates long-run series of wealth distribution consistent with macroeconomic totals
+\item Finds that top 1\% owns 42\% of wealth in 2012, driven by rise of top 0.1\% shares
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{What is wealth?}
+Definition of wealth used in the research
+\begin{itemize}\setlength\itemsep{3pt}
+\item Current market value of all household-owned assets net of debts
+\item Most pension wealth, and all (non-)financial assets where ownership is clearly defined
+\begin{itemize}
+\item Not included: Human capital, nonprofit institutions wealth (no clear market value), durables (no tax return info)
+\end{itemize}
+\item Aggregate wealth of US: Based on household balance sheets of US Financial Accounts
+\begin{itemize}
+\item Obtained from SCF, IRS, US Treasury, BEA, Census, Federal Housing Finance Agency etc
+\end{itemize}
+\end{itemize}\medskip
+From income to wealth
+\begin{itemize}\setlength\itemsep{3pt}
+\item Start with capital income (9 categories) reported on individual tax returns 
+\item Then, capitalize these incomes, while excluding components without taxable income
+\item Rise in capital inequality: Top 0.1\% share went from 10\% in 1960s  $\to$ 33\% in 2012
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Capitalizing the income}
+How capitalization technique works
+\begin{itemize}\setlength\itemsep{3pt}
+\item Map each capital income category to wealth category in household balance sheet
+\item For each category, compute annual capitalization factor: $\frac{\text{Aggregate HH wealth}}{\text{Tax return income}} $ 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Understand it as how much wealth is required to generate a dollar of income
+\item Capitalization factor $\uparrow\to$ Assets that generate relatively small income (savings account)
+\end{itemize}
+\item Then, exclude assets that does not generate taxable income
+\begin{itemize}\setlength\itemsep{3pt}
+\item Owner occupied housing (no rents), life insurance, offshore wealth etc
+\end{itemize}
+\end{itemize}\medskip
+Potential challenges
+\begin{itemize}\setlength\itemsep{3pt}
+\item Assets generate different rate of income across households and level of wealth
+\item Fortunately, this method matches well with wealth held by foundations and SCF data
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Wealth share of Top 0.1\% = That of bottom 90\%}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.75\textwidth]{sz(2016)_t1.png}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Rising wealth inequality in the past 40 years}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{sz(2016)_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Driven by surge in the wealth share of top 1\%}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{sz(2016)_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Driven by rising share of inequality in saving rates}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{sz(2016)_f3.png}
+\end{figure}
+\end{frame}
+ 
+\subsection{Auten, Splinter (2024): Income Inequality in the United States: Using Tax Data to Measure Long-Term Trends}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Auten, Splinter (2024):\\ Income Inequality in the United States: Using Tax Data to Measure Long-Term Trends
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How unequal are income when measured with consistent data} 
+Measure of income distribution over time is difficult
+\begin{itemize}\setlength\itemsep{3pt}
+\item Different social conditions across time (marriages, household size etc)
+\item Different education: Join labor market late but earn more
+\item Business cycles and inflation rates differ across periods
+\item Tax rules also change across time, and share of income missing in tax data have risen
+\end{itemize}\medskip
+This paper presents new estimates of the trends in income distribution (from tax data)
+\begin{itemize}\setlength\itemsep{3pt}
+\item With accurate measures of income taking tax reforms and technicalities into account
+\item Social changes are also taken into account (e.g. household size and marriage rates)
+\item Lower top income shares and less increase in inequality compared to other works
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{How are tax data used here?}
+ Start with a seminal inequality measure from Piketty and Saez
+\begin{itemize}\setlength\itemsep{3pt}
+\item Create an \textit{improved} fiscal income adjusting for tax changes in 1986
+\item Also take family structures (marriage rates) and sample issues into account
+\item Pre-tax income: Follows national income concept ()
+\item Pre-tax + transfers: includes government transfers, more complete economic measure
+\item After-tax: deducts federal, state, local taxes
+\end{itemize}\medskip
+Why tax reform in 1986 and other changes matter
+\begin{itemize}\setlength\itemsep{3pt}
+\item Top income tax rate $<$ corporate tax rate 
+\item So some business income shows up as individual incomes
+\item Broadening of tax base (those subject to taxation): Dependent and nonresident filers $\uparrow$
+\item Poor less likely to marry $\to$ total tax unit at bottom $\uparrow\to$ Income understated at bottom
+\end{itemize} \medskip
+The authors adjust these factors and re-estimate income distribution across time
+\end{frame}
+
+\begin{frame}
+\frametitle{Income distribution of bottom 50\% more optimistic}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{as(2024)_f1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Different top 1\% estimates}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{as(2024)_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Different top 0.1\% estimates}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{as(2024)_f3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Where do the differences occur?}
+1/3 of increase in top income occured around major tax reforms 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lower tax rates and broader tax base $\to$ Changing incentives to report income
+\item Top income shares in 1960s-70s rise after adjustment (i.e incomes were `sheltered')
+\end{itemize} \medskip
+Note that married couples file together
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lower marriage rates $\to$ more tax units $\to$ more high income tax units at top
+\item This leads to overestimated top incomes in recent years
+\end{itemize}\medskip
+Other issues
+\begin{itemize}
+ \item Different treatment of pensions and business income that accrue over multiple years
+ \item Drop non-resident and dependent filers
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Income distribution trends
+\begin{itemize}\setlength\itemsep{3pt}
+\item Top 1\% income share growth are modest compared to other estimates
+\item Bottom 50\% income share grew more compared to previous studies
+\item Current estimates incorporate transfers, tax reforms, and social changes across time
+\end{itemize}\medskip
+So what to make of these differences?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Data discrepencies and different assumption about missing income could lead to significant differences in estimates
+\item This is general in any empirical studies: Lots of judgement calls involved
+\item Conclusions are very sensitive to these choices
+\item These choices should be defensible from reasonable researchers' perspective
+\end{itemize}\medskip
+\end{frame}
+
+
+
+
+
+
+
+
+\section{Transmission of inequality}
+\subsection{Black, Devereux, Lundborg, Majlesi (2020): Poor Little Rich Kids? The Role of Nature versus Nurther in Wealth and Other Economic Outcomes and Behaviors}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Black, Devereux, Lundborg, Majlesi (2020):\\ Poor Little Rich Kids? The Role of Nature versus Nurther in Wealth and Other Economic Outcomes and Behaviors
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What determines correlation of wealth across generation?} 
+Is it biology (nature) or environment (nurture)?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Nature: Genetic inheritance of skills, attitudes, and preference
+\begin{itemize}\setlength\itemsep{3pt}
+\item Intergenerational correlations arise because wealthy families are inherently more talented
+\item They would be wealthier than others even without growing up with wealthier parents 
+\end{itemize}
+\item Nurture: Parental investments in education, opportunities, and preference \begin{itemize}\setlength\itemsep{3pt}
+\item Intergenerational correlations arise by environment the children grows up in
+\item Any children given these opportunities may benefit
+\end{itemize}
+\item These two can interact: Environmental effect depending on biological endowments
+\end{itemize} \medskip
+This study disentagles nature vs nurture in intergenerational wealth using adoptees
+\begin{itemize}\setlength\itemsep{3pt}
+\item Observe how wealth of adoptive children relate to biological and adoptive parents
+\item Use Swedish adminstrative data covering adopted children born in 1950-70
+\item Are wealth diffrent from education, income, risk preferences? % in terms of intergenerational transmission
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data sources}
+ Swedish administrative data with all citizens born between 1932-80
+\begin{itemize}\setlength\itemsep{3pt}
+\item Education attainment, residence, other demographics
+\item Swedish-born adoptees with biological and adoptive parents
+\item Wealth register data (used for taxes): Various financial assets, debt, real assets
+\item Also: Income, labor earnings, savings, and consumption (clocked at 2006)
+\end{itemize}\medskip
+ Selection of samples
+\begin{itemize}\setlength\itemsep{3pt}
+\item Children born in 1950-70: Avoid someone too young to accumulate wealth
+\item At least one parent alive in 2006: Focus on pre-bequest wealth
+\item 1.2 million children, and 2,598 adopted children
+\item Problem: Adoptive parents relatively richer than general ($\because$ adoption requirements) 
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical Strategy on intergenerational transmission}
+Correlate within-cohort ranks of net wealth of adoptees and parents
+\[
+W_{ij}=\beta_0 + \beta_1 W_i + \beta_2 W_j + \beta_3 W_i^2 + \beta_4 W_j^2 + \beta_5 W_i W_j + X\beta_6 + e_{ij}
+\]\vspace{-15pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item $W$ stands for within-cohort ranks of wealth (left: children, right: parents)
+\item $i$ indexes biological and $j$ indexes adoptive parents
+\item $X$ are covariates: Gender, region of residence, cohort dummies for parent and child
+\item Capture linearity ($\beta_1,\beta_2$), nonlinearity ($\beta_3,\beta_4$) and interactions ()$\beta_5$) 
+\end{itemize}\medskip
+Identifying assumption
+\begin{itemize}\setlength\itemsep{3pt}
+\item Random assignment of adoptive families at birth
+\item i.e. adoption not based on systematic matching on family and child characteristics
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Wealth predominantly associated with adoptive parents}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bdlm(2020)_t1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{And largely in a linear relationship}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bdlm(2020)_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Environment matters for wealth, Nature matters for some others}
+\begin{figure}[H]
+  \centering
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bdlm(2020)_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Key findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Wealth transmission is primarily due to environment
+\item Not because children of wealtheir famlies are more inherently able
+\item Environment determines other wealth-related variables (biology for human capital)
+\item No meaningful interaction between nature and nurture
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Wealth begets wealth: So how does this relate to growing inequality?
+\item Poorer familes increasingly have fewer opportunities and environmental advantages 
+\item Need for policy to equalize opportunities and mitigate intergenerational disparities
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Autor, Levy, Murnane (2003): The Skill Content of Recent Technological Change: An Empirical Exploration}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Autor, Levy, Murnane (2003):\\ The Skill Content of Recent Technological Change: An Empirical Exploration
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How does computerization affect job skill demands?} 
+Why are educated workers more in demand than lesser-educated workers?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Striking correlation between adoption of computers and demand for college graduates
+\item Rise in earnings gap between college and non-college graduates (skill premium)
+\item But what about computers (or what people do with computers) explains this pattern?
+\end{itemize}\medskip
+This paper: Computers change tasks workers perform, affecting demand for skills 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Computers complement certain human tasks, while substituting other human tasks
+  \begin{itemize}\setlength\itemsep{3pt}
+\item Routine tasks: Cognitive and manual tasks that follow explicit guidelines
+\item Non-routine tasks: Problem-solving and complex communication activities
+\end{itemize}
+\item Computers substitute for routine tasks, complement non-routine cognitive tasks
+\item Notes shfits away from routine tasks to non-routine ones, regardless of education
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{What types of tasks?}
+Tasks are categorized based on what machines can do (and can't) 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can perform repetitive tasks with instructions accurately and rapidly
+\item They can also perform symbolic processing (storing, retriving information)
+\end{itemize}\medskip
+Classification of tasks
+\begin{itemize}\setlength\itemsep{3pt}
+\item Routine tasks can be accomplished with machines, based on programmed rules
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many manual tasks (not all) fall into this category
+\item But some cognitive ones too: Calculating, coordinating, record-keeping
+\end{itemize}
+\item Non-routine tasks require flexibility, creativity, problem-solving, and communications
+\begin{itemize}\setlength\itemsep{3pt}
+\item Often occurs without explicit guidelines
+\end{itemize}
+\item Prediction: Computers replace routine tasks but complement non-routine works
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some examples} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.67\textwidth]{alm(2003)_t1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Confirming this with data}
+Data source
+\begin{itemize}\setlength\itemsep{3pt}
+\item Dictionary of Occupational Titles (DOT) from US Department of Labor
+\item Evaluate intensity of routines for 12,000 occupations across 44 dimensions
+\item Merged with Census (based on occupation codes) for individual level characteristics 
+\end{itemize}\medskip
+Empirical strategy: Measuring changing job task requirements over time
+\begin{itemize}\setlength\itemsep{3pt}
+\item Changes over time in occupational distribution of employment (extensive)
+\item Also keep track of task contents within occupation (intensive)
+\item Also tracks differences in computer adoptaion across industries and time
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Trends in occupational distribution based on task content} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.64\textwidth]{alm(2003)_f1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Changes in tasks within industries} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.575\textwidth]{alm(2003)_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions}
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Computerization substitutes for routine tasks and complements non-routine ones
+\item This explains a decrease in demand for routine tasks since 1970s
+\item Tasks, not just skills accumulated through education, explains gap in demand
+\end{itemize}\medskip
+Remaining questions: Note that this paper came out in 2003
+\begin{itemize}\setlength\itemsep{3pt}
+\item AI introduces a new challenge: Evidence that non-routine tasks are substitutable
+\item Thus, it is feasible that demand for these workers can change
+\item Updated explanations for earnings gap and inequality in demand required
+
+\end{itemize}
+\end{frame}
+
+\subsection{Acemoglu, Resrepo (2022): Tasks, Automation, and the Rise in US Wage Inequality}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Acemoglu, Resrepo (2022):\\ Tasks, Automation, and the Rise in US Wage Inequality
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How does automation affect wage inequality?} 
+Rising wage inequality across industrialized economics 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Real wages of post-college graduates on the rise
+\item Those of workers with lower educational attainment stagnant or falling
+\item Could this be explained by differential displacement following automation?
+\begin{itemize}
+\item Workers with routine tasks vs tasks not replaceable with automation
+\end{itemize}
+\end{itemize}\medskip
+This paper provides and tests the framework explaining how automation affects wages
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lays out channels for how technological changes affect wages
+\item It can displace workers, and also reduce real wages of workers not yet displaced
+\item Empirically investigate relationship between wage changes and task displacement across different groups
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Link between automation and displacement: Very simplified} 
+Allocation of task $x$ across capital and different types of labor
+\begin{itemize}\setlength\itemsep{3pt}
+\item Each task (say knitting clothes) is allocated across capital and different types of labor
+\item There is different productivity specific to each factor of production
+\item And the productivity of a given factor can differ based on tasks it performs
+\end{itemize}\medskip
+Technology can affect productivity and factors in these ways
+\begin{itemize}\setlength\itemsep{3pt}
+\item It can augment productivity of capital / labor as a whole
+\item It can increase productivity of a factor doinbg a particular task
+\item It can increase productivity of capital at tasks previously carried out by labor
+\begin{itemize}
+\item The last case leads to displacement of labor: Robots replacing blue-collar tasks
+\end{itemize}
+\item Technologies improving productivity of skilled labor do not involve displacement
+\item Technologies that reduce comparative advantage of workers leds to displacement
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item BEA: industry labor shares, factor prices, and value added
+\item Census and American Community Survey: labor market outcomes by gender, education, age, race etc.
+\end{itemize}\medskip
+Empirical Analysis for reduced form approach (there are more in the text)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Uses two measures of displacements
+\begin{itemize}\setlength\itemsep{3pt}
+\item Do share of labor within an industry decline? (not just due to automation)
+\item How much of the decline in labor shares are driven by automation?
+\end{itemize}
+\item Starts with a descriptive relationship between displacement measures and wages
+\item Then see if it holds after controlling for industry and demographic characteristics
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Automation and labor shares negatively correlated} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{ar(2022)_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Middle-wage workers face highest task displacement} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{ar(2022)_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Task displacement negatively correlated with wage growth} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{ar(2022)_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results similar with alternative displacement measure} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{ar(2022)_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Remaining questions on inequality} 
+Reconciling differences in interpretation remains tricky
+\begin{itemize}\setlength\itemsep{3pt}
+\item Definition of income, tax units may differ
+\item Choices on what counts leads to drastically different conclusions
+\end{itemize}\medskip
+How do we address inequality?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Redistribution (transfers and taxation) could be one way
+\item But it can distort incentives of both the poor and the rich \begin{itemize}\setlength\itemsep{3pt}
+\item Labor incentives could be distorted for both (but for different reasons)
+\end{itemize}
+\item Fiscal stability concerns vs long-run gains from more equal distribution
+\item What policies make opportunities more equal?
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Early childhood care, education and health interventions, cash transfers, wealth taxes?
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+%%%%%%%%%%%
+\end{document}
