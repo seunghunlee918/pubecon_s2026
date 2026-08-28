@@ -1,0 +1,1069 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 8: Evolution of tax structures in developing countries}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{April 17th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+
+\begin{frame}
+\frametitle{Challenges in tax administration: Information} 
+Information on taxable transactions are cricial for imposing tax
+\begin{itemize}\setlength\itemsep{3pt}
+\item Having a firm registered
+\item Income sources with traceable sources
+\item Formal transactions with verifiable paper trails
+\end{itemize}\medskip
+Modern economies implement technologies and systems gathering these information
+\begin{itemize}\setlength\itemsep{3pt}
+\item Statistical offices \& population registers compile info on various economic activities
+\item Employee-employer relationships enable accurate tracking of income
+\begin{itemize}
+\item Third-party information (not self-declared information) used as source
+\end{itemize}
+\item Value-added tax (VAT) creates a paper trail between different levels of supply chain
+ \begin{itemize}\setlength\itemsep{3pt}
+\item VAT charged on sales - input for each firms
+\item Downstream firms have incentive to ask their suppliers for a receipt
+\item Since the receipt provides evidence for input costs, which can lower their tax burden
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Rise of informational capacity and taxation over time} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lack of tax administration capacity in developing countries} 
+Limited access to necessary information
+\begin{itemize}\setlength\itemsep{3pt}
+\item Large share of economic activities are taking place in informal markets (last week)
+\item Usage of third party information is limited
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Higher share of self-employed individuals (who self-declare income)
+\item Less transactions based on digital tools such as credit cards (cash do not leave records)
+\end{itemize}
+\item Tax agents are often under-trained or under-monitored
+\end{itemize}\medskip
+What differences does it lead to
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Generally lower share of taxes relative to economy
+  \item High share of trade taxes such as tariffs (easier to monitor)
+\item Collect more taxes from firms than individuals (fewer firms than individuals)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxes in OECD vs non-OECD countries} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{fig2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{New developments in tax technology} 
+What is being tried in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Expansion of digital money and banking system for transparent transactions
+\item Increases in digitalized identifiaction of properties and individuals
+\item E-filing: Making compliance to taxation easier
+\end{itemize}\medskip
+Some new studies:
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Effects of the assignment of tax collectors
+  \item Effects of incorporating local knowledge in taxation
+  \item Implmentation of various tax campaigns to increase compliance from taxpayers
+\end{itemize}
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Evolution of economic structure and taxation}
+\subsection{Oyebola, Tourek (2024): How Can Lower-Income Countries Collect More Taxes? The Role of Technology, Tax Agents and Politics}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Oyebola, Tourek (2024):\\ How Can Lower-Income Countries Collect More Taxes? The Role of Technology, Tax Agents and Politics
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How do you improve tax system in developing countries? } 
+Increasing tax revenues is a major goal in many low/middle income countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Generally have lower share of their GDP as tax revenues
+\item Low taxation is a symptom of economic and institutional constraints
+\begin{itemize}
+\item Tax base not large enough, lack of constraint on redistribution/taxes
+\end{itemize}
+\item Does economic growth automatically expand tax capacity? Not exactly
+\begin{itemize}
+\item Separate investments in improving the tax system required
+\end{itemize}
+\end{itemize}\medskip
+This paper reviews recent developments in tax administration in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Identifying taxpayers (expanding tax registries and databases)
+\item Detecting tax burden (usage of third-party information)
+\item Collect taxes to state coffers (Billing systems, legal measures for noncompliance)
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Technology in tax collection} 
+Identification: Cost of linking identity info across government agencies and registries$\Downarrow$
+
+\begin{itemize}\setlength\itemsep{3pt}
+\item National ID (Ghana Card), Digital mapping of properties (Liberia)
+\item ID information may need to be combined with other measures (Okunogbe 2023)
+\end{itemize}\medskip
+Detection: Collect third-party info (declaration of tax liabilities by third person)
+\begin{itemize}\setlength\itemsep{3pt}
+\item `Digital trails' from value-added taxes and employment taxes
+\item Requires countries to cross-check information using multiple sources
+\item Need to close international loopholes
+\end{itemize}\medskip
+Collection: Increases in electronic filing and mobile payment options
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduces cost of monitoring and Compliance
+\item May disadvantage those less familiar with electronics \\ (rural, less-educated, less-established firms)
+\end{itemize}\medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Cross-country evidence on technology and collection} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{ot2024_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Role of tax collectors} 
+What determines the effectiveness of officials
+\begin{itemize}\setlength\itemsep{3pt}
+\item Deployment: low citizen-to-staff ratio and appropriate allocation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Low burden per staff
+\item Specialization: Matching staff depending on tax types and taxpayer traits 
+\end{itemize}
+\item Incentives: Tie staff revenues to tax revenue generations
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Risk: Could increase scope for corruption
+\item Monitoring staff with audits crucial 
+\end{itemize}
+\end{itemize}\medskip
+Interaction with technology
+\begin{itemize}\setlength\itemsep{3pt}
+\item Substitute? Obviate need for in-person Interaction
+\item Complement? Help expedite tedious processes and collecting contextual knowledge
+\item Balancing the two forces is key (and unresolved question)
+\item Resistance to adopting the technological change
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Political incentives for taxation} 
+How do political incentives determine tax collection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tax$\Uparrow$ $\to$ fund public services, social programs, infrastructure $\to$ support re-election
+\item Tax$\Uparrow$ $\to$ Citizen demand, expectation for accountability $\Uparrow$ $\to$ not help that much
+\end{itemize} \medskip
+What are the factors shaping success of tax collection?
+\begin{itemize}
+\item Alternative revenue: Dampen motivation for Taxation
+\item Political competition: Competition for better governance (through public services)
+\item Availability of tech: Reduce cost of collection and resistance from taxpayers
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Expanding our knowledge} 
+Findings from other relevant studies
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tax revenue and compliance increases with increased tech and enforcement
+\item Many results are from small-scale local experiments: Generalizable?
+\end{itemize}\medskip
+What remains?
+\begin{itemize}\setlength\itemsep{3pt}
+\item How to make technology and personnel complementary?
+\item How to tax new commodities (digital activities, digital currencies)?
+\item How to increase political support for taxation?
+\end{itemize}
+\end{frame}
+
+
+\subsection{Jensen (2022): Employment Structure and the Rise of the Modern Tax System}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Jensen (2022):\\ Employment Structure and the Rise of the Modern Tax System
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How do modern tax systems rise?}
+Modern tax systems are characterized by increased direct taxes (income tax)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Requires high collection capacities 
+\item Changes in the structure of employment may explain increase in collection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Enforcement in employer-employee structure $>$ Self-employed
+\item Existence of third-party information (employer, in case of income tax)
+\end{itemize}
+\end{itemize}\medskip
+This paper uncovers new facts on tax capacity with microdata across countries and time
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employee share increases over income distribution \& further down the income distribution as country develops 
+\item Exemption threshold gradually decreases in income distribution over development
+\item Threshold is located such that employee share on tax base remains constant and high
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data, definition, and calculation strategy} 
+Data source and definitions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Household surveys (100 countries)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employment type of economically active population (EAP)
+\item Information on taxable earnings (employment / self-employment / capital / other income)
+\item For US (1870-2010) and Mexico (1960-2010), compile long run time series 
+\end{itemize}
+\end{itemize}\medskip
+Definition of key terms and strategies for calculation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employee: if work type generates third-party information usable in tax enforcement \\ (Otherwise, self-employment)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Self-employed: casual laborers, own account workers, workers w/o contracts
+\item Calculate share of employees in EAP across country's income distribution (in deciles)
+\end{itemize}
+\item Threshold: Minimum level of gross income above which individuals have to pay taxes
+\begin{itemize}\setlength\itemsep{3pt}
+\item From country tax reports of International Bureau of Fiscal Documentation
+\end{itemize}
+\item Income tax base: \% EAP whose gross income is above income tax exemption threshold
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fact1: Employee share $\Uparrow$ with income and development levels} 
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{j2022_f1.png}
+    \caption*{Red: Employee, Blue: Self-employed}
+  \end{figure}
+  
+\end{column}  
+\begin{column}{0.35\textwidth}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Within country, employee share increase over income
+\item Across countries, employee share profile moves leftward 
+\item Over transition, increase in employee share concentrated in deciles gradually further down 
+\end{itemize}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fact2: Exemption threshold moves downward as country develops} 
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{j2022_f2.png}
+    \caption*{Red: Employee, Blue: Self-employed, Vertical: Threshold}
+  \end{figure}
+  
+\end{column}  
+\begin{column}{0.35\textwidth}
+\begin{itemize}\setlength\itemsep{3pt}
+\item At low development, threshold at top deciles 
+\item With development, growth in employee share comoves with falling thresholds
+\item Tax base increases
+\item Documents frequent updating of thresholds (base increase not driven by nominal inflation)
+\end{itemize}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fact3: Threshold is located where employee share remains constant} 
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{j2022_f3.png}
+    \caption*{}
+  \end{figure}
+  
+\end{column}  
+\begin{column}{0.35\textwidth}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Composition of tax base is constant and high in employee share
+\item Employee share: 85-95\%
+\item Suggest that employee composition matters in deciding threshold
+\item \% Self-employed $\Uparrow\to$ Enforcement costs $\Uparrow$ (high employee share desirable)
+\end{itemize}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways from the stylized facts}
+Cost channels at play in expanding tax base
+\begin{itemize}\setlength\itemsep{3pt}
+\item Concerns with taxing income segment with too high-self employed population
+\begin{itemize}
+\item Employees have information trails, self-employed do not
+\end{itemize}
+\item Compliance cost imposed on newly taxed self-employed may be high
+\begin{itemize}
+\item Employees have third-party withholding
+\end{itemize}
+\item Worsen between-group horizontal equity among employee vs self-employed
+\begin{itemize}
+\item Self-employed have evasion opportunities $\to$ effective taxes paid < legal liabilities 
+\end{itemize}
+\end{itemize}\medskip
+Rise of modern taxation: Decrease in threshold (broad-based tax) happens when
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase in employee share at lower end of income distribution (Fact 1)
+\item This lowers costs of reform and expand tax base (Fact 2)
+\item While retaining high employee share, making tax administration manageable (Fact 3)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implications for developing countries} 
+Redistribution by direct taxes might be ill-suited for developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Developed countries extensively use third-party information
+\begin{itemize}
+\item Evidenced by increase in employee share down the income distribution over time
+\end{itemize}
+\item Developing countries cannot enforce taxes flexibly due to cost constraints 
+\begin{itemize}
+\item Higher share of self-employment (difficult to gather info)
+\end{itemize}
+\item For such settings, indirect taxation could be the best option for redistribution
+\end{itemize}\medskip
+Remaining issues 
+\begin{itemize}
+\item How would implementation of technology affect tax base long-run?
+\begin{itemize}\setlength\itemsep{3pt}
+\item More use of third-party information $\to$ Rising `employee' share?
+\item Expanding tax base would then be less costly $\to$ tax collection, public goods $\Uparrow$
+\item But what about adoption (existence of political will)?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\section{How tax administration affects tax collection: Evidence from experiments}
+\subsection{Pomeranz (2015): No Taxation without Information: Deterrence and Self-Enforcement in the Value Added Tax}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Pomeranz (2015):\\ No Taxation without Information: Deterrence and Self-Enforcement in the Value Added Tax
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: How does third-party information in VAT help taxation?} 
+VAT is believed to facilitate enforcement via a third-party information 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Built-in incentives to ensure that transactions are revealed
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Downstream firms demand receipt in order to deduct input costs from their liabilities
+  \item This incentive is sustained until the transaction reaches the final consumer
+\end{itemize}
+\item Implementation: 47 countries in 1990 $\to$ 140 in 2010s 
+\item But the effect of this built-in structure not empirically tested at this point
+\end{itemize}\medskip
+This paper uses randomized experiments to verify the properties of this structure
+\begin{itemize}\setlength\itemsep{3pt}
+  \item This experiment was conducted on more than 400,000 firms in Chile
+  \item Letter message experiment to test preventive deterrence effect on evasion
+  \item Spillover experiment to identify underlying mechanisms behind information effects
+  \item Idea is to test how the paper trails interact with tax audit probabilities
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Conceptual framework of VAT} 
+Setup
+\begin{itemize}\setlength\itemsep{3pt}
+\item Let $i\in\{1,2,...,N\}$ index the firm in a value chain where firm $i+1$ buys from firm $i$
+\item $s_i$ and $c_i$ are the true sales and costs for firm $i$. $\widehat{s}_i$ and $\widehat{c}_i$ are reported sales and costs
+\item Firm $i+1$ wants receipt from firm $i$ to deduct $s_i$ from its cost $c_{i+1}$ (No collusion here)
+\item The last firm $N$ does not face this problem: Consumers do not require receipt
+\end{itemize}\medskip
+Types of potential evasion and role of perceived audit provbabilities
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Unilateral: Firms underreport own liability while risking discrepancy with other firms
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item $\widehat{c}_i>c_i$ or $\widehat{s}_i<s_i\implies\widehat{c}_i>\widehat{s}_{i-1}$ or $\widehat{s}_i < \widehat{c}_{i+1}$ 
+  \end{itemize}
+  \item Collusive: Both firms drop the sale entirely or underreport liabilities 
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item $\widehat{c}_i \neq c_i$ but $\widehat{c}_i=\widehat{s}_{i-1}$ or $\widehat{s}_i \neq s_i$ but $\widehat{s}_i = \widehat{c}_{i+1}$ 
+    \item If firm $n$ engage in this evasion, it must be the case for all $i\geq n$ up to $i=N$ 
+    \item It must also be that $\widehat{s}_i-\widehat{c}_i \leq s_i-c_i \iff c_i-\widehat{c}_i \leq s_i - \widehat{s}_i$
+  \end{itemize}
+  \item As audits can uncover paper trail, the threat of audit should deter evasion
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Prediction on tax evasion behaviors after announcement of audit}
+  Unilateral evasion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Suppose audit is announced on firm $n$ in the middle of the chain
+\item This forces supplier and client firms to revise perceived audit probability
+\item Thus, they revise declared transactions to be consistent with firm $n$
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Supplier: Increase sales figures and VAT payment
+  \item Client: Decrease cost figures and increase VAT payment
+\end{itemize}
+\end{itemize}\medskip
+Collusive evasion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Again, firm $n$ receives audit announcement
+\item Firm $n$ would be incentivized to create a paper trail (increased sale and costs)
+\item Supplier firm induced to increase reported sales and VAT payment 
+\begin{itemize}
+\item Possible chain reaction continues to onto its own supplier
+\end{itemize}
+\item Client firms has room to increase their cost and reduce VAT 
+\begin{itemize}
+\item Since supplier raised sale, client has more room to declare its costs
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Experiment design} 
+Experiment 1: Letter experiment to check behavior of a single firm
+\begin{itemize}\setlength\itemsep{3pt}
+\item Deterrence: Reminds firms of the possilbility of audit (102,031)
+\item Tax Morale: Highlight social norms on taxes, but no content on deterrence (18,579)
+\item Placebo: New feature on tax website to see if messaging alone has impacts (18,519)
+\item Outcome variable: VAT filings of each firms
+\end{itemize}\medskip
+Experiment 2: Spillover experiment to see if tax compliance on other firms are affected
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Sample of 5,600 suspected firms already chosen for audit
+  \item Randomly pre-announce audit to half of the firms
+  \item Data on partner firms collected in the audit
+  \item Check VAT declarations before and after announcemenrt
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Deterrence message increases compliance (reduce evasion)}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.8\textwidth]{p2015_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preannouncement also affects partner firms' taxation response}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{p2015_t2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key takeaways and discussion} 
+Key findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Paper trail in VAT self-enforces accurate tax information
+\item Transactions already under paper trail more likely to comply with audit possibility
+\item Increasing audit probability increases tax payment of supplier firms
+\begin{itemize}
+  \item Not necessarily downstream firms: Consumers have less incentives to ask for receipt 
+\end{itemize} 
+\end{itemize}\medskip
+Overall message
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Interaction of information and enforcement matters
+  \item Information from paper trail can be a powerful tool
+   \begin{itemize}
+    \item Either in form of VAT or digitalized property rasters or earnings 
+   \end{itemize}
+  \item But it also explains why tax collection in developing countries are low
+   \begin{itemize}\setlength\itemsep{3pt}
+    \item Many home-based activities with no paper trail
+    \item Lack of credible threat/perception of enforcement
+   \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{De Neve, Imbert, Spinnewijn, Tsankova, Lutz (2021): How to Improve Tax Compliance? Evidence from Population-Wide Experiments in Belgium}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+De Neve, Imbert, Spinnewijn, Tsankova, Lutz (2021): \\ How to Improve Tax Compliance? Evidence from Population-Wide Experiments in Belgium
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How do  different administrative approaches affect tax compliance?} 
+Tax compliance matters for healthy functioning societies
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Cost of noncompliance in US: 319 billion USD annually
+  \item Truthfulness and timely payment both matters for compliance
+\item Increasing yet incomplete understanding on nonpecuniary motives for tax compliance 
+\begin{itemize}
+  \item Recent interest in `tax morale'
+\end{itemize} 
+\end{itemize}\medskip
+This paper studies how communications from tax authorities affects tax compliance
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Different dimensions: Simplified communication vs deterrence vs appeal to tax morale
+  \item Messaging experiment from tax authorities in Belgium (2014-16)
+  \item Estimates how different dimensions of tax reminders differentially affect compliance
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Message content
+  \item All taxpayers vs taxpayers who missed deadline
+\end{itemize} 
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Tax process in Belgium} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{distl2021_f1.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Experiment design} 
+Treatment
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Simplification: Shorter letters, reduce information overload, action-relevnt info
+ \item Deterrence: Simplified + make penalities explicit
+ \item Tax deterrence: Simplified + emphasize social benefits of taxation
+ \item Control group: Standard long message with complicated information
+\end{itemize}\medskip
+Implementation of the experiment
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Four experiments: Filing, Filing reminder, Payment, Payment reminder
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Filing experiment only had tax morale
+    \item Filing reminder experiment did not have morale component
+  \end{itemize}
+  \item Only the ones who missed the deadlines are part of the reminder experiment
+  \item Randomized based on birthday (payment) and national ID number (other experiments)
+  \item Regression is an OLS where
+  \[
+  y_i =\alpha + \beta_s S_i + \sum_j \beta_j T^j_i+\gamma X_i + e_i
+  \]
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Different effects on tax payment} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{distl2021_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exploring mechanisms} 
+Simplication works primarily with extensive margins
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Make relevant deadline salient: Effects larger around the deadlines
+  \item Does not lead to large increases in the amount of taxes paid
+\end{itemize}\medskip
+Deterrence component complements the effect of simplified messages
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Makes deadline and relevant information salient and encourage immediate action
+  \item No large effect on the amount of taxes paid
+  \item Tax morale part may have increased relevant knowledge but ineffective beyond this
+\end{itemize}\medskip
+Heterogeneity
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Simplication more effective on households with children and median solvency score
+  \item Deterrence most effective on young taxpayers, and those with low liabilities
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cost-effectiveness of interventions and remaining discussion} 
+Cost effectiveness of different interventiones 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item The authors estimate the costs using RD estimates around enforcement intensity
+  \item Based on this cost-effectiveness is measured in three ways 
+  \item In all of these results: Costs of simplification $<$ Costs of extra enforcement
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Simplification: Total cost is 10\% of extra deterrence measure in one of the approaches
+  \end{itemize} 
+\end{itemize}\medskip
+Discussions
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Compliance can increase if directions are straightforward
+  \item Morale message not effective: Likely because people are aware of importance of taxes
+  \item Lack of compliance, thus, is largely explained by inattention of taxpayers 
+  \item Can this apply on tax collectors?
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item They know that as public servants, collecting taxes are crucial
+  \item But they may be techinically unaware of deviant behaviors...
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Effect of tax collectors on compliance}
+\subsection{Basri, Felix, Hanna, Olken (2021): Tax Administration versus Tax Rates: Evidence
+from Corporate Taxation in Indonesia}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Basri, Felix, Hanna, Olken (2021):\\ Tax Administration versus Tax Rates: Evidence
+from Corporate Taxation in Indonesia
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How much does improving tax adminstration raise tax revenues?}
+Tax revenues in developing countries remain low
+\begin{itemize}\setlength\itemsep{3pt}
+\item Is it due to high elasticity of taxable income (ETI)?
+\begin{itemize}\setlength\itemsep{3pt}
+\item High ETI implies that tax revenues fall in large amounts w.r.t. rise in tax rates
+\end{itemize}
+\item Or is it a problem of tax administration?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Enhanced administration may make evasion/avoidance much more difficult
+\item Rise in tax revenues without rise in tax rates
+\end{itemize}
+\end{itemize}\medskip
+This paper studies this question in context of corporate taxes in Indonesia
+\begin{itemize}\setlength\itemsep{3pt}
+\item Administrative reforms created medisum size taxpayer offices (MTO)
+\begin{itemize}\setlength\itemsep{3pt}
+\item higher ($\times3$) staff-to-taxpayer ratio than other offices to increase enforcement
+\end{itemize}
+\item First study the effect of intensified administration in administrative tax data
+\item Then compare with changes in statutory corporate income tax rates several yrs later
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relevant tax reforms in Indonesia}
+Administrative reforms in Indonesia in mid-2000s
+\begin{itemize}\setlength\itemsep{3pt}
+\item Moved several hundred top corporate taxpayers across 19 tax regions to MTOs 
+\item MTOs exclusively focused on large taxpayers and had more staff than other offices
+\item Taxpayers not assigned to MTOs assigned to smaller offices (PTOs)
+\item Staffs in MTOs and PTOs are similar in experience and performance assessments
+\end{itemize}\medskip
+Tax rate reform on corporate income tax
+\begin{itemize}\setlength\itemsep{3pt}
+\item In 2009, Indonesia changed from progressive 15-30\% rate to flat 28\% tax rate
+\item Pre-reform tax base was net taxable profits
+\item Post-reform taxes are determined based on gross revenues
+\item Total tax and discount determined by a set formula across 3 revenue brackets
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data sources and regression}
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Anonymized microdata on corporate taxpayers (2003-2011)
+\item Detail on tax reporting, wage bills, audits, VAT assessments, and tax payment
+\end{itemize}\medskip
+Regression approach
+\begin{itemize}\setlength\itemsep{3pt}
+\item MTO reform: Use matched DID
+\[
+y_{it} = \alpha + \beta (M_{i}\times 1[t>2005])+ \delta_t + \delta_i + e_{it}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Control: Taxpayers in same region with similar pre-MTO tax payments and gross revenue
+  \item Match control and treatment based on entropy balancing (Hainmueller 2012)
+\end{itemize}
+\item Effects of tax rates: Instrument change in tax rates with tax formula following reform
+\begin{itemize}\setlength\itemsep{3pt}
+  \item The goal is to estimate elasticity of taxable income w.r.t tax rate changes
+  \item Lower elasticity implies that taxable income does not respond much to tax rate
+  \item Used to calculate how much tax rate should change to match revenue from MTOs
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Tax revenues following MTO nearly doubles}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{bfho2021_f1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Effects driven by higher reported incomes}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{bfho2021_f2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{ETIs are actually similar across different firms}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.6\textwidth]{bfho2021_t1.png}
+  \end{figure}
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item ETI is 0.579, similar to many developed countries
+    \item ETIs statistically similar = MTOs did not work by reducing ETIs
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Other key findings and discussion}
+  Other key findings
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Tax enforcement no longer size-dependent
+    \begin{itemize}
+      \item Before: Small offices focusing on large firms 
+      \item This created disincentives for small firms to grow
+      \item Now: MTOs able to treat firms of various sizes equally 
+    \end{itemize}
+    \item Tax revenue increases by administrative reform can be cost-effective
+     \begin{itemize}\setlength\itemsep{3pt}
+     \item Improved tax administration = raising top rates on all firms by 8 percentage points
+     \item So improving administration can have significant returns for developing countries
+    \end{itemize}
+  \end{itemize}\medskip
+  Discussion: How to improve tax administration
+   \begin{itemize}\setlength\itemsep{3pt}
+     \item Improving staff-to-taxpayer ratio by raising staffing
+     \item Alternatively, specialized offices may help
+     \item Another dimension is the quality of staffing (education, capital, training)
+     \begin{itemize}\setlength\itemsep{3pt}
+     \item Better trained, well-equipped staffing can improve effective number of personnel
+     \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\subsection{Balán, Bergeron, Tourek, Weigel (2022): Local Elites as State Capacity: How City Chiefs Use Local Information to Increase Tax Compliance in the Democratic Republic of Congo}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Balán, Bergeron, Tourek, Weigel (2022):\\ Local Elites as State Capacity: How City Chiefs Use Local Information to Increase Tax Compliance in the Democratic Republic of Congo
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+ 
+\begin{frame}
+\frametitle{Q: How can local information be used effectively to increase taxes?} 
+How can fiscal capacities develop in presence of local \& traditional elites
+\begin{itemize}\setlength\itemsep{3pt}
+\item On the one hand, can capture politics and civic society
+\item On the other, could be room to collaborate to improve governance
+\item Potential trade-offs
+\begin{itemize}
+\item Enforcement backed by the state vs local knowledge and coordination?
+\end{itemize}
+\end{itemize}\medskip
+This study investigates if local elites can contribute to statebuilding
+\begin{itemize}\setlength\itemsep{3pt}
+\item Comparison between state agents vs local elites
+\begin{itemize}\setlength\itemsep{3pt}
+\item Local elites know more contextual knowledge but could lead to leakage in revenues
+\item State agents have better enforcement capacity
+\end{itemize}
+\item Based on field experiment randomizing type of tax collectors across neighborhoods
+\item Estimate changes in revenues and bribes, with tests for various mechanism
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxation in Democratic Republic of Congo (DRC)} 
+Setting of DRC
+\begin{itemize}\setlength\itemsep{3pt}
+\item Low-capacity state: tax/GDP ranks 188 out of 200 and  \$0.30 per capita tax revenue
+\item Relies on property tax: First campaign to expand property tax in 2016
+\item Public goods and services are scarce and low-quality
+\begin{itemize}
+\item Limited running water, electricity, unrepaired roads etc
+\end{itemize}
+\end{itemize}\medskip
+The current study focuses on the second campaign (May-Dec 2018)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Collectors trained by provincial ministry, separate for state and chiefs
+\item Involved property registration updates, providing liability information 
+\item Followed by tax visits (revisit until taxes are paid)
+\item Collectors compensated based on houses registered and revenue collection
+\item Property tax rates are tiered flat, fixed fees (low: \$2 tax, 89\% vs high: \$9 tax, 11\%)
+\begin{itemize}
+\item Equivalent to 0.32\% of property value ($\simeq$ lower end of property tax rates in US)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+RCT on 45000+ properties in 356 neighborhoods in Kasai-Central
+\begin{itemize}\setlength\itemsep{3pt}
+\item Randomized at neighborhood, treatment at past campaigns, experience of chiefs
+\item Central (state agents) vs Local (chiefs) vs State agents w/ local info vs state and local
+\item Pure control group: Declare their property values voluntarily
+\item Other aspects of collection equal
+\begin{itemize}
+\item Property registration, assessment, tax liabilities, training, collection compensation
+\end{itemize}
+\item Complemented with tax administrative data and household surveys
+\end{itemize}\medskip
+Estimation leverages random assignment of treatment (indiv $i$, neighbor $j$, strata $k$, time $t$)
+\[
+y_{ijkt}=\beta_0 + \beta\text{Local}_{jkt}+\gamma X_{ijkt} + \alpha_k + \theta_t + e_{ijkt}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item For mechanisms, other treatment arms included as separate variable
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Increase in compliance and revenues} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{bbtw2022_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Accurate assessments \& trust in government $\uparrow$, but bribes $\uparrow$} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bbtw2022_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evidence of local information at play} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{bbtw2022_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways}
+What explains the chiefs' advantage? Better targeting with information advantage
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lower effort cost? Chiefs did not make more visits
+\item Target their visits? When state agents received info from chiefs, compliance $\Uparrow$
+\item Better persuasion? Neutralize info advantage (visit in linear route)$\Rightarrow$ Central = Local
+\end{itemize}\medskip
+Takeaways and remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Should countries with low capacities rely on local elites?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Raise revenues, but also bribes
+\item To shift to state, value of \$1 lost in bribes $>$$>$ \$1 gained in revenues
+\end{itemize}
+\item For technology to increase taxes, need to surpass some state capacity threshold?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Speak to the complementary/substitutional relationship between tech and person
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+ 
+\begin{frame}
+\frametitle{Unanswered questions} 
+Effects of technological advancements on taxation
+\begin{itemize}\setlength\itemsep{3pt}
+\item More countries adopting digital registries, automated paper trails, and identification
+\item Many evidence that it led to better detection and compliance
+\item Other questions that remain not yet fully explored 
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Can it lead to better training of tax officials?
+\item Can it lead to change in perception about taxation among citizens?
+\end{itemize}
+\end{itemize}\medskip
+What can better administration of taxes do
+\begin{itemize}\setlength\itemsep{3pt}
+\item More efforts to increase administration in place
+\item But what about administration for how to \textit{use} these taxes?
+ \begin{itemize}\setlength\itemsep{3pt}
+\item How can developing countries provide public services efficiently with these taxes?
+\item How to ensure that these officials appropriately distribute taxes without corruption?
+\end{itemize}
+\item We will cover topics on public service and personnel in developing countries 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%
+\end{document}
