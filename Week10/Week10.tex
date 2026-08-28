@@ -1,0 +1,984 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 10: Types of public services: Cash vs. In-kind, Conditional vs. Unconditional}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{April 28th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+
+\begin{frame}
+\frametitle{Widespread usage of Cash and In-kind transfers}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{fig1.png}
+\end{figure}
+\begin{footnotesize}
+Source: Gentilli, U. (2023) ``Why does In-kind Assistance Persist when Evidence Favors Cash Transfers?'', Brookings Institution
+\end{footnotesize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Cash vs.\ in-kind transfers}
+\begin{columns}
+\begin{column}{0.48\textwidth}
+  \textbf{Case for cash}
+  \begin{itemize}\setlength\itemsep{4pt}
+    \item Recipients know their own needs best -- cash respects consumer sovereignty
+    \item Less administrative cost (no procurement, storage, or distribution)
+    \item Recipients prefer the cash equivalent and reallocate accordingly than in-kind
+  \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+  \textbf{Case for in-kind}
+  \begin{itemize}\setlength\itemsep{4pt}
+    \item Paternalism: recipients may not spend cash on socially desired goods
+    \item Self-targeting: in-kind goods are less attractive to the non-poor
+  \item Promote consumption of goods generating positive externality
+
+  \end{itemize}
+\end{column}
+\end{columns}
+\medskip
+\begin{block}{Key question}
+\begin{itemize}
+\item[$\to$] Respect recipient preferences, or promote socially desired consumption?
+\item[$\to$] Targeting or insurance value of in-kind transfers $>$ Higher cost relative to cash?
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conditional cash transfers: Progresa in Mexico}
+Mexico's Progresa (1997-2019) as the pioneering large-scale CCT
+\begin{itemize}\setlength\itemsep{3pt}
+\item Targets poor rural households via proxy-means testing
+\item Transfers conditional on school attendance (85\%+) and health clinic visits
+\item By 2004, covered 5 million households --- around a quarter of Mexico's population
+\item Enrollment, child health , household consumption $\uparrow$ (effect wiped out post program)
+\item Spawned a global wave: Used in 2 countries in 1997 $\to$ 63 LMICs in 2016
+
+\end{itemize}\medskip
+Why Progresa became a blueprint
+\begin{itemize}\setlength\itemsep{3pt}
+\item One of the first programs to be rigorously evaluated via randomized rollout
+\item Demonstrated simultaneous gains in enrollment, health, and consumption
+\item Spawned a large literature debating on optimal design
+ \begin{itemize}\setlength\itemsep{3pt}
+\item How much do conditions matter? 
+\item Who benefits most? 
+\item What is the optimal CCT/UCT mix?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Unconditional cash transfers: GiveDirectly in Kenya}
+An NGO-driven large-scale unconditional cash transfer
+\begin{itemize}\setlength\itemsep{3pt}
+\item Rolled out in poor households in rural Kenya via M-Pesa mobile money
+\item Eligibility based on a simple means test (thatched roof as poverty proxy) 
+\item Average transfer of \$709 PPP, delivered as lump sum or monthly installments
+\begin{itemize}\setlength\itemsep{3pt}
+\item Roughly two years of per capita expenditure, 
+\end{itemize}
+\item Became the benchmark against which other transfer modalities are compared
+\end{itemize}\medskip
+What the evidence shows 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Monthly household consumption from \$158 to \$193 PPP nine months after transfer
+\item Significant gains in assets, food security, and psychological well-being
+\item No evidence of wasteful spending (alcohol, tobacco)
+\item Then, is there a need to condition benefits at all?
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{The CCT vs.\ UCT debate}
+\begin{columns}
+\begin{column}{0.48\textwidth}
+  \textbf{Case for CCT}
+  \begin{itemize}\setlength\itemsep{4pt}
+    \item Correct underinvestment in human capital due to misperceived returns 
+\item Imposing a condition deters the non-needy from applying
+    \item Taxpayers accept conditioned redistribution more readily
+  \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+  \textbf{Case for UCT}
+  \begin{itemize}\setlength\itemsep{4pt}
+\item More autonomy for households
+\item Conditions distort choices: households may comply not because it is optimal but because it is required
+\item Simpler and cheaper to administer (no need to monitor compliance)
+  \end{itemize}
+\end{column}
+\end{columns}
+\medskip
+\begin{block}{Key breaking point}
+\begin{itemize}
+\item[$\to$] If the goal is welfare improvement, do conditions add beyond the income transfer?
+\item[$\to$] If the goal is behavior change, are conditions the most efficient way to achieve it?
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Cash vs In-kind Transfers}
+\subsection{Hidrobo, Hoddinott, Peterman, Margolies, Moreira (2014): Cash, Food or Vouchers? Evidence from Randomized Experiment in Northern Ecuador}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Hidrobo, Hoddinott, Peterman, Margolies, Moreira (2014):\\ Cash, Food or Vouchers? Evidence from Randomized Experiment in Northern Ecuador
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How does form of assistance matter for welfare outcomes? } 
+Debate over the form of assistance has long history
+\begin{itemize}\setlength\itemsep{3pt}
+\item Proponents of cash
+\begin{itemize}\setlength\itemsep{3pt}
+\item Autonomy: Allow beneficiaries to use transfers as they see fit
+\item Less stigma: Less visible compared to in-kind transfers
+\end{itemize}
+\item Proponents of in-kind transfers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Targeting: Only those who truly need it will take-up these benefits
+\item Paternalism: In-kind transfers facilitate changes in a particular behavior
+\end{itemize}
+\end{itemize}\medskip
+This paper uses RCT to comparatively evaulate the effects of cash and in-kind transfers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Effect of cash, food vouchers, and food transfers on food consumption
+\item Track quantity and quality (calory intake, dietary diversity)
+\item Also provides analysis on cost-effectiveness across different programs
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Program design} 
+Background: WFP assistance to poor households and Colombia refugees in Ecuador
+\begin{itemize}\setlength\itemsep{3pt}
+\item 6 Monthly transfers of cash, food, and vouchers $\simeq\$40$ (May - Oct 2011)
+\item Eligibility determined by proxy means test based on surveys
+\item Cash transfers sent to ATM cards and did not expire
+\item Vouchers redeemable for nutritionally-approved foods at markets (nontransferrable)
+\item Food transfers gave rice, oil, lentiloes, canned sardines
+\end{itemize}\medskip
+Some characteristics of the recipients
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mostly women: Original intent was to increase women's role in household decisions
+\item Mostly poor: Dirt floors, rarely own TV/computer/automobiles
+\item Has 1-2 children (mostly aged between 6-15)
+\item All received same lecture on significance of nutrition
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Research design} 
+Experiment details
+\begin{itemize}\setlength\itemsep{3pt}
+\item Randomization at neighborhood  level
+\item Neighborhoods randomized into one of the four treatments
+\item Thus, treatment arms are comparable at baseline 
+\item Regression based on OLS (Analysis of Covariance)
+\[
+Y_{hj,1}=\beta_f\text{food}_j+\beta_c\text{cash}_j\beta_v\text{voucher}_j + \gamma Y_{hj,0} + \text{StrataFE} +\text{NeighborFE}+e_{hj}
+\]
+\end{itemize}\medskip
+Additional data obtained
+\begin{itemize}\setlength\itemsep{3pt}
+\item Following quality measures are used
+\begin{itemize}\setlength\itemsep{3pt}
+\item Dietary diversity (DDI): Sum of no. of distinct food items consumed last week (1-40)
+\item Household dietary diversity (HDDS): no. of distinct food groups consumed (1-12) 
+\item Food cosumption score (FCS): $\simeq$ HDDS, different weights per food group (35 as cutoff)
+\end{itemize}
+\item Caloric intake constructed from Nutritional Database for Standard Reference (USDA)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Overall improvements across treatment groups}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{hhpmm2014_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{All treatments show increases in quantity of consumption}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{hhpmm2014_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Food transfer $\to$ Calorie intake $\uparrow$ and Voucher $\to$ DDI}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{hhpmm2014_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cost-effectiveness and remainig discussion} 
+Estimates of cost-effectiveness
+\begin{itemize}\setlength\itemsep{3pt}
+\item Costs: WFP's accounting ledgers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Modality-specific staff costs, debit card production, storage facilities etc
+\end{itemize}
+\item Costs: Food transfers $>$ Cash $\simeq$ Vouchers
+\begin{itemize}\setlength\itemsep{3pt}
+\item For each transfer: \$11.46, \$ 2.99, and \$3.27 each
+\item For raising certain outcomes,  Food transfers $>$ Cash $>$ Vouchers
+\end{itemize}
+\item Recipient preference for cash: 9\% wish not to receive further help vs. 30\% in others
+\end{itemize}\medskip
+Discussion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Choosing the best mode of assistance depends on specific objectives
+\item Simply improve welfare? Cash is preferable
+\item Promote particular behaviors? In-kind might be better
+\item Considering recipient preference? In-kind may not be best suited
+\end{itemize}
+\end{frame}
+
+
+
+
+\subsection{Cunha, De Giorgi, Jayachandran (2019): The Price Effects of Cash vs In-Kind Transfers}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Cunha, De Giorgi, Jayachandran (2019):\\ The Price Effects of Cash vs In-Kind Transfers
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How does different anti-poverty program affect prices?}
+How do in-kind and cash transfers affect market circumstances?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Cash transfers: Increase demand for normal goods 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Think of how expansionary policy affects price levels
+\end{itemize}
+\item In-kind: Increase demand for normal goods, but also increase supply
+\item Potentially have different effects depending on competition structure
+\begin{itemize}\setlength\itemsep{3pt}
+\item Perfect competition: Shift wealth between buyers and sellers
+\item Imperfect competition: Correct inefficiencies by reducing high prices
+\end{itemize}
+\end{itemize}\medskip
+This paper tests the presence of these price effects in rural Mexico
+\begin{itemize}\setlength\itemsep{3pt}
+\item Compare between status quo, cash transfers, and in-kind transfers
+\item Estimates changes in prices following inflow of support
+\item Disaggregates size of price effects across villages with different development
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conceptual framework: Perfect comptition} 
+\begin{columns}
+\begin{column}{0.45\textwidth}
+  \begin{figure}
+    \centering
+  \includegraphics[keepaspectratio, width=\textwidth]{cdj2019_f1.png}
+  \end{figure}
+\end{column}
+\begin{column}{0.55\textwidth}
+  Cash transfers
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Demand curve shift right ($\because$ income $\uparrow$)
+    \item Hence, price $\uparrow$
+  \end{itemize}\medskip
+  In-kind transfer (equivalent value)
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Demand curve shift right ($\because$ income $\uparrow$)
+    \item Some of the demand provided by govt
+    \item Residual demand for local suppliers shift left
+    \item Hence, price $\downarrow$ 
+    \begin{itemize}\setlength\itemsep{3pt}
+      \item In-kind good demand do not rise drastically
+      \item Unless it is a luxury good
+    \end{itemize}
+  \end{itemize}\medskip
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptual framework: Imperfect comptition} 
+\begin{columns}
+\begin{column}{0.45\textwidth}
+  \begin{figure}
+    \centering
+  \includegraphics[keepaspectratio, width=\textwidth]{cdj2019_f2.png}
+  \end{figure}
+\end{column}
+\begin{column}{0.55\textwidth}
+  Assume $N$ firm Cournot-Nash competition
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Constant MC at $c$, Demand $p=d-Q$
+    \item Equilibrium $p=\frac{d+Nc}{N+1}$
+  \end{itemize}\medskip
+  Cash transfers
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Demand curve shift right ($\because$ income $\uparrow$)
+    \item Hence, price $\uparrow$
+  \end{itemize}\medskip
+  In-kind transfer (equivalent value)
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Demand curve shift right ($\because$ income $\uparrow$)
+    \item Residual demand for local suppliers shift left
+    \item Hence, price $\downarrow$ 
+    \item Room to correct excessively high price
+  \end{itemize}\medskip
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Experiment design and context} 
+Programa de Apoyo Alimentario (PAL)
+\begin{itemize}\setlength\itemsep{3pt}
+\item 5,000 small ($<2,500$ ppl) highly marginalized villages
+\item Monthly allotment of basic food items (rice, beans etc) and supplements (tuna etc)
+\end{itemize}\medskip
+Experiment design
+\begin{itemize}\setlength\itemsep{3pt}
+\item Randomly selected 208 villages
+\item Assigned to In-kind, Cash transfer, and control group
+\item Value of cash is 150 MXP: 18\% of food expense \& 8\% of income per month
+\item Value of in-kind is roughly 206 MXP, but w/ assumptions, have similar value to cash
+\begin{itemize}\setlength\itemsep{3pt}
+\item 116 MXP is consumed
+\item 35 MXP of extra consumption of transferred goods, 55 MXP not consumed 
+\item The latter two discounted to 2/3 $\to$ in-kind value of 146 MXP
+\end{itemize}
+\item Uses household and store surveys to obtain data on price
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Price in in-kind fell relative to cash villages} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{cdj2019_t1.png}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Price differences larger in less developed villages} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{cdj2019_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Other findings and key takeaways}
+Other findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item The price effects are actually persistent
+\begin{itemize}\setlength\itemsep{3pt}
+\item Villages treated early had price effects even when later-treated villages began treatement
+\end{itemize}
+  \item Purchasing power in developed villages do not change much
+  \item Larger price effect in poor villages due to less market integration and competition
+  \item Local supplier profit increases in cash transfer villages (no change in in-kind village)
+
+\end{itemize}\medskip
+Discussions
+\begin{itemize}\setlength\itemsep{3pt}
+\item In-kind transfers can correct prices set excessively high due to imperfect competition
+\item But if government is inefficient, this effect could be limited
+\item If so, cash transfers with policies to promte supply-side competition may be preferred
+\item Choice of cash vs. in-kind depends on policy goals and market circumstances
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\subsection{Gardenne, Norris, Singhal, Sukhtankar (2024): In-kind Transfers as Insurance}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Gardenne, Norris, Singhal, Sukhtankar (2024): \\In-kind Transfers as Insurance
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: How does in-kind transfers insurce against price volatility?} 
+Low-income households are vulnerable to price variations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Chages in price of key consumption goods affect stability of their budget
+\item Particularly for developing countries: Market integration $\downarrow$ and weather shocks
+\item If households only receive cash transfers, they cannot insure against such shock
+\item The insurace aspect of transfers, not jus transfers, is understudied
+\end{itemize}\medskip
+This paper sheds light on the insurace aspect of in-kind transfers
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Conceptual framework of price-indexed transfers equalizing marginal utility of income
+  \item In-kind transfers can provide additional insurance value on top of redistrubution
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Especially when price-indexing is difficult due to lack of high-frequency data
+\end{itemize}
+\item Empirically tests the idea using calorie intake as proxy for marginal utility of income
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Using a flagship in-kind transfer program in India (Public Distribution System, PDS)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Conceptual Framework} 
+Optimal insurance policy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Consider households consuming several goods, where one of its price $p_j$ varies 
+\item It maximizes indirect utility $v(p, y)$ ($y$: income)
+\item Insurance: Price-dependent transfers $x(p_j)$
+\item Optimal insurance equates marginal utility of income ($\mu$) in all states of the world
+\[
+v_y(p, y+x(p_j)) = \mu
+\]\vspace{-20pt}
+\item If $v_y$ (MU of income) increase in price, then $x(p_j)$ increases in price
+\end{itemize}\medskip
+Role of in-kind transfers (vs. benchmark cash transfer)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Same goods in fixed quantity vs same expected monetary value across all states
+\item $p_j\uparrow\to$ Market value of an in-kind transfer $\uparrow\to$  purchasing power $\uparrow$ 
+\item In-kind transfers have insurance value (price-indexed transfers) -- not fixed transfers
+\item This hinges on whether additional income more valuable when prices are high
+
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+  \frametitle{Empirical testing}
+India and PDS system
+\begin{itemize}\setlength\itemsep{3pt}
+\item Prices are volatile and many fail to meet caloric requirements
+\item PDS provides rice and other staple foods at below-market prices
+\end{itemize}\medskip
+Transferring theory to data
+\begin{itemize}\setlength\itemsep{3pt}
+\item MU of income proxied with indicator for failing to meet calorie requirements
+\begin{itemize}\setlength\itemsep{3pt}
+\item Assume: Likelihood of failing to meet requirments $\uparrow$ associated with MU of income $\uparrow$
+\item If unlikely to meet requirement, additional income valuable for meeting this requirement
+\end{itemize}
+\item Relevant price and calorie intake data from National Sample Survey (NSS, 2003-12) 
+\item Also control for household characteristics (obtained from NSS)
+\item Uses the following regression to estimate relationship between price and caloric intake
+\[
+c_{it}=\beta \text{Riceprice}_{-i,t}+X_{it}\lambda+\delta_{da}+\theta_t + \phi_{\text{round}}+e_{it}
+\]\vspace{-20pt}
+where leave-out price is used to net out influence of own-taste
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{More likely to not meet requirements with higher prices}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio,width=0.9\textwidth]{gnss2024_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Particularly for poor rural households}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio,width=0.9\textwidth]{gnss2024_t2.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Also reduces sensitivity of meeting requirements to market prices}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio,width=0.67\textwidth]{gnss2024_t3.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Key takeaways and discussion} 
+Further findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Value of in-kind that would ensure meeting caloric requirements
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Find $x$ s.t. $-0.260 + 0.177 \times x =0$
+  \item This $x$ is 147 Rupees, 1.5 times the average nonzero transfer
+\end{itemize}
+\item Thus, PDS implemented in the sample period did contribute to substantial insurnace
+\end{itemize}\medskip
+Policy implications
+\begin{itemize}\setlength\itemsep{3pt}
+  \item So does in-kind transfers dominate cash transfers? Not necessarily
+  \item Need to consider implementation costs (As discussed in the previous paper)
+  \item Nevertheless, insurance value provided by in-kind could be worthwhile for recipients
+  \item Especially when recipients are exposed to price risk that affects their welfare
+  \end{itemize}
+\end{frame}
+
+\section{Conditional vs. Unconditional transfers}
+\subsection{Baird, McIntosh, Özler (2011): Cash or Condition? Evidence from a Cash Transfer Experiment}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Baird, McIntosh, Özler (2011):\\ Cash or Condition? Evidence from a Cash Transfer Experiment
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: How to conditioning benefits affect recipient behaviors?} 
+Relative merits between conditioning (CCT) and not conditioning (UCT) cash transfers?
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Evidence that both CCT and UCT do affect behaviors across different settings
+ \item Proponents of CCT 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Correct for underinvestment in education and health by imposing conditions
+\item Make transfers politically acceptable to the non-poor
+\end{itemize}
+\item Proponents of UCT
+\begin{itemize}\setlength\itemsep{3pt}
+\item Marginal contribution of conditioning unknown
+\item Conditioning may be difficult to implement in dedveloping countries
+\end{itemize}
+\end{itemize}\medskip
+This paper examines marginal contribution of conditioning cash transfers
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Cash transfers to households with school-age girls in Malawi
+  \item RCT where some receive CCT, others are under UCT, and remaining  receive none
+  \item Examine behaviors that CCT conditions (education) 
+  \item But also investigate others (human capital, underage marriage / pregnancy)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experimental setting and design}
+Zomba District in Malawi
+\begin{itemize}\setlength\itemsep{3pt}
+    \item One of the poorest in the world (2008 GNI per capita is \$760)
+    \item Enrollment to secondary school is low (24\%)
+    \item 176 Enumeration Areas spread across urban, near rural, far rural areas
+    \item Surveyed to identify never-married females aged 13-22
+\end{itemize}\medskip
+
+Treatment assignment
+\begin{itemize}\setlength\itemsep{3pt}
+    \item CCT arm (T1, 46 EAs): Monthly transfer conditional on regular school attendance
+    \begin{itemize}\setlength\itemsep{3pt}
+    \item  Transfer amount determined by random: \$4 - \$10 per month
+    \item Separate payment to schoolgirls (\$1-\$5) to cover school fees
+\end{itemize}
+\item UCT arm (T2, 27 EAs): No school requirement, same financial offer
+\item Remaining EAs (88) are in control group
+\item Track attendence, performance, marriage, pregnancy for `08 and `09
+\item Potential concern: Selective attrition (especially for control group) 
+  \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{No selective attrition!}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{bmo2011_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Higher enrollment in CCT (based on teacher reporits)}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{bmo2011_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Better educational performance from CCT}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{bmo2011_t3.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Less early marriage and pregnancy in UCT}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{bmo2011_t4.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Key findings and discussion} 
+Other key findings
+\begin{itemize}\setlength\itemsep{3pt}
+  \item UCT impacts on marriage and pregnancy entirely driven by girls who dropped out
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Effects of UCT on these outcomes null among those enrolled
+  \end{itemize}
+  \item Authors do a follow-up (paper in 2019 at \textit{Journal of Development Economics})
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Besides sustained enrollment, effects of CCT vanish
+  \item Health gains of UCT besides height-for-age vanish
+  \end{itemize}
+  \item Effects of CCT similar across different amounts of transfers
+\end{itemize}\medskip
+
+Discussion
+\begin{itemize}\setlength\itemsep{3pt}
+    \item CCT can be cost-effective in raising educational attainment 
+    \item But UCTs still can improve other outcomes (health, delayed marriage)
+    \item CCT could improve outcomes that hinge on complying to conditions (e.g. test scores)
+    \item UCT effective if many noncompliers change behaviors following income support
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\subsection{Bergstrom, Dodds (2021): The Targeting Benefit of Conditional Cash Transfer}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Bergstrom, Dodds (2021):\\ The Targeting Benefit of Conditional Cash Transfer
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Does conditional transfers have a targeting \textit{benefit}?}
+Major opposition to conditional cash transfer (CCT): Targeting cost
+\begin{itemize}\setlength\itemsep{3pt}
+\item CCTs are conditional on investments in children's human capital (schooling or health)
+\item Low-income households find these conditions costly $\to$ excluded (targeting cost)
+\item Thus, many prefer UCTs (no targeting costs) to alleviate poverty
+\end{itemize}\medskip
+This paper argues that CCTs have targeting benefits that could offset targeting costs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Sending a chilren: lumpy investment where child income is the opportunity cost
+\item CCTs direct money to households forgoing child income (targeting benefit)
+\item Provides a theoretical framework capturing targeting benefits and costs
+\item Proposes a optimal trade-off between CCT and UCT with estimates from rural Mexico
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Theoretical framework}
+Set-up of the household optimziation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Parents decide whether to send children to work (for income $y_c$) or to school
+\begin{itemize}
+\item Schooling HH forgo $y_c$ but receive higher income when children become adults
+\end{itemize}
+\item All receive UCT $t_u$, schooling HH receive $t_c$ as well (along with parental income $y$)
+\item Cannot borrow against child's future income (Otherwise, always consumption more)
+\item Thus, they solve ($s$: schooling, $\mu$: child's ability)
+\[
+\max_{s\in\{0,1\}} u(c) + v(\mu, s) \ \ \text{(s.t.) } c = y + y_c(1-s)+t_u + t_c s
+\]
+\end{itemize}\medskip
+Social planner problem
+\begin{itemize}\setlength\itemsep{3pt}
+\item Utilitarian: Maximizes sum of social welfares of schooling \& non-schooling HH
+\item Distribute fixed budget to predetermined set of households in UCT or CCT
+\item Can observe $s$ (not $y$, or $\mu$) - so that CCTs goes to schooling households ($s=1$)
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key takeaways from the framework}
+Conclusions: $(1+\frac{\partial t_u}{\partial t_c})\overline{u_c(c(1))}S+\frac{\partial t_u}{\partial t_c}\overline{u_c(c(0))}(1-S)=0$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Targeting benefit: Net welfare to schooling HH when $t_c$ increases
+\item Targeting cost: Net welfare loss from decreasing $t_u$ due to rise in $t_c$
+\item Key component: MU of consumption higher in schooling households!
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Especially if $y_c$ is large and parental income is largely equal
+  \item May not hold if schooling households are rich to begin with (most developed countries)
+\end{itemize}
+\item In such case, better to increase budget to CCT 
+\end{itemize}\medskip
+How to capture from empirically observable objects (sufficient statistics)?
+\begin{itemize}\setlength\itemsep{3pt}
+\item $S$: Share of schooling households (obtainable from data)
+\item $\overline{u_c(c(s))}$: Consumption distribution across households + curvature of utility functions
+\item $\frac{\partial t_u}{\partial t_c}$: Budget trade-off (Not observable on its own)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Need income effect of UCT (I), price effect of CCT (P), and $S$
+  \item I tracks how $S$ changes with UCT, P tracks how $S$ changes with CCT
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Taking the theory to the data}
+  Progresa program in Mexico
+\begin{itemize}\setlength\itemsep{3pt}
+\item Largest component: nutritional subsidy and education grant
+\item 320 treated localities (1998 --), 186 control localities (2000 --)
+\item Transfers conditional on children attending school 85\%+ of days (grades 3--9)
+\end{itemize}\medskip
+Identifying income effects ($I$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Use variation in transfers to siblings under age 12
+\item Enrollment below age 12 is near 100\% (practically a UCT)
+\item Variation in sibling composition provides exogenous variation in size of $t_u$
+\end{itemize}\medskip
+Identifying price effects ($P$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Introduction of CCTs was randomized at the locality level
+\item Transfer schedule varies by grade and gender, providing variation in size of $t_c$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{CCTs can narrow the consumption gap}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{bd2021_f1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$P=0.008$, $I=0.004$}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{bd2021_t1.png}
+  \end{figure}
+\begin{itemize}
+  \item 1 Peso increase in CCT $\to$ raise schooling by 0.8 p.p
+  \item 1 Peso increase in UCT $\to$ raise schooling by 0.4 p.p
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Optimal CCT/UCT mix: quantitative results}
+  How much of the budget should go to a CCT on targeting grounds alone?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Large forgone $y^c$ and limited parental income inequality $\to$ TB is substantial
+\item From Progresa: Targeting benefit is 79\% of the targeting cost 
+\item TB/TC $<$ 1 $\Rightarrow$ current CCT share is slightly too high; optimal to shift some to UCT
+\item CCT/UCT mix that equalizes this: 33\% should go to CCT
+\end{itemize}\medskip
+Takeaway for policy design
+\begin{itemize}\setlength\itemsep{3pt}
+\item The targeting benefit is a quantitatively important advantage of CCTs \item It should not be ignored when designing cash transfer programs
+\item CCT vs. UCT is not a binary choice: an optimal program allocates some budget to each
+\item CCT preferred when $c(1) < c(0)$ and enrollment is below socially optimal
+\item UCT preferred when $c(1) > c(0)$ and enrollment is near optimal
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unanswered questions}
+Program design aspects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Optimal program size: Needs vs fiscal sustainability and general equilbrium effects?
+\item Amount of support -- Universal amount or vary with circumstances?
+\end{itemize}\medskip
+Behavioral and long-run effects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Do transfers build long-run resilience or create dependency? 
+\item What about life-cycle effects on labor supply, savings, and investment?
+\item Many papers try to look at graduation programs to study this
+
+\end{itemize}\medskip
+Room for further research
+\begin{itemize}\setlength\itemsep{3pt}
+\item Role of digital money: How can it close the gaps?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Individuals can send money back to families as remittance
+  \item Potential insurance role: Value of transfers adjust to real-time valuation
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%
+\end{document}
