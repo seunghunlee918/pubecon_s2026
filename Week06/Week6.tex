@@ -1,0 +1,865 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 6: Theoretical and empirical evidence on state capacity and weak states}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{April 10th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+\begin{frame}
+\frametitle{Drastic differences in capabilities of states across different countries} 
+Some of the poorest countries in the world are also  `weak states'
+\begin{itemize}\setlength\itemsep{3pt}
+  \item State capacity: Encompasses ability to support markets, provide public goods, and raise taxes from broad bases 
+   \begin{itemize}\setlength\itemsep{3pt}
+    \item Support markets: Enforce contracts, protect property rights
+    \item Provide public goods: Education, health, but also peace (by monopolizing violence)
+    \item Broad base taxes (income tax) are more rule-based, less burdensome for individuals, but require large investments for implementation 
+    \item Narrow base taxes (royalties and tariffs) are easy to implement but could be corruptible and extracts particular group excessively 
+  \end{itemize}
+\item Weak states: States that cannot support basic economic function, raise revenues, deliver essential public services, and provide law and order
+\end{itemize} \medskip 
+State capacity is widely dispersed, but also clustered
+\begin{itemize}\setlength\itemsep{3pt}
+\item Weak states are also poorer and mired in internal conflicts
+\item Developed countries: High income, functioning institutions, less internal conflicts
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Huge variation in state capacity across the globe}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.7\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{State capacity clustered with income and functioning of institutions}
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2_1.png}
+\caption{Income and capacities are clustered}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2_2.png}
+  \caption{Capacities and fragilities index}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Why care about state capacity, and open questions?}
+Why do state capacities matter?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capable states can distribute fruits of economic development and prevent violence that stifles the progress
+\begin{itemize}
+\item Ability to tax, enforce law, and distribute services contributes to growth and peace
+\end{itemize}
+\item Ultimately relates to economic and institutional development: Many weak states are poor, authoritarian, and in internal conflict
+\end{itemize}\medskip
+
+We discuss open questions on state capacity with theories and empirical findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item What forces explain the formation of capable states?
+\item How do weak states perpetuate violence, corruption, and weak growth?
+\item What explains the clustering of state institutions, violence, and income?
+\end{itemize}
+\end{frame}
+
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+\section{Conceptualizing state capacity}
+\subsection{Besley, Persson (2009): The Origins of State Capacity: Property Rights, Taxation and Politics}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Besley, Persson (2009):\\ The Origins of State Capacity: Property Rights, Taxation and Politics
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What determines the state's investment in fiscal and legal capacity}
+How are institutional capacity support markets and collect taxes developed?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Historians note the development of capacity in response to external wars (Tilly 1990)
+\item Social sciences (economics, especially) typically assume such capacities exist by default
+\item In reality, institutional capacities differ starkly
+\end{itemize}\medskip
+This paper provides theoretical framework of state institutions as endogenous investments
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individuals come from different groups (ruling vs nonruling, different wealth)
+\item State collects taxes, protects property rights, and provide public goods
+\item What determines taxation, public goods provision, and support for market activities
+\item Why are there differences in investments in these capacities across different settings?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Focus on high capacities of wealthy, democratic, and parliamentary democracies 
+\end{itemize}
+\item Provides grounds for studying how institutions evolve during development
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: Definitions and layout} 
+What makes up state capacity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Legal capacity: Enforce contracts, regulate markets, and protect property rights
+\item Fiscal capacity: Collect taxes to finance public goods and `redistribution'
+\end{itemize}\medskip 
+Setting the model up
+\begin{itemize}
+\item There are two time periods $s\in\{1,2\}$ and two groups of individuals  $J\in\{A,B\}$
+\item Individuals have linear preferences over public goods and post-tax income
+\item State (led by $A$ or $B$) protects property rights, collect taxes in both periods
+\item State can also increase its legal and fiscal capacities at $s=1$
+\item State maximizes (politically) weighted sum of individual utilities under budget and capacity constraints
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: Individual utilities} 
+Individual utilities (For given group $J\in\{A,B\}$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Gain utility from public good $G_s$ (by factor of $\alpha_s$) and income $Y_s^J$ (taxed by $t_s^J$)
+\[
+v_s^J=\alpha_s G_s + (1-t_s^J)Y_s^J(p_s^J) 
+\]\vspace{-20pt}
+\item Income gain is higher with increase in $p_s^J$, enforcement of property rights, $\left(\frac{\partial Y_s^J}{\partial p_s^J} >0\right)$
+\item Taxes deduct from income but used to finance public goods
+\end{itemize}\medskip 
+Differences across groups
+\begin{itemize}\setlength\itemsep{3pt}
+\item Demographic share: $\beta^J$ of population in group $J\in\{A,B\}$ ($\beta^A+ \beta^B=1$)
+\item Different protection, taxation (negative taxes possible), and income 
+\item Public good is distributed commonly (no differences in level of public goods)
+\item Assume that group $A$ is ruling at $s=1$, with chance of continued ruling in $s=2$ is $\gamma_A$
+\end{itemize}\medskip 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: State objectives and constraints} 
+Objective of the state: Politically weighted sum of individual utilities
+\begin{itemize}
+\item $\bar{\rho}$ and $\underline{\rho}$: Relative political weights on ruling and nonruling groups ($\bar{\rho}\beta_s^A+\underline{\rho}\beta_s^B=1$)
+\[
+V_s = \alpha_s G_s + \bar{\rho}\beta_s^A(1-t_s^A)Y_s^A(p_s^A)+\underline{\rho}\beta_s^B(1-t_s^B)Y_s^B(p_s^B)
+\]\vspace{-20pt}
+\begin{itemize}
+\item $\bar{\rho}$ captures how $A$ values its own group relative to demographic share (1 or greater)
+\item $\underline{\rho}$ captures how $A$ values nonruling groups (less or equal to 1)
+\end{itemize}
+\item At $s=1$, invest in legal ($\pi_s$) and fiscal capacity ($\tau_s$) at cost of $L(\pi_2-\pi_1)$ and $F(\tau_2-\tau_1)$
+\end{itemize} \medskip
+Constraints of the state
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capacity constraints: $p_s^J \leq \pi_s$, $t_s^J \leq \tau_s$
+\item Budget Constraints
+\begin{itemize}\setlength\itemsep{3pt}
+\item $s=1$: Capacity investment included $\to \sum_J \beta^J t_1^J Y_1^J=G_1 + L(\pi_2-\pi_1)+F(\tau_2-\tau_1)$ 
+\item $s=2$: No new investment$\to \sum_J \beta^J t_2^J Y_2^J=G_2 $ 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Policy choices in utilitarian vs politically-motivated settings} 
+Policy choices on $p_s^J$ and $t_s^J$ in utiltarian governments ($\bar{\rho}=\underline{\rho}=1$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item $p_s^J$ increases indirect utilities: Provide to the fullest possible $p_s^J=\pi_s$ 
+\item $t_s^J$ works in both ways - incomes are taxed, but used for public goods
+\item $\alpha_s\geq1$: Tax to the fullest possible ($t_s^J=\tau_s$), all revenues to $G_s$ and investments 
+\item $\alpha_s<1$: $G_s=0$, smallest possible taxes (0 in $s=2$, exact cost of investments in $s=1$)
+\end{itemize}\medskip
+Politically-motivated objective maximization ($\bar{\rho}>1>\underline{\rho}$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item No different logic in legal capacity: Higest protection possible
+\item Public goods are provided only if ruling class values it sufficiently ($\alpha_s\geq\bar{\rho}$)
+\item If $\alpha<\bar{\rho}$:  $G_s=0$, and taxes could be `redistributed' from nonruling to ruling class
+\begin{itemize}
+  \item Ruling group gains $\bar{\rho}$ from `redistribution', nonruling loses $\underline{\rho}$ from this
+  \item With $\bar{\rho}-\underline{\rho}>0$ beneficial to extract (from nonruling group standpoint)
+\item Implies that in this setting, people have different interests towards fiscal capacity
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Investing in state capacity} 
+Investments in fiscal ($\tau$) and legal ($\pi$) capacities maximizes expected social utility
+\begin{itemize}\setlength\itemsep{3pt}
+\item Factors: Wealth ($Y_s^J$), Value of public goods ($\alpha_s$), Regime stability ($\gamma_A$), representativeness ($\bar{\rho}-\underline{\rho}$)
+\item Legal capacity is desirable in any case
+\item When $\alpha_s<\bar{\rho}$, high $\tau$ undesirable for non-ruling group $\to$ Underinvest in capacities
+\begin{itemize}
+  \item In other cases, no conflict over the desirability of fiscal capacity
+\end{itemize}
+\end{itemize}\medskip
+Key findings (in theory and empirics)
+\begin{itemize}\setlength\itemsep{3pt}
+\item In most cases, legal and fiscal capacities complement each other
+\begin{itemize}
+  \item $\pi\Uparrow\to$ More revenues for public goods $\to\tau\Uparrow\to$ More funds to increase protection$\to\pi\Uparrow$
+\end{itemize}
+\item What factors increase investments in state capacities?
+\begin{itemize}
+  \item High $Y_s^J$, High $\alpha_s$, High $\gamma_A$, Small $\bar{\rho}-\underline{\rho}$
+  \item Mismatch in political power and economic influence $\to$ Fiscal capacity underinvested
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical prediction matches well with observed correlates} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bp2009_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical prediction matches well with observed correlates} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bp2009_t2.png}
+\end{figure}
+\end{frame}
+
+
+
+
+\subsection{Dincecco, Katz (2014): State Capacity and Long-Run Economic Performance}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dincecco, Katz (2014):\\ State Capacity and Long-Run Economic Performance
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: long-run relationship btw state capacity and economic growth}
+Effective states are only a recent phenomenon
+\begin{itemize}\setlength\itemsep{3pt}
+\item Having enough administrative infrastructure to secure property rights and collect tax
+\item Modern states underwent (1) fiscal centralization and (2) limited government
+\begin{itemize}\setlength\itemsep{3pt}
+\item Uniform tax systems at national level
+\item Establishment of parliaments that monitor state expenditures
+\end{itemize}
+\end{itemize}\medskip
+This paper explores relationship between state capacity and economic performance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Data from European 11 countries from 1650-1913
+\item Fiscal centralization contribute to long-run economic growth
+\item Higher extraction of revenues explain how both transformations affect growth
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Political transformation}
+Fiscal centralization: From fragmentation to centralized collection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Central govt competed with local institutionss in tax collection
+\item Local institutions were free-riding on other localities
+\item National governments standardized tax implementation (vs bargaining place by place) 
+\end{itemize}\medskip
+Limited government
+\begin{itemize}\setlength\itemsep{3pt}
+\item Parliaments demanded fiscal oversight to prevent monarchs from wasteful spending
+\item Having regular control led to rise in extractive capacity
+\end{itemize}\medskip
+Economic implications: How transformations contribute to growth
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provision of productive infrastructure (education, public services etc)
+\item Efficient mobilization of resources (by efficient information gathering and transmission)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and regression}
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Apply different timing of fiscal centralization (e.g. ENG: 1066, FRA: 1790, DEN:1903)
+\item Define timing for limited government (ENG: 1688, FRA: 1870, DEN: 1848)
+\item State capacity: Per capita national govt revenue and military expenditure 
+ \item Economic performance: per capita GDP from Maddison (2010) data
+ \begin{itemize}
+ \item 1600, 1700, then annually from 1820-1913
+ \end{itemize}
+\end{itemize}\medskip
+Identification: Leverage variation in timing of transformations 
+\[
+\Delta y_{it}=\alpha + \beta_1 C_{it}+\beta_2 L_{it}+\gamma X_{it-1}+\mu_i + \lambda_t+e_{it}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item $C_{it}$ and $L_{it}$ are fiscal centralization and limited government dummy
+\item $X_{it-1}$: External/internal conflicts, population growth, and lags of dependent variables
+\item Country and year fixed effects included
+\item Potential reverse causality concerns (why lags of dependent variable are in $X_{it-1}$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Growth in economic performance after political transformations} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.5\textwidth]{dk2014_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Effects are larger for fiscal centralizations} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{dk2014_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Extractive capacity increases explains the findings} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{dk2014_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Takeaways and conclusions}
+Key findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fiscal centralization (and limited govt, to some extent) contribute to long-run growth
+\item Particularly driven by rise in extractive capacity
+\item The findings implies that growth of administrative infrastructure had significant role
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Potential role for non-fiscal mechanisms?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fiscal centralization removes political power of local elites (e.g. feudal landlords)
+\item Political accountability: Prevent wasteful spending and have voice in policy decisions
+\end{itemize}
+\item How are taxes collected used is also a remaining question
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Efficient bureaucracy that provides services at efficient costs?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Acemoglu, De Feo, De Luca (2020): Weak States; Causes and Consequences of Sicilian Mafia}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Acemoglu, De Feo, De Luca (2020):\\ Weak States; Causes and Consequences of Sicilian Mafia
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+\begin{frame}
+\frametitle{Q: How do illicit organizations emerge and contribute to weak states?}
+Criminal organizations are widespread and may play a significant role in economic growth
+\begin{itemize}\setlength\itemsep{3pt}
+\item Think of Mafias in Italy, drug cartels in Mexico/Colombia, and so on
+\item Many of these have filled the void left by weak states
+\begin{itemize}\setlength\itemsep{3pt}
+\item Some of these groups have provided public services on their own
+\item But also collected `taxes' in exchange for `protection'
+\end{itemize}
+\item Possibly contribute to weakness of the state and economic underdevelopment?
+\end{itemize}\medskip
+This paper explores the growth and consequence of Sicillian Mafia
+\begin{itemize}\setlength\itemsep{3pt}
+\item What explains Mafia's growth dating back to 1860s?
+\item How does proliferation of Mafia affects economic development and other outcomes?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Literacy rates and high school completion rates (provision of education)
+\item Possible mechanism: Capture (literal and figurative) of politicians and candidates
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Proliferation of Mafia in Sicily}
+Sicilian Mafia origins
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mafia started during the transition from Bourbon Kingdom to Unified Italy in 1860s
+\item Unified Italy not fully set up in Sicilian Islands $\to$ Weak state presence
+\item Rise of socialist movement (\textit{Fasci}), especially in the severe droughts of 1893
+\item This movement led landowners and local politicians turn to Mafia for protection
+\end{itemize}\medskip
+Impact of the drought of 1893
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conditions for agriculture were deteriorating even prior to 1893
+\item 1893: Drop in crop production $\to$ Fasci movement $\to$ landowners turn to Mafia
+\item This pattern is confirmed from data obtained by the authors
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mafia and Draught distribution significantly overlap}
+\begin{figure}
+  \begin{subfigure}{0.48\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{add2020_f1_1.png}
+\caption{Draughts in Sicily}  
+\end{subfigure}
+  \begin{subfigure}{0.48\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{add2020_f1_2.png}
+  \caption{Mafia presence in Sicily}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data and regression}
+Database
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mafia presence: Obtained from Cutrera (1900)
+\item Fasci presence and rainfall: Renda (1977) and Eredia (1918), respectively
+\item Human capital outcome: Obtained from Italian census (1911,21,31,61,71, 81)
+\item Other public goods: Various mortality rates and expenditure from ISTAT
+\end{itemize}\medskip
+Identification leverages exogenous variation in Mafia presence explained by draughts
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduced form: $y_i=\alpha+ \beta\text{Mafia}_i+\gamma X_i+e_i$
+\item IV (first-stage): $\text{Mafia}_i=\alpha_1 + \beta_1 \text{rainfall}_i+\gamma_1 X_i+u_i\Rightarrow \widehat{\text{Mafia}}_i=\widehat{\alpha}_1 + \widehat{\beta}_1 \text{rainfall}_i+\widehat{\gamma}_1 X_i$
+\item IV (second-stage): $y_i=\alpha+ \beta\widehat{\text{Mafia}}_i+\gamma X_i+e_i$
+\item Relevance: $F$ statistics around 10 (not very strong, but not weak either)
+\item Exclusion: Droughts only affect outcomes through Mafia presence
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Significant mid-term effect on human capital} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{add2020_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Findings robust to other measures of public service provision} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{add2020_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Long-run negative (but weaker) effects on human capital} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{add2020_t3.png}
+\end{figure}
+\end{frame}
+
+
+
+\section{Reciprocical nature of state capacity}
+\subsection{Besley (2020): State Capacity, Reciprocity, and Social Contract}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Besley (2020):\\ State Capacity, Reciprocity, and Social Contract
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does civic culture contribute to fiscal capacity?}
+Increased tax intake enabled governments to spend on essential services 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not just on national defense, but also health care, education, income transfers etc
+\item Switches in public spending requires economic, political, and social changes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Should develop capacity to tax and raise revenues
+\item But also, cultivate civic culture that increases tax \textit{compliance}
+\end{itemize}
+\end{itemize}\medskip
+This paper extends the Besley, Persson (2009) model
+\begin{itemize}\setlength\itemsep{3pt}
+\item  By incorporating the role of civic culture, reciprocity, and social contract
+\item Relative payoffs of civic-minded citizens and materialistic citizens matter
+\item Investigates how civic culture can develop in the long-run
+\item Ultimately answers how state capacity can persist with interactions with citizens
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivating findings: Different attitudes to tax compliance} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.7\textwidth]{b2020_t1.png}
+\end{figure}
+\begin{footnotesize}
+  Source: Individual responses from World Value  Survey, regressing compliance on individual characteristics, country and wave dummies. Income is displayed from lowest to highest
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Model setup} 
+Basic structure of the model
+\begin{itemize}\setlength\itemsep{3pt}
+\item Share $e$ of elites who decides public goods and transfers, and non-elites
+\item Among non-elites, $\mu_s$ of civic-minded citizens and $1-\mu_s$ of materialists
+\begin{itemize}\setlength\itemsep{3pt}
+\item All subject to taxes, with possible noncompliance ($n$), and receive utility from public goods 
+\item Civic-minded: Gains if tax used on public goods ($G$), loss if used on transfers to elites ($B$)
+\item Noncompliance: Incurs cost $C(n)$, which rises with fiscal capacity $\tau$ (easily detected)
+\item Individual Utility: $\lambda>0$ for civic-minded citizens, $\lambda=0$ for materialists\vspace{-5pt}
+\[\alpha G + b + w(1-(1-n)[t-\lambda\{G-eB\}] -\tau C(n))\] 
+\end{itemize}\vspace{-10pt}
+\item Revenues must be spent on public goods $G$, transfers to elites ($B$) and non-elites ($b$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item For every $B$, share $0\leq\sigma\leq1$ must be spent on $b$. Thus $b=\sigma B$  (Higher $\sigma$ $\to$ cohesiveness)
+\item Budget: $eB+(1-e)\sigma B = T-G $
+\end{itemize}
+\item Fiscal capacity is determined by physical investments but also `tax morale'
+\begin{itemize}\setlength\itemsep{3pt}
+  \item For materialists, only physical investments matter
+\item For civic-minded person, public good$\uparrow \to$ tax morale $\uparrow$ (transfer$\uparrow\to$ tax morale $\downarrow$)  
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal policy choice}  
+Optimal policy choice
+\begin{itemize}\setlength\itemsep{3pt}
+\item Elites choose $t$, $G$, and $B$ to maximize the sum of individual utilities
+\item Subject to cohesiveness of institutions ($\sigma$), fiscal capacity ($\tau$) and civic culture ($\mu$)
+\item Whether revenues are spent on $G$ or $B$ depends on cohesiveness and civic culture
+\begin{itemize}
+\item Public goods are more likely to be provided in scenario where civic culture ($\mu\Uparrow$) and cohesiveness ($\sigma\Uparrow$) are dominant (and also raise fiscal capacity)
+\item This comes from the fact that civic-minded persons are more likely to comply if revenues are used for public goods (and vice versa)
+\item Furthermore, high cohesiveness makes transfers to elites expensive $\to$ make public goods relatively cheaper
+\end{itemize}
+\item Over time, additional public goods due to $(\mu, \sigma) \Uparrow$ $\Rightarrow$ benefits of being civic-minded $\Uparrow$
+\begin{itemize}
+\item Conversely, narrow range of public goods provision from $(\mu, \sigma) \Downarrow$ $\Rightarrow$ civic-mindedness $\Downarrow$
+\end{itemize}
+\item Initial state of civicness, cohesiveness + strength of common interest ($\alpha$) matters
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Core implications of the model} 
+Cohesiveness of institutions and civic culture is complementary
+\begin{itemize}\setlength\itemsep{3pt}
+\item Cohesiveness of institutions are strengthened when more civic-minded persons induce high public goods over transfers to elites
+\item People are more likely to be civic minded if institutional setups make transfers to elites costly (through cohesiveness)
+\end{itemize}\medskip
+These determine how common interests develop
+\begin{itemize}\setlength\itemsep{3pt}
+\item In a less cohesive, weakly civic-minded setting, external threat may not significantly increase common interest
+\end{itemize}\medskip
+Civic-mindedness and cohesivess can be fostered in more representative political setup
+\begin{itemize}\setlength\itemsep{3pt}
+\item Elites that more closely represents non-elites more likely to sustain power
+\item Further increases returns for being civic-minded
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Potential extensions} 
+High dependence on outside sources of funds
+\begin{itemize}\setlength\itemsep{3pt}
+\item Outside sources of funding reduces need for own-source tax revenues
+\item This reduces importance of tax compliance and the role of civic culture
+\item Sudden, exogenous changes to outside funds $\to$ Challenges in raising fiscal capacity 
+\end{itemize}\medskip
+Can elites determine civic-mindedness ($\mu$)?
+\begin{itemize}\setlength\itemsep{3pt}
+\item We assumed that $\mu$ is exogenously determined
+\item But these can be potentially determined by elites
+\item Room for extension: Making tax avoidance costly, Benefits of public services over time
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways: How these topics can be empirically studied} 
+How can fiscal capacities be built 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Evolution towards broad-based system (Gordon, Li 2009; Jensen 2022)
+\item Efforts to gather more accurate information in developing countries (Balan et al 2021)
+\end{itemize}\medskip
+What increases tax morale and compliance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase benefits of compliance (tax breaks for formal firms) - (Benhassine 2018)
+\item Tax perceptions and electoral outcomes (Christensen, Garfias 2021)
+\end{itemize}\medskip
+Other factors that contribute to state capacities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Role of bureaucrats: Well-motivated, well-trained bureaucrats matter for effective public goods provision
+\item Active studies on how to recruit and monitor them (Dal Bó et al 2013)
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Weigel (2020): The Participation Dividend of Taxation: How Citizens in Congo Engage More With The State When it Tries to Tax Them }
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Weigel (2020):\\ The Participation Dividend of Taxation: How Citizens in Congo Engage More With The State When it Tries to Tax Them 
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Do taxation increase civic engagement in fragile states?}
+Participation dividend of taxation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Taxes enable state to provide public goods and services
+\item It is said to also stimulate political engagement: Taxation as a social contract
+\begin{itemize}
+\item Traditionally: Citizens delay paying taxes until rulers made concessions
+\end{itemize}
+\item Does this form of bargaining also appear in fragile states?
+\end{itemize}\medskip
+This paper uses randomized rollout of tax campaigns to see if taxes raises participation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Context: Democratic Republic of Congo
+\item Rollout of tax campaign meant to increase citizens registering to pay taxes
+\item Active visit of tax collectors in treated towns vs. Declaration system in control group
+\item Participation \& perceptions that government are responsible for public goods $\Uparrow$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Institutional context of DRC}
+Kangara, DRC
+\begin{itemize}\setlength\itemsep{3pt}
+\item DRC is one of the poorest country in the world (188/200 in terms of tax-GDP ratio)
+\item Tax revenue per person at Kangara: \$0.23 
+\item Very few people pay taxes to begin with: 6\% of population have ever paid taxes
+\end{itemize}\medskip
+Tax collection and political participation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Systematic tax collection began in 2016, induced by redistricting of the region
+\item Citizens have limited avenue for political participation
+\item Neighborhood meetings, letter of complaint are main channels
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Research design}
+Randomized control treatment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Door-to-door property tax collection compaign in Apr-Dec 2016
+\begin{itemize}
+  \item Property registration and tax solicitation
+\end{itemize}
+\item Treated neighborhoods (253) received this in 2016, (control (178): mid-2017)
+\item Stratified randomization based on location and population
+\end{itemize}\medskip
+Estimation leverages random assignment to treatment controlling for strata
+\[
+y_{ijk}=\beta I_{jk} + \alpha_k + X_{ijk}\gamma + X_{jk}\phi+e_{ijk}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item $i$: individual, $j$: neighborhood, $k$: strata
+\item Control for individual and neighborhood characteristics ($X_{ijk}$ and $X_{jk}$)
+\item Control \& treated groups balanced on observables and tax/political outcome variables
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tax compliance rises following treatment} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{w2020_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Citizens' political participation increases} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{w2020_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Citizen's perception of government responsibility rises} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.75\textwidth]{w2020_t3.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions}
+Effects of tax collection campaign
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher tax compliance (registered properties, willingess to pay taxes)
+\item Higher demand for political participation (esp. town halls)
+\item Higher recognition of state responsibility and expectation on state's roles
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Political participation follows tax collection
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Governments willing and able to respond to demands will proceeds as is
+  \item Otherwise, may attempt other ways to raise revenue (e.g. seignorage, tariffs)
+\end{itemize}
+\item Other ways to increase political particpation and civic engagement?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item What about people who do not pay taxes (i.e. most people in developing countries)
+  \item How do demand from citizens shape politician behavior?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unanswered questions in differences in taxation across countries}
+Effectiveness of the state is not a given
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many states are unable to mobilize sufficient resources
+\item Which affects their ability to provide essential public services
+\item Also have welfare consequences for the citizens
+\item What ways to increase capacity?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Developing countries differ in underlying institutional conditions
+\item Many have underdeveloped financial systems and income registries and bureaucracies
+\end{itemize}
+\end{itemize}\medskip
+Raising extractive capacities must be balanced with citizen demand
+\begin{itemize}\setlength\itemsep{3pt}
+\item Collect taxes $\to$ citizens demand essential services and state responsibility
+\item States unable to meet these demands induce tax non-compliance 
+\item So how do institutional trust and state capacities interact?
+\end{itemize}\end{frame}
+ 
+%%%%%%%%%%%
+\end{document}
