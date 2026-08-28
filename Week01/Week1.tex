@@ -1,0 +1,741 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 1: Course Introduction}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{February 24th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Course logistics}
+\begin{frame}
+\frametitle{Course logistics} 
+Instructor: Seung-hun Lee 
+
+\begin{itemize}\setlength\itemsep{3pt}
+
+\item Office location: Room C06 in this building
+\item Office hours: Tuesdays 2:00-4:00PM \href{https://www.calendly.com/seunghunlee0918}{(Sign up here)}
+\item Ph.D. in Economics from Columbia University (2024)
+\end{itemize}\medskip
+Class time and location
+\begin{itemize}
+\item Time: Tuesdays 9AM - 12PM
+\item Location: Room A09
+\end{itemize}\medskip
+Coming prepared to the lecture
+\begin{itemize}
+\item Lecture notes are uploaded a day in advance 
+\item Slides summarize textbooks and papers -- no need to purchase them separately
+\item Keep up with the readings: more on that later
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Course goal: Understand public economics in developing countries} 
+Study government's role in economic life: Taxation, public goods, and bureaucracy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Classical theories on optimal taxation,  redistribution, and public sector employment
+\item Income taxes, antipoverty programs, principal-agent problems etc.
+\end{itemize}\medskip
+
+ Understand challenges faced by developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lagging behind on fiscal, legal, and personnel capacity of the state  
+  \item Thus, what's optimal elsewhere do not work on developing countries
+\end{itemize}\medskip 
+
+Goals and requirements
+\begin{itemize}\setlength\itemsep{3pt}
+\item Be able to critically engage with scholarly work
+\item Conduct independent, original research
+\item Familiarity with statistical inference, micro/macroeconomics is necessary!
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Course goal: Understand public economics in developing countries} 
+Main texts
+\begin{itemize}\setlength\itemsep{3pt}
+\item Atkinson, Stiglitz (2015): Lectures on Public Economics
+\item Besley, Persson (2009): Pillars of Prosperity
+\item Hindriks, Myles (2013): Intermediate Public Economics
+\end{itemize}\medskip
+
+ Recommended (and often helpful texts)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public economics: Gruber (2022, undergrad), Roland (2014, undergrad), Salanié (2011, graduate)
+\item Econometrics: Angrist, Pischke (2009, graduate), Cameron, Trivedi (2005, graduate), Stock, Watson (2020, undergraduate)
+\end{itemize}\medskip 
+
+Readings
+\begin{itemize}\setlength\itemsep{3pt}
+\item 4-6 papers from leading economic scholarly journals
+\item Read up on the starred papers in the reading list!
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Course topics (Refer to syllabus for full reading list)} 
+
+Weeks 1-2: Introduction and econometric methods
+\begin{itemize}\setlength\itemsep{3pt}
+\item Introduction to public economics
+\item Empirical analysis tools: OLS, IV, Panel regression, Natural experiments
+\end{itemize}\medskip
+
+Week 3-5: Classical theories on taxation and public economics
+\begin{itemize}\setlength\itemsep{3pt}
+\item How drastic are problems with inequality and welfare across countries and time?
+\item How are optimal taxation and public expenditure achieved?
+\item Why are these difficult to achieve in developing countries?
+\end{itemize}\medskip
+
+ Week 6-8: Fiscal capacity in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item What explains different tax collection patterns in developed and developing countries?
+\item How does large informal economy affect taxation? 
+\item How are developing countries adopting their tax structure to increase fiscal capacities?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Course topics (Refer to syllabus for full reading list)} 
+Week 9-11: Anti-poverty programs and public provision
+\begin{itemize}
+\item How should anti-poverty programs be designed?
+\item Form of anti-poverty programs: Cash v. in-kind? Conditional or not?
+\item How should public expenditures be targeted?
+\end{itemize}\medskip
+Week 12-14: Organizational capacity of the state
+\begin{itemize}
+\item  How to optimally allocate authority across bureaucrats and managers?
+\item How can public sector recruit capable and motivated individuals?
+\item How do public sector incentivize and monitor its workers?
+\end{itemize}\medskip
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Tasks and grading scale} 
+
+ Two referee reports (20\% of the grades)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Aim: Critically engage with scholarly work (Guides: \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2547191}{here} and \href{https://scholar.harvard.edu/files/apassalacqua/files/refguidelines_tepe.pdf}{here}) 
+  \item 200-word summary + 1500-word critique of not-yet published academic papers
+\item Assess strength and weaknesses, while separating critical matters from minor issues 
+\item For papers to referee, refer to the syllabus
+\end{itemize}\medskip
+ Three Problem sets (20\% of the grades) - Only the top two scores counts towards grade
+\begin{itemize}\setlength\itemsep{3pt}
+\item Solve questions testing theoretical problem-solving skills and empirical analysis skills
+\item Theory: Solve mathematical model and identify intuitions in plain english
+\item Empirics: Replicate and extend parts of an empirical scholarly paper
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tasks and grading scale} 
+
+ Research Proposal and Virtual Paper (30\% of the grades)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Develop a viable plan for a paper and build-up towards a full paper
+\item 2-page research proposal outlining research questions, expected contribution, background, potential data sources and empirical strategy (10\% of grade)
+\item Virtual paper: Extend the proposal towards a paper with original analysis, building up to a full paper (20\% of grade)\\ \smallskip
+$\Rightarrow$ \textbf{Unfinished but original and exciting project $>>$ complete, yet unintersting project}
+\end{itemize}\medskip
+ Final exam (30\% of the grades) 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Cumulative exam at the end of the semester
+\item Tests understanding of theoretical frameworks and connect it to empirical findings
+\item Exact mode (take-home vs in-person) TBD
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{More on the virtual paper} 
+
+Format of the virtual paper: Mimics many scholarly articles
+\begin{enumerate}\setlength\itemsep{3pt}
+\item \underline{Introduction}: State your research question and why it matters (academically / policy)
+\item \underline{Literature review}: State the gap in the relevant literature, and how you fill that gap
+\item \underline{Background}: State the relevant information on the context that you are studying
+\item \underline{Data}: Provide explanation on data source and why it works in your favor
+\item \underline{Empirical strategy}: Explain research methods, whether it allows for causal inference, and potential limitations in that method
+\item \underline{Preliminary results}: Highlight main findings (causational relationships)
+\item \underline{Mechanism and falsification tests}: State what explains your main results, and what plans you have to address potential factors that may nullify your findings
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Important deadlines} 
+\begin{itemize}\setlength\itemsep{10pt}
+\item March 31st: Referee report 1 due
+\item April 14th: Problem set 1 due
+\item April 28th: Research proposal due
+\item May 12th: Problem set 2 due
+\item May 19th: Refere report 2 due
+\item June 2nd: Virtual paper due
+\item June 9th: Problem set 3 due 
+\item Week of June 9th: Final exam (mode to be declared later)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Changes in schedule around March}
+No class on March 24th and March 31st (Conferences in Europe and Thailand) 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Two make up classes will be scheduled
+\item One on March 30th, likely evening
+\item One on the week of April 6th (perhaps friday)
+\item Open to other schedules
+\end{itemize}
+\end{frame}
+
+
+
+
+ 
+\begin{frame}
+\frametitle{Some ground rules} 
+Active discussions and questions!\par \medskip
+ Usage of AI: Strictly for assistive purposes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Allowed for proofreading, coding support
+\item Do not generate complete assignments using AI 
+\item All writings, especially virtual paper, must be original
+\item To prove originality, regular discussion of your ideas will suffice
+\end{itemize} \medskip
+Rules regarding collaboration
+\begin{itemize}\setlength\itemsep{3pt}
+\item You are not allowed to collaborate on referee report!
+\item Others: Collaboration is allowed, but under following conditions 
+\item Each student must write up their own assignments
+\item Students must clearly identify their collaborators
+\end{itemize}
+\end{frame}
+
+
+
+\section{What is Public Economics?}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+What is Public Economics?}
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Public economics study role of the state in our economic lives} 
+ State collects taxes from its citizens, and provides many goods and services
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Income tax, sales tax, social security contributions, excise tax... 
+\item Education services, infrastructure, public safety, national defense, social safety net...
+\item Significant number of population works at the public sector
+\end{itemize} \medskip
+\textit{Positive} analysis: Explanation of economic phenomena following government actions 
+\begin{itemize}\setlength\itemsep{3pt}
+\item How do taxes affect (or distort) labor supply, savings, or other economic behaviors? 
+\item How are the effects distributed across different types of individuals?
+\end{itemize} \medskip
+\textit{Normative} analysis: Making judgements on how the government should act 
+\begin{itemize}\setlength\itemsep{3pt}
+\item How progressive should the tax systme be?
+\item To whom should we provide more public services?
+\end{itemize} \medskip
+In this course, we focus on three pillars of public economics: Taxation, public goods, and personnel
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Why do taxes matter} 
+Sources of revenue for governments to finance their key services
+\begin{itemize}\setlength\itemsep{3pt}
+\item Finance essential public goods and services (defense, infrastructure, education, health)
+\item Reduce inequality through redistribution
+\item May come at a cost: Distort labor incentives $\to$ Fall in efficiency  
+\end{itemize} \medskip
+
+Development of tax revenues and unresolved questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tax share of GDP: 10\% in 1910 $\to$ 30-50\% today (in developed countries)
+\item What is the optimal design of taxation?
+\begin{itemize}\setlength\itemsep{3pt}
+\item How progressive should taxes be?
+\item Which taxes minimize distortions while raising needed revenue?
+\end{itemize} 
+\item Many developing countries lag behind: 
+\begin{itemize}\setlength\itemsep{3pt}
+\item What explains low tax collection capacity? 
+\item Do optimal tax prescriptions from developed countries apply here?
+\end{itemize} 
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Rise of the state in the developed countries} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.8\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why are taxes enforced differently?} 
+Differences in observed policy choices across place and time 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Significant progressive income taxes and sizeable public sector in developed countries
+\item Many developing countries rely on regressive indirect taxes (consumption, tariffs, etc.)
+\item Limited public services and lack of state presence in many fragile states
+\end{itemize} \medskip
+
+These differences originate from differences in underlying \textit{state capacity}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ability of states to implement policies, collect taxes, and provide public goods
+\item Not all states can collect taxes digitally or have comprehensive information systems
+\item Not all states are fully aware of citizens' income and can target policies accordingly
+\item Not all states have sizeable public sectors capable of delivering policies and services
+\end{itemize} \medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Growth of fiscal (information) capacity in developed countries} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.8\textwidth]{fig2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{.. that is not evenly shared across countries (Okunogbe, Tourek 2024)} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.7\textwidth]{ot2024.png}
+\caption*{Index of tax tech: Use of 3rd party info, tax ID, among other technology}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Thus, drastic difference in tax intakes (Besley, Persson 2014)} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.75\textwidth]{fig3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why do public goods matter} 
+Effective provision of public goods determines quality of life
+\begin{itemize}\setlength\itemsep{3pt}
+\item Support markets: Law and order that enforce contracts and protect property rights
+\item Benefits to society beyond individual benefits: health, education, infrastructure etc.
+\item Underprovided by private markets: They often under-internalize social benefits
+\end{itemize} \medskip
+Public goods provision is central to reduction in poverty and inequality
+\begin{itemize}\setlength\itemsep{3pt}
+\item The rich have means to seek private alternatives, or move to `better' locations
+\item The poor frequently do not
+\item Public spending serves to minimize discrepancy across the poor and the rich
+\item Huge differences across how much money is spent on such programs across countries
+\end{itemize} \medskip
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Expansion of public services over time in Europe} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.75\textwidth]{fig4.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{But significantly different even within developed countries} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{oecd.png}
+\caption{Public social expenditure as share of GDP}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Various public services in developing countries} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=\textwidth]{fig5.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{...still lag behind developed countries} 
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=\textwidth]{fig6.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsettled questions in public goods / anti-poverty programs?} 
+To whom do we target these programs? How much?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Do you target specific populations? Or do you provide it universally?
+\item Do you provide support in-kind or cash?
+\item Do you attach conditions to income support or not?
+\item How do you increase take-up for welfare programs? (surprisingly low in many places)
+\end{itemize} \medskip
+How do you improve welfare while minimizing side-effects?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Labor supply potentially discouraged for both recipient and the rich
+\begin{itemize}\setlength\itemsep{3pt}
+\item Recipients: More earned income usually implies less support $\to$ work effort $\Downarrow$
+\item Rich: More tax collected $\to$ less income from working $\to$ work effort $\Downarrow$
+\end{itemize}
+  \item How do you make welfare programs politically acceptable?
+\item How do you design a program that also considers fiscal sustainability?
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Why public workers are important public economics} 
+ Think of them as bureaucrats working for public institutions
+\begin{itemize}\setlength\itemsep{3pt}
+\item They are the frontline public service providers
+\item They serve crucial roles for implementing various policies
+\item They are sizeable: 35\% of all formal employment (World Bank data)
+\end{itemize} \medskip
+The quality of these workers matter, but also differ across contexts
+\begin{itemize}\setlength\itemsep{3pt}
+\item The human capital of these workers determine the quality of service provided
+\item There are also large variation in the quality of public workers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tend to be `clustered' with economic development
+\item Problems range from absenteeism, corruption, and lack of capabilities
+\end{itemize}
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Public sector takes up huge share of employment globally} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{fig7.png}
+\caption{Share of public sector employment in total employment, 2019 (Our World in Data)}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Development and bureaucratic quality co-move (Besley et al 2022)} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{fig8.png}
+\caption*{Bureaucracy score: Avg of bureaucratic recruitment and impartial administrative practices}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Finding and retaining motivated and dedicated workers} 
+ How do you persuade capable individuals to public sector?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individuals with high abilities AND prosocial motives are ideal targets
+\item Public sectors in many contexts (not all!) provide lower and inflexible incentives
+\item Thus, smaller applicant pool and less qualified Individuals (Dal Bó et al 2013)
+\item Higher pay may attract individuals who apply `just for the money' (Dessserano 2015)
+\end{itemize} \medskip
+How do you incentivize and monitor existing public workers?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public workers' interests may not always align well with the public
+\item Many places tried monitoring and incentive mechanisms, with mixed results
+\item Incentives may increase effort, but also more abuse of discretions (Balan et al 2022)
+\item Consistent monitoring is costly and potentially discourages efforts
+\end{itemize} \medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Quality of bureaucrat recruits vary across organizations} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{indonesia.png}
+\caption*{(Source: World Bank Group (2024), \textit{Innovating Bureaucracy for a More Capable Government})}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Task allocation not by merit: Possible disincentives} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{WBG.png}
+\caption*{(Source: World Bank Group (2024), \textit{Innovating Bureaucracy for a More Capable Government})}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{We will often use mathematical models in our discussions} 
+
+Models are a simiplification of reality that help us think about complex policy questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textbf{Derive predictions}: What happens to people's behavior when we change tax rates? 
+\item \textbf{Guide empirics}: What should we measure? What comparisons are informative?
+\item \textbf{Welfare analysis}: Does the policy make society better off/equitable?
+\end{itemize} \medskip
+Most models in this course share common elements:
+\begin{enumerate}\setlength\itemsep{3pt}
+\item \textbf{Agents}: Who makes decisions? (Individuals, firms, government)
+\item \textbf{Objectives}: What do agents care about? (Utility, profits, social welfare)
+\item \textbf{Constraints}: What limits their choices? (Budget, technology, information)
+\item \textbf{Environment}: What are the rules? (Tax system, market structure, policies)
+\item \textbf{Equilibrium}: What happens when everyone optimizes?
+\end{enumerate} 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Constrained optimization: The workhorse of economic modeling}
+Many economic problems can be written as constrained optimization:
+\begin{equation*}
+\max_{x_1, x_2, \ldots, x_n} f(x_1, x_2, \ldots, x_n)
+\end{equation*}
+\begin{equation*}
+\text{subject to (s.t.): } g(x_1, x_2, \ldots, x_n) \leq c
+\end{equation*}\vspace{-15pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textbf{Objective function} $f(\cdot)$: What the agent wants to maximize
+\item \textbf{Choice variables} $x_1, \ldots, x_n$: What the agent can control
+\item \textbf{Constraint} $g(\cdot) \leq c$: Limits on feasible choices
+\end{itemize} \medskip
+
+How calculus helps us solve this:
+\begin{itemize}\setlength\itemsep{3pt}
+\item Take derivatives: $\frac{\partial f}{\partial x_i}$ tells us how $f$ changes with small change in $x_i$
+\item At optimum: Marginal benefit of increasing $x_i$ = Marginal cost (from constraint)
+\item First-order conditions (FOCs): Set derivatives equal to zero (or use Lagrangian)
+\item Solve system of equations to find optimal $x_1^*, \ldots, x_n^*$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Lagrangian method for constrained optimization}
+The problem:
+\begin{equation*}
+\max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n) \quad \text{subject to: } g(x_1, \ldots, x_n) = c
+\end{equation*}
+
+The Lagrangian approach: Convert constrained problem into unconstrained one
+\begin{equation*}
+\mathcal{L}(x_1, \ldots, x_n, \lambda) = f(x_1, \ldots, x_n) + \lambda \left[c-g(x_1, \ldots, x_n)\right]
+\end{equation*}
+where $\lambda$ is the \textbf{Lagrange multiplier}  \medskip
+
+Solution method for $x_i^*$ and $\lambda^*$: Take derivatives and set equal to zero
+\begin{itemize}\setlength\itemsep{3pt}
+\item FOC for $x_i$: $\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial f}{\partial x_i} - \lambda \frac{\partial g}{\partial x_i} = 0$
+\item FOC for $\lambda$: $\frac{\partial \mathcal{L}}{\partial \lambda} = g(x_1, \ldots, x_n) - c = 0$ (ensures constraint holds)
+\item Solve system of $n+1$ equations for $x_1^*, \ldots, x_n^*, \lambda^*$
+\end{itemize} \medskip
+
+Interpretation: $\lambda^*$ = how much objective improves if constraint relaxed by one unit
+\end{frame}
+
+\begin{frame}
+\frametitle{Example: Optimal tax to maximize social welfare}
+
+Objective: Maximize social welfare function $W(\cdot)$
+\begin{equation*}
+\max_{t} W(U_1(t), U_2(t), \ldots, U_n(t))
+\end{equation*}
+where $U_i(t)$ is utility of individual $i$ given tax rate $t$ \medskip
+
+Constraint: Government budget constraint (revenue needed for spending $G$)
+\begin{equation*}
+G \leq  \sum_{i=1}^n t \cdot w_i \cdot \ell_i(t) 
+\end{equation*}
+
+Trade-off
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher $t$ allows more redistribution (equity)
+\item But reduces labor supply $\ell_i(t)$ and distorts economy (efficiency)
+\item Optimal tax balances these concerns
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{From models to empirics: Why we need both}
+Models provide structure to empirical thought
+\begin{itemize}\setlength\itemsep{3pt}
+\item What parameters matter? (e.g., labor supply elasticity, social preferences)
+\item What would we observe if the model is correct?
+\item How to extrapolate from one setting to another
+\end{itemize} \medskip
+
+Data are used to test and discipline models
+\begin{itemize}\setlength\itemsep{3pt}
+\item Do people actually respond to taxes as predicted?
+\item How large are the responses? (quantitative magnitudes)
+\item Are there important factors the model missed?
+\end{itemize} \medskip
+
+
+This course emphasizes \textit{both} theoretical frameworks and empirical evidence
+\end{frame}
+
+\begin{frame}
+\frametitle{We will also use a lot of data and softwares} 
+ Working with numerical data involves working with statistical softwares
+\begin{itemize}\setlength\itemsep{3pt}
+\item Process raw data: Excel, GIS programs (maps to numbers), OCR (digitalize text data)
+\item Configure the data to a clean estimation-friendly form
+\item Then run estimation to obtain results and make rigourous claims
+\item The last two are done with Python, R, Stata ...
+\end{itemize} \medskip
+This involves many skill sets
+\begin{itemize}\setlength\itemsep{3pt}
+\item Understanding statistical inference
+\item Interpreting intuitions from the numerical results
+\item Patience (this is about 70-80\%)
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Next week} 
+ We will cover classical public economics topics from week 3
+\begin{itemize}\setlength\itemsep{3pt}
+\item We plan to cover roughly 6 papers each course
+\item I will assume that you have read at least the abstract and introduction of each papers
+\begin{itemize}
+  \item Ideally, try to read from cover to cover for 1-2 papers that interest you the most
+\end{itemize}
+\end{itemize} \medskip
+What we will do: Econometrics 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Cover applied econometrics theory and technics required to understand the papers
+\item We will go over regression methods: OLS, Instrumental Variables, Panel regression, Difference-in-Differences, Regression discontinuity
+\item Then, we will try demonstrations (demo files to be uploaded)
+\begin{itemize}
+  \item  If you have a laptop with R or Stata, I highly recommend bringing it to class
+\end{itemize}
+\end{itemize} \medskip
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
