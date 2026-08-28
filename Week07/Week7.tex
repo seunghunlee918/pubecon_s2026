@@ -1,0 +1,910 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 7: Challenges to taxation in weak states: Informal economies and political economy}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{April 14th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+\begin{frame}
+\frametitle{Development of fiscal capacity is a key feature of development} 
+Expansion of government size and fiscal capacity investment in the last century 
+\begin{itemize}\setlength\itemsep{3pt}a
+\item Tax share of GDP: 10\% in 1910 $\to$ 30-50\% today
+\item Tax capacity improved following implementation of broad-based taxes (income tax)
+\item However, this explains the trend only in developed countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item So economic growth $\to$ better fiscal capacity? Not regularly 
+\item Separate investment in capacities are key
+\end{itemize}
+\end{itemize}\medskip
+But in poor states, no noticeable increase in fiscal capacities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Raise significantly less revenues than developed countries
+\item Lag behind in the implementation of modern tax technologies
+\begin{itemize}\setlength\itemsep{3pt}
+\item Property registers are manually updated, if updated at all 
+\item Do not utilize third-party information that ensures accurate tax information
+\item Less digitalized systems, more loopholes in general
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Less capable states rely more on distortionary and narrow based taxes} 
+Why do they depend on such taxation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Broad-base taxes require registries that cover formal sector, and audits
+\item Narrow-base taxes rely on easily observable bases (trade ports, mines etc)
+\item Large informal economy and underdeveloped finance sector: Opens up loopholes
+\item Extractive for select groups by shifting tax burden onto them
+\item Bad equilibrium: Fiscal capacity$\Downarrow\to$ Public goods and economic development $\Downarrow$
+\end{itemize}\medskip
+What the data tells us
+\begin{itemize}\setlength\itemsep{3pt}
+\item High income countries rely on broad-based taxes
+\item Narrow base taxes (tariffs) more observable in low-capacity countries
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{High income $\to$ Income tax, Lower income $\to$ Trade tax} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Less capable states suffer from negative shocks from conflicts} 
+External Conflicts and taxation (Besley, Persson 2010)
+\begin{itemize}\setlength\itemsep{3pt}
+\item External wars raise value of public goods (e.g. national defense)
+\item Hence, motivates increases in fiscal capacity
+\end{itemize}\medskip
+However, many of the global conflicts are internal
+\begin{itemize}\setlength\itemsep{3pt}
+\item Approx 20-30\% of countries worldwide have active civil conflicts during 1960-2000s
+\item Supermajority of conflicts are intrastate (Ray,Esteban 2017)
+\item Depletes administrative infrastructure used to mobilize resources
+\item Hence, leads to decline in tax collection and public goods provision
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{External wars increase capacity; internal wars hamper it}
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2_1.png}
+\caption{External wars positively correlate}  
+\end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2_2.png}
+  \caption{Internal wars negatively correlate}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Theories on tax leakages}
+\subsection{Allingham, Sandmo (1972): Income Tax Evasion: A Theoretical Analysis}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Allingham, Sandmo (1972):\\ Income Tax Evasion: A Theoretical Analysis
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How and why do some people avoid taxes?}
+Optimal taxation from the standpoint of the individuals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Up until now, we assumed that individuals abide by taxes levied on them
+\item In reality, that is not always the case
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Tax avoidance: Exploit legal loopholes to minimize tax liability
+\item Tax evasion: Misreport tax liability illegally
+\item The distinction between the two is \textit{subtle}...
+\end{itemize}
+\end{itemize}\medskip
+This paper provides a classical model of tax evasion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individuals factor in the detection probability to decide on how much income to \textit{report}
+\item The true income of each individual is given
+\item If not caught, they keep more income than they would have if they complied to taxes
+\item If caught, they pay taxes and penalty on difference between true and reported income
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: Individual decisions} 
+Assumptions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individual's true income is $W$
+\item Tax rate $t$ levied on \textit{reported} income $\bar{W}=W-E$, where $E$ is amount of evasion
+\item Government conducts tax audit with probability $p$ 
+ \begin{itemize}\setlength\itemsep{3pt}
+\item We assume audits always catch evasion 
+\item If they do not, we can use \textit{effective} probability of detection $p'<p$
+\end{itemize}
+\end{itemize}\medskip
+Possible scenarios on income
+\begin{itemize}\setlength\itemsep{3pt}
+  \item If not caught: Individuals keep 
+  \[
+  \begin{aligned}
+  Y_N &= W-t\bar{W} = W-t(W-E)\\
+  &=(1-t)W+tE\\
+  \end{aligned}
+  \]\vspace{-10pt}
+  \item If caught: Pay taxes on $E$ at rate $\theta>t$
+  \[
+  \begin{aligned}
+  Y_A&= W-t\bar{W} -\theta (W-\bar{W})=W-t(W-E)-\theta E\\
+  &=(1-t)W-(\theta-t)E\\
+  \end{aligned}
+  \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Optimizing on how much to report}
+  Household problem
+   \begin{itemize}\setlength\itemsep{3pt}
+\item We take the expected utility framework
+\[
+V= (1-p)u(Y_N) + p u(Y_A) = (1-p)u[(1-t)W+tE] +p u[(1-t)W-(\theta-t)E]
+\]
+\item Solve the FOC with respect to $E$
+\[
+\begin{aligned}
+  [E]: &\ \  (1-p)u'(Y_N)t - p u'(Y_A)(\theta-t)=0 \\
+  & \iff \frac{u'(Y_N)}{u'(Y_A)}= \frac{p}{1-p}\frac{\theta-t}{t}\\
+\end{aligned}
+\]
+\item MRS of evaded income = MC of tax evasion (both relative to audited income)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Comparative statics}
+  Comparative statics on $p$ and $\theta$
+   \begin{itemize}\setlength\itemsep{3pt}
+\item Rise in $p$ means audits are more likely to happen and $\frac{\partial E}{\partial p}<0$
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Rise in $p$ raises $\frac{p}{1-p}  \Rightarrow\frac{u'(Y_N)}{u'(Y_A)}$ should rise to preserve equality (or $Y_N$ should fall)
+  \item Since $Y_N=(1-t)W+tE$ and $Y_A=(1-t)W - (\theta-t)E$ this implies $E\downarrow$
+\end{itemize}
+\item Rise in $\theta$ increases penalty once detected and $\frac{\partial E}{\partial \theta}<0$
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Rise in $\theta$ raises $\frac{\theta-t}{t}  \Rightarrow\frac{u'(Y_N)}{u'(Y_A)}$ should rise to preserve equality (or $Y_N$ should fall)
+  \item With similar logic as above, $E\downarrow$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Comparative statics}
+Comparative static on tax rate $t$ is a bit more complicated
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Substitution effect: Higher tax increases gains from hiding income (without affecting penalty anount) and raises $E$
+  \item Income effect: Higher tax makes taxpayer poorer anyway, and if poor are risk averse (of being caught), then they decrease $E$ 
+\item This is because penalty $\theta E$ does not scale with $t$
+\begin{itemize}
+  \item Rising $t$  increases gains from evasion w/o proportionally increasing the cost of detection
+\end{itemize}
+\end{itemize}\medskip
+Adjust the model: Pay taxes on evasion itself $\theta t E$
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Then $Y_A=(1-t)W + tE(1-\theta)$ and  FOC on tax evasion becomes
+  \[
+  \frac{u'(Y_N)}{u'(Y_A)}= \frac{p(\theta-1)}{1-p}
+  \]
+  \item Here, rise in $t$ raises both gains from evasion \textit{and} penalty if caught
+ \item Thus, there is no substitution effect, and $E$ unambiguously decreases
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Higher taxes $\to$ Less evasion?}
+Intuitively, higher taxes increase the burden on taxpayers
+\begin{itemize}\setlength\itemsep{3pt}
+\item More to gain from hiding income
+\item Natural expectation: higher $t$ $\Rightarrow$ more evasion
+\end{itemize}\medskip
+ Previous results shows the opposite: higher $t$ $\Rightarrow$ less evasion
+\begin{itemize}\setlength\itemsep{3pt}
+\item When penalty is on evaded taxes $\theta t E$, gains and penalties scale equally with $t$
+\item $t$ cancels out of the evasion decision entirely
+\item Higher $t$ only makes taxpayer poorer, reducing appetite for risky evasion
+\end{itemize}\medskip
+Empirically, most evidence goes against this theory
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher tax rates tend to be associated with more evasion in practice
+\item Suggests substitution effect dominates in real settings
+\item Or that penalty structures do not follow the this assumption in practice
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What this means in the context of developing countries}
+Developing countries generally have low detection capacities
+\begin{itemize}\setlength\itemsep{3pt}
+\item In terms of our model, $p$ is low
+\item Implying higher $E$ and less tax revenues
+\item Example: Informal economies (undetected from formal state)
+\end{itemize}\medskip
+ They also may have lower $\theta$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lack of legal enforcement on deviant behaviors
+\item Thus, more evasion (and less tax revenues)
+\item Example: Less credible threat of enforcing penalties (failure to monopolize tax)
+\end{itemize}\medskip
+\end{frame}
+
+
+\section{Informal economies and taxation}
+\subsection{Gordon, Li (2009): Tax structures in developing countries: Many puzzles and a possible explanation}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Gordon, Li (2009):\\ Tax structures in developing countries: Many puzzles and a possible explanation
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Do presence of informal sectors affect choice of tax policies?} 
+Major difference in tax structures across developing and developed countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Some could be attributed to social preferences over public goods and redistribution
+\item But many differences with predicted optimal taxation in generic settings
+\begin{itemize}\setlength\itemsep{3pt}
+\item These taxation preserves production efficiency under plausible assumptions
+\item Rule out tariffs, capital income taxes, differential consumption tax, inflation tax
+\end{itemize}
+\item Drastic diffrences in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Less personal income tax, more tariffs, corporate income tax, and seignorage
+\end{itemize}
+\end{itemize}\medskip
+This paper proposes that existence of informal sector explains different tax structures
+\begin{itemize}\setlength\itemsep{3pt}
+\item Incorporates enforcement problems in developing countries due to informal economy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Informal economies: Use cash over financial intermediaries
+  \item Taxes on formal economy shifts activities to informal economy $\to$ Optimal tax rate $\Downarrow$
+  \item Justifies inflation tax, differential tax across industries, and tariffs
+\end{itemize}
+
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Summary of the difference in tax choices across country income} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{gl2009_t1.png}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item  High corporate income tax, tariffs, seignorage in developing countries
+\item Less personal income tax
+\item Statutory tax rates are similar across different countries!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tax policy with limited information: Differential excise taxes} 
+Characterizing informal economy into a model
+\begin{itemize}\setlength\itemsep{3pt}
+\item Informal economy not observed by government
+\begin{itemize}\setlength\itemsep{3pt}
+\item Thus, taxes cannot be levied to such firms
+\item So profits for such firms are revenues - wage cost - capital costs
+\end{itemize}
+\item Formal firms use financial systems and have higher outputs, but subject to tax
+\item Firms become formal if net profits exceed those from informal economy
+\begin{itemize}\setlength\itemsep{3pt}
+\item High excise taxes reduce the net profits $\to$ tax revenue drops
+\end{itemize}
+\end{itemize}\medskip
+Variation across industries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Sectors with low increase in output from formalizing $\to$ lower tax rates than desired
+\item This results in distortion in domestic production, which are offset by tariffs on imports
+\item Inflation tax and red tape on lightly taxed sectors may be attractive
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{How to increase benefits of using financial sector} 
+Determinants of benefits to using financial sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capital intensive firms: They need lending to finance purchase of capital
+\item If firms operate at wide distance, financial sector reduces the cost
+\item High revenue per employee: More cash transaction exposes to internal theft
+\begin{itemize}
+\item Service sectors tend to be less capital intensive and easily transfer to informal economy
+\end{itemize}
+\item Firms that do not formalize avoid corporate and excise tax, but pay inflation tax
+\item Thus, taxes are kept low for non capital-intensive sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capital-intensive ones more likely to stick to formal even without intervention
+\item This is meant to shift informal economies to formal ones
+\end{itemize}
+
+\item This explains high capital income tax in developing countries (vs. income tax)
+\item Inflation taxes also raise cost of keeping cash, inducing firms to formalize
+\end{itemize}\medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivating uses of other anti-competitive measures}
+Tariffs  
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher tariff protection for capital intensive sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Meant to offset distortions due to uneven domestic tax enforcement
+\item Specifically, aim is to induce production to a sector more likely to formalize
+\end{itemize}
+\end{itemize}\medskip
+Other anti-competitive measures
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provide monopoly power to capital-intensive firms
+\item Impose tighter regulation or monitoring on informal firms
+\begin{itemize}\setlength\itemsep{3pt}
+\item Even if revenue from such firms cannot be observed, other activities could be
+\item Higher red tape measure on those firms as monitoring device
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Key takeaways}
+Existance of informal firms twist the choice of optimal taxation 
+\begin{itemize}\setlength\itemsep{3pt}
+\item More capital taxation, tariffs, and inflation taxes
+\item This is determined by the returns to using financial sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item If financial sectors provide benefits, less incentives to join informal economy
+\item As developing countries have less developed finance sectors, high informality
+\end{itemize}
+\item Thus, models should incorporate possiblity of informal economies
+\end{itemize}\medskip
+However, leaving informal economies as is is undesirable
+\begin{itemize}\setlength\itemsep{3pt}
+\item Weakens capacity to provide essential public goods
+\item Resource misallocation$\Uparrow$ and innovation$\Downarrow$ (cost of hiding leave little for innovation)
+\item Thus, efforts to induce firms to formalize through third-party information, legal measures, and expansion of electronic filing (Benhassine et al 2018)
+\end{itemize}
+\end{frame}
+
+\subsection{Benhassine, Mckenzie, Pouliquen, Santini (2018): Does Inducing Informal Firms to Formalize Make Sense? Evidence from Benin }
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Benhassine, Mckenzie, Pouliquen, Santini (2018): \\Does Inducing Informal Firms to Formalize Make Sense? Evidence from Benin
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: Can governments induce informal firms to formalize?}
+Many small firms in the developing country are informal
+\begin{itemize}\setlength\itemsep{3pt}
+\item In some cases, their estimated size is equivalent to 70\% of GDP
+\item These could be very problematic
+\begin{itemize}\setlength\itemsep{3pt}
+\item Informal firms cannot access formal finance sector, public contracts etc 
+\item Lost tax revenues for the government
+\end{itemize}
+\item Thus, reforms to mandate business entry regulation is in place in many places
+\end{itemize}\medskip
+This paper uses randomized experiment to see what can be done to induce formalization
+\begin{itemize}\setlength\itemsep{3pt}
+\item Involves 3,600 firms in Benin
+\item Introduction of entreprenant legal status, a simplified formalization regime
+\item Estimates benefits for firms and costs of the intervention
+\item Also provides suggestion on who is most likely to formalize
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Institutional Context in Benin}
+Entreprenant status reform in Benin
+\begin{itemize}\setlength\itemsep{3pt}
+\item Came into effect in 2011
+\item Aim to facilitate formalization through simplified procedures
+\item Costs also reduced by 70-80\%
+\item As these were rolled out suddenly, many firms seemed to have been unaware
+\end{itemize}\medskip
+What happens when firms formalize (vs informal)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Get tax ID and exempt for taxation for one tax year (and 3-year reduced taxation)
+\item Informal firm addresses unknown to govt (so difficult to collect tax)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Experiment design}
+Treatment across 3595 firms
+\begin{itemize}\setlength\itemsep{3pt}
+\item A: In-person visits with verbal explanation and assistance in paperworks
+\item B: Help open a bank account and provide training in return for formalizing
+\item C: Provide tax mediation service and tax preparation service
+\item Treatment1 got A, Treatment2 got A+B, Treatment 3 got A+B+C 
+\item The experiment data is merged with admin data on formalization and firm surveys
+\end{itemize}\medskip
+The regression follows an OLS format, given randomized assignment
+\[
+y_i=\alpha + \beta_1 T1_i+ \beta_2 T2_i ++\beta_3 T3_i +X_i +e_i
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Follow-up surveys: Form a panel of firm-years
+\[
+\begin{aligned}
+y_{it}&=\alpha + b_1 (T1_i\cdot F1)+ b_2 (T2_i\cdot F1)+b_3 (T3_i\cdot F1)\\
+&+ c_1 (T1_i\cdot F2)+ c_2 (T2_i\cdot F2)+c_3 (T3_i\cdot F2)+\pi Y_{i0} + \gamma M_{i0} +X_i\delta +e_i
+\end{aligned}
+\]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{More firms to formalize}
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.8\textwidth]{bmps2019_f1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{But limited effect on take-up of further programs}
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.9\textwidth]{bmps2019_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{And limited impact on firm performance}
+\begin{figure}
+\centering
+\includegraphics[keepaspectratio, width=0.9\textwidth]{bmps2019_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cost-benefit analysis and takeaways}
+Cost-benefit analysis
+\begin{itemize}\setlength\itemsep{3pt}
+\item Total costs in the 2 years: Equivalent to US\$ 620,000
+\item Costs per formalization: Range from \$1,237 -- \$ 2,217
+\item This is more than 10 times of the profits from formalization
+\item Recouping costs through taxes: Takes estimated 20 years
+\item Better targeting could help: More educated firmowners more likely to formalize
+\end{itemize}\medskip
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Formalization can bring in additional tax revenues in theory
+\item But implementation is costly: Takes time to recoupe costs of additinal interventions
+\item What now? Target those who are more likely to formalize?
+\end{itemize}
+\end{frame}
+
+
+\section{Conflicts and implementation of tax authority}
+\subsection{Sanchez de la Sierra (2020): On the Origins of the State: Stationary Bandits and Taxation in Eastern Congo }
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Sanchez de la Sierra (2020):\\ On the Origins of the State: Stationary Bandits and Taxation in Eastern Congo
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do stationary bandits mimick essential functions of the state?}
+Monopoly of violence, taxation, and law enforcement is an essential function of state
+\begin{itemize}\setlength\itemsep{3pt}
+\item But even in developed countries, these are modern concepts
+\item In what environment do these functions emerge?
+\item However, many quantitative data exist \textit{since} the states are formed
+\item so what explains \textit{the birth} of states?
+\end{itemize}\medskip
+This paper investigates this question using a natural experiment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Uses Democratic Republic of Congo (DRC) as a context
+\begin{itemize}\setlength\itemsep{3pt}
+\item Vacuum of the formal state presence (DRC lost de facto control of part of its territory)
+\item Leaving armed actors to monopolize violence, taxation, and other essential services
+\end{itemize}
+\item Motives of armed actors determined by external changes in resource prices
+\item Rise of state function related to which types of resource shock is in place
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptualizing state functions}
+When are states likely to emerge?
+\begin{itemize}\setlength\itemsep{3pt}
+\item States monopolize violence to repress threats to the property of the governed
+\item They then monopolize taxation to finance their operations
+\item The potential tax revenues motivate armed actors to protect welfare of the population
+\end{itemize}\medskip
+Motivating hypotheses
+\begin{itemize}\setlength\itemsep{3pt}
+\item When do state emerge and develop state capacity?
+\begin{itemize}
+\item Likely when an output that can be easily taxed exists
+\item The output themselves should promise significant returns for the armed actors
+\end{itemize}
+\item What is the net benefit for the population?
+\begin{itemize}
+\item If investments spurred by protection $>$ disincentives created by taxing production
+\item If taxing output (suppliers) is difficult, states may choose to target consumption
+\end{itemize}
+\item In production economies: State emerges with high output prices at production sites
+\item In consumption economies: State emerges where the outputs are being consumed
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Setting and data in DRC}
+Setting: Eastern DRC in early 2000s
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mineral extraction in eastern DRC (lack of formal state) promises high returns
+\item Many militias (regional, external actors, DRC army) have incentives to take over
+\item Demand shock for different minierals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Coltan: Heavy, demand shock driven by announcement of PS2
+\item Gold: Light/concealable, safe haven of values during recession
+\end{itemize}
+\end{itemize}\medskip
+Data and analysis
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mining site and local history (outputs) compiled by surveyors on the ground
+\item Uses the following municipality-year level regression
+\[
+Y_{jt}=\beta_t +\alpha_j + \gamma_{\text{coltan}}C_jp_{\text{coltan},t}^{\text{US}}+ \gamma_{\text{gold}}G_jp_{\text{gold},t}^{\text{US}} + e_{jt}
+\]
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{State emerges differently in production and consumption economies}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{s2020_t1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Coltan: Benefits locations without stationary bandits}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{s2020_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Gold: Benefits locations with stationary bandits}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{s2020_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussion}
+Summaries of key findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Armed groups sometimes form monopoly of violence, taxation, and protection
+\item Especially if outputs with high returns that can be expropriated are present
+\item In turn, they form essential state functions that sometimes benefitting the well-being
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Sometimes the population would rather support armed groups over the government
+\begin{itemize}
+  \item e.g. Mexico, Colombia, or any places where organized criminal groups provide services
+\end{itemize} 
+\item But that is not always the case
+\item So how do armed groups legitimize their presence?
+\end{itemize}\medskip
+\end{frame}
+
+
+\subsection{Henn, Mugaruka, Ortiz, Sánchez de la Sierra, Wu (2025): Monopoly of Taxation without a Monopoly of Violence: The Weak State's Trade-off from Taxation}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Henn, Mugaruka, Ortiz, Sánchez de la Sierra, Wu (2025):\\ Monopoly of Taxation without a Monopoly of Violence: The Weak State's Trade-off from Taxation
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Tradeoffs between monopoly of taxation \& monopoly of violence?} 
+Weak states often fail to exert de facto control over their jurisdictions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Non-state actors (rebels) take over, who sometimes provide stability over 
+\item If these areas are economically valuable, state loses lot of fiscal revenue
+\item So is it beneficial for state to take formal authority over those lands?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Regain lost fiscal revenues
+\item But could trigger inadvertent response from rebels (e.g. plundering)
+\end{itemize}
+\end{itemize}\medskip
+This paper investigates the effect of state-building attempts to increase tax revenues
+\begin{itemize}\setlength\itemsep{3pt}
+\item Military powers to reclaim land and replace rebels
+\item Negotiate with rebels (often with concession to the rebels)
+\item Leverage subnational evidence in Democratic Republic of Congo (DRC) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{State-building efforts to drive rebels out of DRC} 
+State absence in Eastern DRC (and postcolonial Africa in general)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many parts of DRC (East) were under armed group control since 1998
+\item Most notable of these organizations is FDLR (Forces de Libération du Rwanda)
+\end{itemize}\medskip
+Military operation and peace treaty with rebels
+\begin{itemize}\setlength\itemsep{3pt}
+\item Largest peace treaty: Sun City peace treaty in 2004
+\begin{itemize}\setlength\itemsep{3pt}
+\item Various armed groups integrated into Congolese army
+\item Allowed government to regain half the country without triggering violence
+\item Other peace agreements had smaller goals and lower credibility
+\end{itemize}
+\item Largest military operation: Kimia II (March 2009)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Joint operation with UN, national army, and Rwanda
+\item Targeted FDLR presiding and taxing over Basile Chiefdom region since 2005
+\item Although defeated, FDLR launched theft operations from the nearby hilly forest region
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Constructing the data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Armed group presence: village-level data through interviews with former combatants
+\begin{itemize}
+\item Perpetrators' affiliation, motivation (pilage/retaliate/etc), actions taken
+\end{itemize}
+\end{itemize}\medskip
+Effects of Kimia II and Sun City Peace Treaty
+\begin{itemize}\setlength\itemsep{3pt}
+\item Kimia II: FDLR vs non-FDLR villages pre (`05-`09) and post (`10-`12) in Basile Chiefdom
+\item Peace treaty: Integrated villages vs others in the region before and after `02
+\[
+Y_{i,t} = \alpha_i + \beta_t + \sum_{k=-4}^{k=3}\beta_k \text{Treat}_i \times 1[t=t_0+k] + e_{i,t}
+\]\vspace{-20pt}
+\begin{itemize}
+  \item $t_0=2009$ for Kimia II effects, $2002$ for peace treaty effects
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kimia II: FDLR increased violence afterwards} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{hmosw2025_f1.png}  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kimia II: Driven by increase in pillages by FDLR} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{hmosw2025_t1.png}  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Peace treaty: Rise of new armed groups since treaty} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{hmosw2025_f2.png}  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+What (doesn't) explain the effects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Actual violence increased (as opposed to \textit{reported} violence)
+\item Violence by other actors do not increase following Kimia II
+\begin{itemize}
+\item Thus when incentive to protect villages (for tax revenues) vanish, violence increase
+\end{itemize}
+\item Treaty raised revenues, but limited commitment ability led to questioning of legitimacy
+\end{itemize}\medskip
+Takeaways and questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Kimia II: Monopolize violence (rebels out), but lost taxation due to ensuing violence
+\item Peace treaty: Expand tax revenues but no longer monopolize violence
+\item If faced with these trade-offs what should the states do?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Asserting force desirable if state has more capacity to prevent crime 
+  \item Bargaining potentially desirable if states can commit to not negotiate with future rebels and have resource to integrate rebels
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+ 
+\begin{frame}
+\frametitle{Unanswered questions} 
+Informal economies reduce potential for tax revenues
+\begin{itemize}\setlength\itemsep{3pt}
+\item Thus, states have less information about tax payers
+  \item This induces developing countries to choose different types of taxes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Those that are easily detectable and difficult to avoid
+\item Trade taxes, corporate income tax, consumption tax 
+\end{itemize}
+\item But formalizing them is also costly
+\item Then, how to increase amount of information (e.g. new technologies?)
+\end{itemize}\medskip
+Failure to monopolize taxes
+\begin{itemize}\setlength\itemsep{3pt}
+\item States sometimes compete with non-state actors (armed groups / local chiefs)
+  \item Tax administration is limited in scope
+\item Any way to incorporate local knowledge?
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%
+\end{document}
