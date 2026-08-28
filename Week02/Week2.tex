@@ -1,0 +1,512 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 2: Empirical methods}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{March 3rd, 2026}
+
+\begin{document}
+\begin{transitionframe}
+
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+
+
+\subsection{Conceptualizing Treatment Effects}
+\begin{frame}
+\frametitle{Causal inference in social sciences: Quantifying causal relationships} 
+Econometrics: Clarify quantitative, causal relationship between different variables
+
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textit{Does higher commodity prices reduce wars? (Caselli et al 2015; Dube, Vargas 2013)}
+\item \textit{Does extractive colonial institutional backdrop hurt current institutional development? (Acemoglu et al 2001; Michalopoulos, Papaiaonnou 2016)}
+\item \textit{Does negative shocks to economic productivity lead to revolutions (Brückner, Ciccone 2011)}
+\end{itemize} \medskip 
+Treatment effect measures the size of impact these events have on sample of interest
+\begin{itemize}\setlength\itemsep{3pt}
+\item Identify an event that induces some shocks to individual behavior/societal outcome
+\item Find a suitably comparable sample (i.e. the control group and treatment)
+\item Compare outcomes for those affected by the event to those not affected 
+\end{itemize} \medskip 
+ For empirical economics, we collect data from a suitably defined population and use various methods to estimate the effects of these events.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Correlation vs Causation: Does $X$ cause $Y$?}
+
+
+ A \textbf{correlation} is a statistical measure describing how the two variables co-move
+\begin{itemize}\setlength\itemsep{3pt}
+\item It captures \textit{any} type of statistical dependence that moves the two variables together: Causation, but also others too!
+\item Not causal 1: $Y$ can cause $X$ (reverse causality)
+\item Not causal 2: $X$ and $Y$ co-move because of $Z$ that affects both (Omitted variable bias)
+\end{itemize} \medskip
+A \textbf{causal} relationship is identified from changes in $Y$ due to \textit{exogenous} changes in $X$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Changes in $X$ may be a combination of changes from $X$ alone + other factors that co-move with $X$ and affect $Y$ (You do not want the latter)
+\item Randomized experiments: One way of isolating clean changes in $X$ 
+\item Econometrics: Concisely explains the relationship between $X$ and $Y$ variables in a single equation (Even when experiment is not feasible)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Treatment effect in mathematics} 
+
+ Mathematical notations
+\begin{itemize}\setlength\itemsep{3pt}
+  \item $Y_i$: observed outcome for individual $i$ % e.g. Income, votes, vote particpation, health
+  \item $X_i=x$: Treatment assignment ($x=1$ for treated, 0 for control group) 
+  \item $Y_i(x)$: Outcome for treated individual if $x=1$, control group if $x=0$. 
+\end{itemize}\medskip
+Treatment effect: How much does outcome differ between treated and control group
+\[
+  TE = Y_i(1)-Y_i(0)
+\]\vspace{-15pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item With large number of $i$, we want an average treatment effect
+\[
+ATE = E[Y_i(1)-Y_i(0)]=E[Y_i(1)]-E[Y_i(0)]
+\]
+\item Missing \textbf{counterfactual}: If $i$ is treated, it cannot be in the control group
+\item We need to make judgement on what the counterfactual looks like w/ econometrics 
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Another problem: How to attribute changes to $X$} 
+Can we fully attribute $Y_i(1)-Y_i(0)$ to $X_i$?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Accurate estimation of treatment effects of $X_i$ relies on the answer to above question
+\item True (Exogenous): If treated \& control group are similar on other dimensions except $X_i$
+\begin{itemize}\setlength\itemsep{3pt}
+\item e.g. Random assignments (randomized control trials)
+\item Simple ordinary least squares (OLS) method suffices
+\end{itemize}
+\item Usually, this is false (Endogenous): Factors other than $X_i$ could affect $Y_i(1)-Y_i(0)$
+\end{itemize}\medskip
+When does the endogeneity problems happen and how to deal with it?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Omitted variables: Not taking into account factors that affect outcomes
+\item Selection into treatment: Those with certain trait more likely to be assigned treatment
+\item Reverse causality: $Y$ affects $X$, then $X$ affects $Y$, and so on..
+\item Need other methods to make treated and control groups comparable
+\begin{itemize}\setlength\itemsep{3pt}
+\item Panel regression, Instrumental variable, difference-in-differences, regression discontinuity
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Basic Regressions: Ordinary Least Squares}
+\begin{frame}
+\frametitle{Reconciling potential outcomes and regressions} 
+ Potential outcomes provides framework to match observations to treatment effect
+\[ 
+\begin{aligned}
+Y_ i &= Y_i(1)X_i + Y_i(0)(1-X_i)\\
+&=Y_i(0)+X_i(Y_i(1)-Y_i(0))\\
+\end{aligned}
+\]
+In terms of conditional expectations, 
+\[ 
+\begin{aligned}
+E[Y_ i|X_i ]&=E[Y_i(0)+X_i(Y_i(1)-Y_i(0)) |X_i]   \\
+&=E[Y_i(0)|X_i]+E[Y_i(1)-Y_i(0)|X_i]X_i \\
+\end{aligned}
+\]
+Generic regression setup between $X_i$ and $Y_i$
+\[
+\begin{aligned}
+Y_i &=\alpha + \beta X_i + u_i   \\
+E[Y_ i|X_i]&=\alpha + \beta X_i + E[u_i|X_i] \\
+\end{aligned}
+\]
+where $u_i$ are errors (determinants of $Y_i$ not captured by $X_i$)
+\end{frame}
+
+\begin{frame}
+\frametitle{Ordinary Least Square (OLS) and random assignments} 
+Random assignment assumes that treatment is as good as random
+\begin{itemize}\setlength\itemsep{3pt}
+\item Only $X_i$ is different across control and treated groups
+\item In mathematic terms, $E[u_i|X_i]=0$
+\end{itemize} \medskip
+Reconciling with earlier notations, we get
+\[
+\begin{aligned}
+  E[Y_i|X_i]&=E[Y_i(0)|X_i]+E[Y_i(1)-Y_i(0)|X_i]X_i \\
+          &=\alpha + \beta X_i + E[u_i|X_i]\\ 
+          &=\alpha + \beta X_i\\ 
+\end{aligned}
+\] \vspace{-15pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Here, estimate of $\beta$ is the estimate of treatment effect of interest 
+\item For accurate estimates, we can control for variables other than $X_i$ as well
+\begin{itemize}
+  \item Helps address issues arising from omitted variables
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+ 
+
+\begin{frame}
+\frametitle{Ordinary Least Square (OLS): Mathematical approach } 
+Setup of OLS regressions
+\begin{itemize}
+\item  Write 
+\[
+Y_i = \alpha + \beta X_i + u_i 
+\] 
+where $X_i$: independent variable and $u_i$ is the error
+\item Exogeneity: We assume that $u_i$ is uncorrelated with $X_i$, $E[u_i|X_i]=0$ (very important!)
+\item OLS estimates the parameter of interest $\beta$ by minimizing the sum squared of errors, giving us the $\beta$ that best matches the patterns in the observation
+\[
+\hat{\beta}_{OLS} = \min_\beta \sum_{i=1}^n (Y_i - \alpha-\beta X_i)^2
+\]
+\item We can do the same for $\alpha$, which capture baseline average (average when all independent variables are zero)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conceptualizing OLS} 
+\begin{figure}
+\includegraphics[width=0.67\textwidth, keepaspectratio]{ols.png}
+\end{figure}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Internal and external validity problems: Why OLS is not always usable} 
+\textbf{External validity} is concerned with the applicability to other contexts. \\ \medskip
+\textbf{Internal validity} assesses whether the model accurately represents the sample
+\begin{itemize}
+\item \textbf{Omitted variable bias: } Leave out factors affecting $Y$ and are correlated with $X$?  \\$\to$ \textcolor{blue}{Multivariate regression, panel regression}
+\item \textbf{Wrong functional form: } Not using proper functional form (quadratic, logs?) \\$\to$ \textcolor{blue}{add logs, squared variables, or use logit/probit}
+\item \textbf{Measurement error: } If $X$ does not have an accurate measure, estimates bias to 0 \\  $\to$ \textcolor{blue}{Instrumental variable}
+\item \textbf{Sample selection bias: }  certain groups more likely to be treated\\ $\to$ \textcolor{blue}{Instrumental variable, Natural experiments} 
+\item \textbf{Simultaneous causality bias: }  $Y$ causes $X$ too,  leading to biased estimation \\ $\to$ \textcolor{blue}{Instrumental variable}
+\end{itemize}\medskip
+Most likely, we use natural experiment that uses external events/shock as treatment
+\end{frame}
+
+
+\subsection{Panel Regressions}
+\begin{frame}
+\frametitle{When exogeneity fails: Mathematical explanation} 
+$E[u_i|D_i]=0$ rarely holds
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Treatment is often unrandom, or some are more likely to be treated than others
+\item This biases our results: Suppose that $E[u_i|D_i]=\phi D_i + v_i$ ($u_i$ and $D_i$ have correlation)
+ \[
+ \begin{aligned}
+  E[Y_i|D_i]&=\alpha+\beta D_i+E[u_i|D_i]\\
+  &=\alpha + (\beta+\phi)D_i + v_i\\
+ \end{aligned}
+\]
+With OLS on $Y_i$ and $D_i$, $\hat{\beta}$ captures $\beta+\phi$ - Treatment effect and \textcolor{red}{endogeneity bias}
+\end{itemize} \medskip
+When and why do biases happen?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Treated groups may be a good performer to begin with (and vice versa)
+\item Differences in baseline characteristics besides treatment $\to$ inaccurate TE estimates
+\end{itemize}\medskip
+Need to control for $\phi$ with individual/time indicators (Panel), exogenous proxy (IV), or natural experiments
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Panel regression fixed effects approach} 
+Setup
+\begin{itemize}\setlength\itemsep{3pt}
+\item We observe multiple individuals for multiple time periods ($i\in \{1,...,N\}, t\in \{1,...,T\}$)
+\[
+Y_{it} = \beta_0 + \beta_1X_{1,it}+ ... +\beta_kX_{k,it}+u_{it}
+\]
+\item Problem: Unobserved individual characteristics and time trends could affect outcomes \smallskip
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individual's unobserved ability/characteristics (e.g. culture)
+\item A bad shock in year $t$ that affects everyone (COVID years)
+\end{itemize}
+\end{itemize}\medskip
+ Panel regression allows us to capture these using individual and time fixed effects
+\[
+Y_{it}=\beta_1 X_{1,it}+...+\beta_k X_{k,it} + \alpha_i +\lambda_t + u_{it}
+\] \vspace{-15pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item $\alpha_i$: Dummy for each individual $i\in\{1,...,N\}$
+\item $\delta_t$: Dummy for each time $t\in\{1,...,T\}$
+\end{itemize}
+\end{frame}
+
+\subsection{Instrumental Variable Regressions}
+\begin{frame}
+\frametitle{Instrumental variables: Exogeneity amidst endogeneity} 
+OLS hinges on independent variable $X_i$ being uncorrelated with $u_i$
+ 
+\begin{itemize}\setlength\itemsep{3pt}
+\item This often breaks: omitted variable bias, measurement error, and reverse causality etc..
+\item Parts of $X_i$ that are \textcolor{red}{correlated with $u_i$}: What we want is part of $X_i$ \textcolor{blue}{independent of $u_i$}.
+\end{itemize}\medskip
+Solution is to find another variable $Z_i$ that are
+\begin{itemize}\setlength\itemsep{3pt}
+\item (1) Correlated with $X$ (relevancy), 
+\item (2) not correlated with $u$ (exogeneity): This gets us part of $X_i$ \textcolor{blue}{independent of $u_i$}
+
+\item Exogeneity is difficult to argue (usually argue that $Z_i$ affects $Y_i$ only through $X_i$)
+\end{itemize}\medskip
+This is estimated with two stage least squares (2SLS)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Original Equation: $Y_i = \alpha + \beta X_i + u_i$
+\item First stage: $X_i=\delta_0 + \delta_1Z_i+v_i \to$ Get $\widehat{X}_i=\hat{\delta}_0+\hat{\delta}_1Z_i$ ($\widehat{X}_i$ is uncorrelated with $u_i$ )
+\item Second stage: $Y_i = \beta_0 + \beta_1 \widehat{X}_i + u_i$
+\end{itemize}\medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Instrumental variables using natural environment} 
+Brückner, Ciccone, ``Rain and the Democratic Window of Opportunity'', \textit{Econometrica}, 79(3), 923-947
+\begin{itemize}\setlength\itemsep{3pt}
+\item Question: Can transitory shocks to income ($X_i$) lead to democratic changes ($Y_i$)?
+\item Income shocks can be endogenous: Places with higher income are likely more democratic to begin with
+
+\item Use (lack of) rainfall ($Z_i$): Correlates with income through agricultural productivity but unlikely to affect democratic transitions alone
+\item Plausible: Very hard for rainfall itself to lead to democratization
+
+
+\item Result: 1\% transitory negative income shock $\to$ 1.3 percentage point rise in democratic transitions
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \centering
+\frametitle{Instrumental variables using natural environment} 
+\includegraphics[width=0.75\textwidth]{iv.jpeg}
+\end{frame}
+
+
+
+\subsection{Natural Experiments: Difference-in-Differences, Event studies, and Regression Discontinuity}
+\begin{frame}
+\frametitle{Natural experiments: Difference-in-differences} 
+Assume two time periods (before and after) and two groups (treated and controlled)
+\begin{itemize}\setlength\itemsep{3pt}
+\item You have the following regression
+\[
+Y_{it} = \beta_0 + \beta_1 D_{it} + \beta_2 P_{it} + \beta_3 D_{it}P_{it}+u_{it}
+\]
+where $D=1$ if in treatment group, $P=1$ if after treatment started
+\item You can get the following group averages \smallskip
+\begin{itemize}\setlength\itemsep{3pt}
+\item[(1)] Treated, After: $E[Y_{it}|D_{it}=1, P_{it}=1] = \beta_0+\beta_1 + \beta_2 + \beta_3$ 
+\item[(2)] Treated, Before: $E[Y_{it}|D_{it}=1, P_{it}=0] =\beta_0+ \beta_1 $ 
+\item[(3)] Controlled, After: $E[Y_{it}|D_{it}=0, P_{it}=1] =\beta_0+ \beta_2 $
+\item[(4)] Controlled, Before: $E[Y_{it}|D_{it}=0, P_{it}=0] =\beta_0 $ 
+\end{itemize}
+\item DID: $[\bar{Y}_{\text{treat,after}} (1)-\bar{Y}_{\text{treat,before}}(2)]-[\bar{Y}_{\text{control,after}}(3)-\bar{Y}_{\text{control,before}}(4)]  \to \hat{\beta}_3$
+\item Can be generalized to many time periods and many groups 
+\begin{itemize}
+  \item Two-way fixed effects, event-studies
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Conceptualizing Difference-in-differences} 
+\begin{figure}
+\includegraphics[width=0.7\textwidth, keepaspectratio]{did.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Difference-in-Differences} 
+Andreas V. Jensen (2025) ``Educating for Democracy? Going to College Increases Political Participation'', \textit{British Journal of Political Science}, 55,1-12
+\begin{itemize}\setlength\itemsep{3pt}
+\item Question: Does going to college increase political participation?
+\item Method: Uses a survey of US students who graduated high school at 2004, observe differences in election participation in 2004 and 2008
+\[
+\text{Turnout}_{it}=\alpha_i+\delta_t + \beta[\text{College}_i\times\text{Post}_t]+\gamma X_{it}+u_{it}
+\]\vspace{-15pt}
+
+  \item Here $\alpha_i$ and $\delta_t$ are individual and time fixed effects\\ (Can you find their equivalent variables in the previous equation?)
+  \item Treated: Those who entered college between 04-08
+  \item Control: Did not go to college
+
+\item Result: College enrollment increase particpation by 13 percentage points
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Difference-in-Differences} 
+\begin{figure}
+\includegraphics[width=0.7\textwidth, keepaspectratio]{did_table.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Regression discontinuity} 
+Comparing individuals just entering the treatment vs marginally did not receive one
+
+\begin{itemize}\setlength\itemsep{3pt}
+\item Assume you are treated if $X_i \geq c$ and not if otherwise
+\item Then, run this regression on $X_i \in [c-h, c+h]$ for some small $h$, along with covariate $Z_i$
+\[
+Y_i = \beta Z_i + \gamma (1[X_i\geq c]\times Z_i) + \delta (Z_i \times (X_i-c)) + \mu (Z_i \times (X_i-c)\times 1[X_i\geq c])+u_i
+\]
+For simplicity, assume that no other independent variables are in place: $Z_i=1$ \smallskip
+\begin{itemize}\setlength\itemsep{3pt}
+\item $1[X_i \geq c]=1$ if $i$ passes threshold for eligibility (0 if otherwise)
+\item $\gamma$ captures the treatment effect: Difference between those in and out of treatment
+\item We also allow slope to be different under and above the cutoff: $\delta$ for people below cutoff and $\delta+\mu$ for those above
+\end{itemize}
+\end{itemize}
+Caveats
+\begin{itemize}\setlength\itemsep{3pt}
+\item Treatment effect estimated here is local: May not hold for out-sample
+\item There may be cases where threshold is not strict (fuzzy RD)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Regression discontinuity in use with electoral rules} 
+Thomas Fujiwara (2011) ``A Regression Discontinuity Test of Strategic Voting and Duverger’s Law'', \textit{Quarterly Journal of Political Science}, 6, 197-233
+\begin{itemize}\setlength\itemsep{3pt}
+\item Question: Do third-party candidates perform well in majoritarian elections with run-offs than ones with no run-offs?
+\item Design: In Brazil, precincts with more than 200,000 registered voters have run-off elections for mayors (otherwise, no run-offs)
+\item Findings: Third-party candidates perform signficantly worse in places without run-offs, suggesting that voters consider winning probabilities of candidates into account
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Natural experiments: Regression discontinuity} 
+\begin{figure}
+\includegraphics[width=0.8\textwidth, keepaspectratio]{rd.png}
+\end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
