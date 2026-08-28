@@ -1,0 +1,1064 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 14: Monitoring and Incentivizing Public Sector Workers}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{May 26th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+
+\begin{frame}
+\frametitle{Why politicians face little scrutiny — and why it matters}
+ 
+Citizens hold little information on political activities and limited punishment mechanisms
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Limited channels (local radio, low-circulation press) to learn about politician behavior
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Media and internet are often censored
+  \end{itemize}
+  \item Actual data on whether and how services reach endpoints is limited
+  \item Recall elections and audits can be misused by political rivals and pressure groups
+\end{itemize}\medskip
+Why accountability still matters
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Need to prevent diverson of public resources away from intended recipients
+  \item Electoral outcomes serve as strong incentives on elected officials
+    \begin{itemize}\setlength\itemsep{3pt}
+    \item Whereever legally feasible, politicians care about re-election
+    \item Even if not, continuation of incumbent party rule still matters
+  \end{itemize}
+  \item Long run: Shape who enters politics, not just disciplining incumbents
+\end{itemize}
+ 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Media as an accountability tool — promise and limits}
+How media promotes accountability
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Reward well-behaving politicians, not only punishes corrupt ones
+  \item Disseminate information via dominant channels (radio, television, web) 
+  \item Effective bottom-up enforcement: Campaign for or against various causes
+  \item Lower coordination costs and facilitate collective action (esp, social media and mobile)
+  
+\end{itemize}
+ 
+\medskip
+But media can backfire very badly
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Above positive assumes sufficient media reach (not always the case)
+  \item Misinformation can entrench incumbents or manufacture political crises
+  \item In low-trust environments, media may not shift voter behavior at all
+\end{itemize}\bigskip
+$\Rrightarrow$ This is a large field in political economy that deserves its own semester
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Incentivizing bureaucrats — types of instruments}
+ Financial incentives
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Nonlinear pay tied to performance (better service delivery and showing up)
+  \item Subject to fiscal constraints and politically difficult for entrenched civil servants
+ \end{itemize} \medskip
+ Nonmonetary measures: Job postings and career progression
+ \begin{itemize}\setlength\itemsep{3pt}
+  \item Assignment favoring high-performers can induce effort
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Potential mismatch: preference of top performance and where they are needed may differ
+\end{itemize}
+  \item Bureaucrats care about career progression (how fast they are promoted)
+   \begin{itemize}\setlength\itemsep{3pt}
+  \item Often linked with post-retirement benefits and social prestige
+  \item Inflexible trajectory in general: Could lead to them exiting for outside options
+  \item So they care about not getting suspensions - may lead to passive behaviors instead
+\end{itemize}
+\end{itemize}\medskip
+Unlike private organizations, role of financial incentives could be limited
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Payscale is generally inflexible
+  \item Side effects at recruitment: Crowd out prosocial individuals (Deserrano 2019)
+ \end{itemize}
+ 
+\end{frame}
+ 
+
+
+
+
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Monitoring and Accountability}
+
+
+\subsection{Reinikka, Svensson (2005): Fighting Corruption to Improve Schooling: Evidence from a Newspaper Campaign in Uganda}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Reinikka, Svensson (2005):\\ Fighting Corruption to Improve Schooling: Evidence from a Newspaper Campaign in Uganda
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How can monitoring improve public goods and services? } 
+How do you improve provision of public goods
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many progress in reduced-form natural and randomized experiments
+\item When scaling the findings up, understanding of the entire delivery chain matters
+\begin{itemize}\setlength\itemsep{3pt}
+\item What institutional constraints hinder the policy decisions?
+\item What incentives influence different layers of governments, agents, and beneficiaries?
+\end{itemize}
+\item These are required for more fruitful policy implications
+\end{itemize}\medskip
+This paper highlights the significance of governance structure in public services 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Using a policy experiment from newspaper campaign in Uganda
+\item The aim is to see how providing information reduces capture of public funds
+\item Induce bottom-up enforcement by publishing data on educational grant usage
+\item Improved primary school enrollment and performance
+ \end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Educational grants and newspaper experiment in Uganda} 
+Educational grant program aimed to support financing nonwage expenditures of schools
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Funds disbursed by Ministry of Education to the schools on regular basis
+\item On paper, it seemed to work well (central government budget data)
+\item On the ground, only 20\% of the funds reached schools, many schools received nothing
+\item Bulk of the grants were captured by local government officials
+\end{itemize}\medskip
+In response, newspaper campaign was rolled out to combat these issues in late 1990s
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not involving enhancement of legal and financial institutions (top-down)
+\item Campaigns induce citizen enforcement through increased awareness
+\item Geographical variation induced by the placement of newspaper outlet
+\item Knowledge of info instrumented with above geographical variation
+ \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Improvements since the newspaper campaign} 
+ \begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{rs2005_t1.png}
+ \end{figure}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Sources of financial data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public Expenditure Tracking Survey (PETS)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Measures how much public resources were filtered down to \textit{schools}
+\item Central government data only shows how much \textit{outflow} was under educational grant
+\end{itemize}
+\item Also controls for time and income of the local region
+\end{itemize}\medskip
+Two ways of exploring effects of differential information
+\begin{itemize}\setlength\itemsep{3pt}
+\item IV: Share of funding reaching school instrumented with distance to newspaper outlet
+\[
+\Delta \text{students}_j=\alpha+\gamma_0 \Delta x_j +\gamma_1 \sigma_{2001}+\gamma_2 \Delta \hat{s}_j+e_j
+\]
+\item DID: Variation in newspaper circulation per district across time
+\[
+\text{students}_j=\alpha+\gamma  x_j +\sigma_{1995}+\sigma_{2001}+\beta_0\text{Newspaper}_j+\beta_1\text{Newspaper}_j \times D_{1995} +e_j
+\]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Positive effects of being informed on enrollment} 
+ \begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{rs2005_t2.png}
+ \end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Evidence also consistent on DID regression} 
+ \begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{rs2005_t3.png}
+ \end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Key messages and developments} 
+Key message: information can improve public service provision
+\begin{itemize}\setlength\itemsep{3pt}
+\item Bottom-up approach meant to improve monitoring
+\item Suggests that information can lead to improvements via accountability
+\item Very old paper: More recent papers have found more rigorous ways to test this idea
+\end{itemize}\medskip
+Developments since this paper
+\begin{itemize}\setlength\itemsep{3pt}
+\item Randomized audits: Reduce corruption of politicians
+\begin{itemize}\setlength\itemsep{3pt}
+\item Revelation of audit results affect politicians reelection chances and image
+\item See Ferraz, Finan (2008), Larreguy, Marshall, and Snyder Jr (2021)
+\end{itemize}
+\item Collective actions: Information as mediator of protests
+\begin{itemize}\setlength\itemsep{3pt}
+\item Usage of online surveys, distribution of mobile data etc
+\item See Manacorda, Tesei (2020), Enikolopov, Marakin, Petrova (2020), Bursztyin et al (2021) 
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+
+\subsection{Ferraz, Finan (2008): Exposing Corrupt Politicians: The Effects of Brazil's Publicly Released Audits on Electoral Outcomes}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Ferraz, Finan (2008):\\ Exposing Corrupt Politicians: The Effects of Brazil's Publicly Released Audits on Electoral Outcomes
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+\begin{frame}
+\frametitle{Q: Do disclosing information on corruption affect accountability?} 
+Information on politicians' performance is crucial for holding them accountable
+\begin{itemize}\setlength\itemsep{3pt}
+\item Open information induces alignment of the interests of politicians and the public
+\item However, such information is not randomly assigned
+\item Rather, information availability is endogenous to voter efforts and community traits
+\item Furthermore, such information could be manipulated in absence of independent media
+\end{itemize}\medskip
+This paper studies effects of disclosing corruption practices on electoral outcomes
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Using anticoruption program in Brazil initiated in April 2003
+  \item Randomly select municipalities to be audited for use of federal funds
+  \item Audit results were disseminated publicly, including to the general public
+  \item Compare electoral outcomes of municipalities audited pre-election vs post-election
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Anticorruption program in Brazil} 
+Rollout of anticorruption program in 2003
+\begin{itemize}\setlength\itemsep{3pt}
+\item Aimed at discouraging misuse of public funds and promote bottom-up monitoring
+\item Municipalities subject to audits determined by lottery
+\item If chosen, all info on federal funds transferred to the auditing body
+\item Then, representative auditors sent to municipal governments
+\begin{itemize}\setlength\itemsep{3pt}
+\item Also receive complaints from community members and municipal councilmen
+\end{itemize}
+\item Detailed reports on irregularities submitted to the central goverment
+\item Summary of findings posted on the web and disclosed to media sources
+\item Most voters receives this information via local radio stations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Newspaper subscription is low (42 copies per 1000)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Data and empirical strategy}
+Data sources are primarily audit reports released to public 
+\begin{itemize}\setlength\itemsep{3pt}
+\item From 373 municipalities (municipalities ran by 1st-term mayors)
+\item Total federal funds, audited amounts, itemized list of irregularities
+\item Corruption: Frauds in procurements, fake receipts, embezzlement, over-invoicing
+\item Combined with geographical surveys and electoral outcomes of `04 local elections
+\end{itemize}\medskip
+Estimation leverages variation in audit timing($A_{ms}$), controlling for \# of irregularities($C_{ms}$)
+\[
+E_{ms}=\alpha + \beta_0 C_{ms}+\beta_1 A_{ms}+\beta_2(A_{ms}\times C_{ms})+\gamma X_{ms}+\nu_s + e_{ms}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Compare municipalities audited before ($A_{ms}$=1) to those audited after
+\item Control for the degree of seriousness in corruption
+\item Also uses variation by media source in some specifications
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reduction in re-election probabilities following pre-election audits}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{ff2008_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reduction in re-election probabilities following pre-election audits}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{ff2008_t2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results evident in simple relationships}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{ff2008_f1.png}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Key findings and remaining questions} 
+Effect of information on electoral outcomes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Providing information on corruptions enhance accountability of politicians
+\item Particularly more evident if information is spread via dominant channel (radio)
+\item It also rewards well-behaving politicians
+  \end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item This is a study based on one election
+\item Can this effect be sustained over time?
+\item What about in the environment where the mass media is not trusted?
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Or worse: When media spread misinformation? 
+\end{itemize}
+\item Political accountability in new, social media environment is actively being studied
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Artiles, Klein-Rueschkam, León-Cilotta (2021): Accountability, Political Capture, and Selection into Politics: Evidence from Peruvian Municipalities}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Artiles, Klein-Rueschkam, León-Cilotta (2021):\\ Accountability, Political Capture, and Selection into Politics: Evidence from Peruvian Municipalities
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+  \frametitle{Q: How does politically captured accountability mechanism function?}
+Can measures meant to increase accountability work when they could be manipulated?
+\begin{itemize}\setlength\itemsep{3pt}
+\item In principle, many mechanisms are in place to monitor politicians action and selection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Re-election incentives, media, recall mechanism, impeachement
+\end{itemize}
+\item In low capacity countries, these measures could be subject to political capture
+\item Could be driven by special interest groups or manipulated by political elites
+\item Can the objectives of the accountability measure be distorted?
+\end{itemize}\medskip
+This paper investigates how misuse of these mechanisms affects selection of politicians
+\begin{itemize}\setlength\itemsep{3pt}
+\item Recall elections initiated by special interest groups in Peru
+\item Municipalities whose mayor barely survived recall vs ousted by small margin
+\item Intrinsically motivated/high-ability politicians discouraged from running 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Recall of mayors negatively affects net value of the position
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Peruvian recall procedures and political landscape}
+Local politics in Peru at municipal level
+\begin{itemize}\setlength\itemsep{3pt}
+\item Highly decentralized and responsible basic public goods (streets, security, waste)
+\item Mayors on 4-year terms with possibility of re-election (not after 2015)
+\item Very fragmented: Many independent parties based on candidates, not ideology
+\end{itemize}\medskip
+How recall elections work in Peru (Pretty common  in Peru)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Voters can recall local elected officials at 2nd or 3rd year of the term
+\item Buy recall kit (forms) $\to$ name politician $\to$ collect signature (25\% of voters)
+\item Recalled if turn out is at least 50\% and if 50\% + 1 of valid votes call for recall
+\item No makeup election on the spot (first councilor takes over)
+\item 20,000 recall attempts in `97-`13, with 5,000 officials facing referendum
+\begin{itemize}\setlength\itemsep{3pt}
+\item Often losers of previous elections gathering support to oust incumbent 
+\item Mainly in small cities ($\to$ policymakers in Lima were unaware) 
+\item Also in places where where mayor won by small share (many win with 35-ish\%)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Data and empirical strategy}
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Candidate characteristics obtained from www.infogob.com.pe
+\begin{itemize}\setlength\itemsep{3pt}
+\item Maximal educational level, years of schooling, previous experience, demographics
+\end{itemize}
+\item Electoral outcomes from national election office (ONPE)
+\item Budget outcomes from Ministry of Economy and Finance (MEF)
+\end{itemize}\medskip
+Empirical design leverages differential returns to mayorship across individuals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Recall lowers expected term length regardless of the candidates potential performance
+\item Drive out policy-driven candidates and those with better outside options
+ \begin{itemize}\setlength\itemsep{3pt}
+\item High-ability individuals, those with policy experience $\downarrow$ Less-able ones $\uparrow$
+\end{itemize}
+\item Leverage sharp regression design based on close recall election outcomes by vote shares
+\[
+Y_{imt}=\alpha + \beta \text{Recalled}_{mt-1}+\gamma f(\text{voteshare}_{mt-1})+e_{imt}
+\]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Decline in highly-educated candidates following referendum}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.65\textwidth]{akl2021_f1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Recalls are politically driven \& have effects regardless of performance}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{akl2021_t1.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Lower quality of mayors and less revenue \& expenditures}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{akl2021_t2.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Key findings and remaining questions}
+Key findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Accountability measures not only affect incumbents, but also potential candidates
+\item If the procedures are captured, there could be negative effects
+ \begin{itemize}\setlength\itemsep{3pt}
+  \item High ability individuals discouraged from seeking positions
+  \item Less representative to indigenous population
+  \item More inefficient public finances 
+\end{itemize}
+
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mechanisms designed to give citizens control over politics could be distorted
+\item Particularly in cases where manipulation due to political motives are unchecked
+\item How to design safeguards to prevent political capture of these procedures?
+\end{itemize}
+\end{frame}
+
+
+
+\section{Incentives on bureaucrats}
+\subsection{Duflo, Hanna, Ryan (2012): Incentives Work: Getting Teachers to Come to School}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Duflo, Hanna, Ryan (2012):\\ Incentives Work: Getting Teachers to Come to School
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How does monitoring and incentives reduce absentivism?}
+Expansion of school access often not accompanied by improvements in school quality
+\begin{itemize}\setlength\itemsep{3pt}
+\item One major factor is teachers not showing up to work
+\begin{itemize}\setlength\itemsep{3pt}
+\item India: about 24 \% of teachers were absent during school hours
+\item Para-teachers on temporary contracts often fill in for teachers' absence
+\end{itemize}
+\item Regular teachers are politically entrenched and can resist attempts to enforce rules
+\item Thus, monitoring and financial incentives may work better on para-teachers
+\end{itemize}\medskip
+This paper tests whether monitoring and incentives reduce absenteeism of para-teachers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Theoretically not straightforward
+\begin{itemize}\setlength\itemsep{3pt}
+\item More effort for high pay vs crowd out intrinsic effort or only work until target income
+\end{itemize}
+\item Also investigates whether schooling outcomes improve as a result
+\item Randomized experiment with video device and nonlinear salaries in rural India
+\item Provides models that shows how para-teachers respond to financial incentives
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experimental setup} 
+Experimental design (jointly at Udaipur organized with Seva Mandir (NGO))
+\begin{itemize}\setlength\itemsep{3pt}
+\item Education carried out in nonformal education centers (NFEs)
+\begin{itemize}\setlength\itemsep{3pt}
+\item 1 para-teacher per NFE, teaching about 20 students
+\item When the para-teacher is absent, the school is closed
+\end{itemize}
+\item Base salary: \$ 160 PPP for at least 20 days of work per month
+\item in `03, the NGO assigned 60 schools in the treatment group, 60 in control
+\begin{itemize}\setlength\itemsep{3pt}
+\item Teachers given camera and students instructed to take picture of teachers and students
+\item Each camera came with tamper-proof settings
+\item \$1.15 PPP bonus (penalty) for each additional (shortfall) day in excess of 20 days 
+\end{itemize}
+\end{itemize}\medskip
+Data collection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Attendance: Unannounced visits and camera data
+\item School activities: \# of children, writing on blackboard, teacher talk w/ students?
+\item Performance measured with 3 competency exams (pre/mid/post tests)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Teacher attendance markedly increases}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{dhr2012_f1.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Particularly in schools with teachers below median test scores}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{dhr2012_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Financial incentives do not crowd out effort}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{dhr2012_t2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Students's educational performance also improved}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{dhr2012_t3.png}
+  \end{figure}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Key messages and the remaining questions} 
+Monitoring combined with financial incentives work
+\begin{itemize}\setlength\itemsep{3pt}
+\item Decrease teacher absenteeism and improve student outcomes
+\item Efforts of teachers are not crowded out while in school
+\item Monitoring alone not as effective as monitoring combined with financial incentives
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can this be extended to regular teachers in government schools?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Politically powerful and likely to resist regulations
+\item How do you surmount entrenched interst to institute changes?
+\end{itemize}
+\item Can this work in other professions and contexts?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Similar pilot program on local nurses not effective long-run ($\because$ many exemptions)
+\item Tailoring monitoring/financial incentives accordingly?
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+
+
+\subsection{Khan, Khwaja, Olken (2019): Making Moves Matter: Experimental Evidence on Incentivizing Bureaucrats through Performance-Based Postings}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Khan, Khwaja, Olken (2019):\\ Making Moves Matter: Experimental Evidence on Incentivizing Bureaucrats through Performance-Based Postings
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: Can incentives through posting improve organizational efficiency?} 
+Governments often aim to provide incentives through nonmonetary means
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Financial incentives are subject to regulation and fiscal constraint
+ \item Spots for promotion are often limited, especially in seniority-based systems
+ \item Where people are posted can function as incentives
+\begin{itemize}\setlength\itemsep{3pt}
+\item Bureaucrats have preferences over different work locations and move frequently
+\item In practice, posting is determined by factors other than performance
+\end{itemize}
+\item Challenges: Diverse preferences over postings, and may not reveal truthfully
+\end{itemize}\medskip
+This paper asks whether assignment of bureaucrats can work as an incentive mechanism
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Large-scale experiment in property tax department in Punjab, Pakistan
+  \item Posting purely based on performance (high-performer pick first) vs status quo
+  \item Tests how new assignment mechanism affects tax revenues
+  \item Identify who are most likely have stronger incentives 
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Assignment mechanism: Performance-ranked serial dictatorship}
+How it works in design
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Serial dictatorships: Individuals take turns choosing among remaining options
+    \item Known to be able to uncover true preferences over fixed set of slots
+    \item Early theories are silent on how the individuals should be ordered
+  \end{itemize}\medskip
+  How it is implemented here and what the theory predicts
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Ordering by performance (recovery, tax assessments)
+    \item Increased performance $\to$ Likelihood of getting preferrable slot $\uparrow$
+    \item Incentive effects depend on own vs. others' preference, and performance distribution
+    \begin{itemize}\setlength\itemsep{3pt}
+    \item If indiv $i$ prefers a popular slot $j$ - more incentives (and vice versa)
+    \item If $i$ is very likely or unlikely to outperform, then lower incentives
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Data and experimental setup}
+Background information on Punjab, Pakistan (110 million population)
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Low tax collection: low tax base, inadequate enforcement, corruption
+    \item Collection unit (circle): led by 1 inspector and covers 2,000-10,000 properties
+    \begin{itemize}\setlength\itemsep{3pt}
+    \item They determine how property tax formula is applied and if the property is liable
+    \item Size, amenities, and ease of collecting taxes vary - inspectors care about postings
+  \end{itemize}
+  \item 1/3 of inspectors transferred per year: Status quo mechanism is opaque
+  \end{itemize}\medskip
+  Data sources and the 2-year experiment
+    \begin{itemize}\setlength\itemsep{3pt}
+    \item Tax revenues, base, recovery rates, non-exemption rates collected at circle level
+    \item Preference data from all inspectors in all circles (rank all circles within a group)
+   \begin{itemize}\setlength\itemsep{3pt}
+    \item Collected before the announcement of treatment assignment
+  \end{itemize}
+  \item Randomization at group level (10 circles) for each year by a lottery
+   \begin{itemize}\setlength\itemsep{3pt}
+    \item Performance based on recovery (1/2 of treatment) and tax assessments (other half)
+  \end{itemize}  
+\end{itemize}
+\end{frame}
+
+
+  
+\begin{frame}
+  \frametitle{Improved tax revenue following experiment}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{kko2019_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{But the effect dies off with the repeated treatment}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{kko2019_t2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Treatment effect varies with knowledge of preference and outcomes} 
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\hline\hline
+ & \multicolumn{2}{c}{Revenue} \\
+\cmidrule(lr){2-3}
+Estimated Treatment $\times$ model-predicted effort & (1) & (2) \\
+\hline
+Full knowledge of \textbf{P}, \textbf{y} & 0.038 & 0.042 \\
+(know others' pref \& performance distribution)& (0.051) & (0.066) \\[6pt]
+Random \textbf{P}, full knowledge of \textbf{y} & 0.076 & 0.176 \\
+(know performance distribution, not others' pref) & (0.036) & (0.103) \\[6pt]
+Assume identical \textbf{P}, full knowledge of \textbf{y} & 0.025 & 0.051 \\
+(assume same pref as own, know performance distribution) & (0.027) & (0.051) \\[6pt]
+Full knowledge of \textbf{P}, no knowledge of \textbf{y} & $-$0.009 & $-$0.014 \\
+(know others' pref, not performance distribution) & (0.060) & (0.069) \\
+\hline
+Observations & 249 & 249 \\
+Mean of control group & 16.268 & 16.268 \\
+\hline\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Key findings and remaining questions} 
+Other key findings
+\begin{itemize}\setlength\itemsep{3pt}
+  \item The effect sizes are similar to the performance pay experiment 
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Carried out in similar contexts by the same group of authors!
+\end{itemize}
+\item Group that increases the effort most? 
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Case where others' performance are predictable but not preferences
+    \item Uncertainty about preferences + info on how much to improve $\to$ effort to raise rank $\uparrow$ 
+\end{itemize}
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Nonpecuniary incentives can work as much as pecuniary ones
+    \item Both schemes may reduce flexibility over assignment
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Sometimes, may need to send top performers where they are needed most
+    \item This may be different from agents' preferences 
+\end{itemize}
+\item How to balance organizational goals with individual motivation?
+\end{itemize}
+\end{frame}
+
+
+\subsection{Bertrand, Burgess, Chawla, Xu (2020): The Glittering Prizes: Career Incentives and Bureaucratic Performance}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Bertrand, Burgess, Chawla, Xu (2020):\\ The Glittering Prizes: Career Incentives and Bureaucratic Performance
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does career incentives of bureaucrats affect performance?}
+What motivates bureaucrats to work hard?
+\begin{itemize}\setlength\itemsep{3pt}
+\item We know how politicians and private sector managers affect performance
+\item But what motivates bureaucrats?
+\begin{itemize}\setlength\itemsep{3pt}
+\item They enter through a competitive procedures (exams)
+\item They are seldom fired, promoted based on seniority, and retire at fixed age
+\end{itemize}
+\item Meant to limit favoritism and prevent lobbying, but where does motivation kick in?
+\end{itemize}\medskip
+This paper investigates this question using survey and administrative data on bureaucrats
+\begin{itemize}\setlength\itemsep{3pt}
+\item Using examples from Indian Administrative Service (IAS)
+\item What motivates IAS workers? Promotion to top positions and perks that come with it
+\item Leverage natural experiment from variation in age at entry
+\begin{itemize}\setlength\itemsep{3pt}
+\item Those who entered old cannot reach the top $\to$ Are they less motivated?
+\item Also leverage pension reform that extended retirement age by 2 years
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Who are the IAS officers?}
+Elite administrative civil service of India (that shaped other Commonwealth countries)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Competitive entry based on exams: 120 acceptances for roughly 450,000 applicants
+\item Age limit: Must be 21-30 years old at entry
+\item Selected officers allocated to state cadre in the subsequent year based on rules
+\end{itemize}\medskip
+What are their generic career progressions?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Promotion by seniority: After 4,9, 13, 16, 25 and 30 years to reach next payscale
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Salary jump at final payscale: 25-60\% 
+\end{itemize}
+\item Actual tenure required for promotion is stringent for later promotions
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Depends on performance reviews, and availability
+\end{itemize}
+\item Retirement at 58 before `98 and 60 post-`98, with pensions linked to final payscale
+\item Retiring at highest payscale comes with social prestige and other nonpecuniary perks
+\item Those who enter older may not reach top payscale $\to$ Incentives and effectiveness $\downarrow$
+
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Data and regression analysis}
+Measuring bureaucratic performance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Surveys assessing bureaucrauts from 14 states (85\% of Indian pop.) on 1-to-5 scale
+\begin{itemize}\setlength\itemsep{3pt}
+\item Overall rating, job effectiveness, probity, withstrand illegal pressure, pro-poor sentiment
+\item From other IAS officers, state civil servants, politicians, businessmen, media, civil society
+\item Subjectivity addressed with source FE, interviewer FE, and respondent FE
+\end{itemize}
+\item Names of IAS workers compiled at state level - covers 70\% of all officers
+\item Administrative data: Gather suspension episodes, internal rankings etc
+\end{itemize}\medskip
+ Regression leverage variation in age of entry and timing of reforms at `98 
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Leveraging entry age only (agent $i$, respondent $j$):\vspace{-10pt}
+\[
+y_{ij}= \alpha \text{age\_entry}_{i}+\beta X_i + \theta_j + e_ij
+\]\vspace{-20pt}
+\item Leveraging entry age and reforms\vspace{-10pt}
+\[
+y_{ij}= \alpha_1 \text{age\_entry}_{i}+\alpha_2 \text{age\_entry}_{i}\times\text{post98}_i +\beta X_i + \theta_j + e_ij
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Those who enter older are less likely to be perceived as effective}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.8\textwidth]{bbcx2020_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Delayed retirment increases perceived effectiveness of older entrants}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{bbcx2020_t2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Performance of marginal entrants (age 28,29) improves post-reform }
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{bbcx2020_f1.png}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Takeaways and remaining questions}
+  Key findings
+  \begin{itemize}\setlength\itemsep{3pt}
+\item Paper also finds that older entrants working with younger colleagues perform worse
+\item Older entrants with less likelihood of reaching top levels face more suspensions
+\item All evidence suggest career potentials act as incentive mechanism for bureaucrats
+\item Thus highlights the role of nonmonetary instruments in shaping performance
+\end{itemize}\medskip
+Remaining questions
+  \begin{itemize}\setlength\itemsep{3pt}
+\item How do civil leaders affect societal outcomes?
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Paper is silent on economic and social outcomes of motivated bureaucrats
+\item Ultimate guidance on whether bureaucratic reforms work!
+\end{itemize}
+  \item Roles of other nonmonetary instruments?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Social prestige that comes with bureaucracy, for instance
+\item Potentially leverage exogenous changes in the exams selecting bureacrats?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unanswered questions}
+Citizens as a stakeholder in all of this?
+\begin{itemize}\setlength\itemsep{3pt}
+\item What is the best way to monitor bureaucracy (media, SNS, civil society etc)
+\item What method of public organizations serves the citizens the best?
+\item How do you motivate them to join public organizations (or comply to public policies)?
+\end{itemize}\medskip
+Ultimately, what is the best way to organize a bureaucracy?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Typically organized in hierarchy
+\item But alternatively, some are form based on tasks or events (e.g. task forces)
+\item Is clear structure better (may need bureaucrats to carry difficutl tasks against will)
+\item Or is providing flexibility better?
+\end{itemize}\medskip
+Keep an interest on Vorada's class entirely dedicated to bureaucracy next semester
+\end{frame}
+
+
+
+%%%%%%%%%%%
+\end{document}
