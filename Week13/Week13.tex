@@ -1,0 +1,1006 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 13: Recruiting Capable and Motivated Individual to Public Sector}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{May 19th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+\begin{frame}
+\frametitle{Why Selection Matters: The Stakes}
+Patronage and meritocracy coexist in most countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Low-skilled positions: patronage common (reward political supporters)
+\item High-skilled positions: meritocracy more likely (incompetence could be costly)
+\end{itemize}\medskip
+Quality of governance strongly linked to \textbf{how} bureaucrats and personnel are selected
+\begin{itemize}\setlength\itemsep{3pt}
+\item But selection is often distorted — patronage and political connections pervasive
+\item Cost: Loyalty over capability — disrupts continuity and undermines service delivery
+\begin{itemize}\setlength\itemsep{3pt}
+\item Junior bureaucrats under-invest in skills when transfer risk is high
+\item Inconsistent and inefficient practices within public organizations
+\end{itemize}
+\item Benefit: Discretion can weed out entrenched, low-performing workers
+\begin{itemize}\setlength\itemsep{3pt}
+\item May be necessary when civil service protections shield underperformers
+\item Allows principal to restore control over misaligned bureaucrats 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Stylized facts on political influence in recruitment}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.85\textwidth]{fig1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{What Determines Selection Quality?}
+Rule-based vs. discretionary selection — a fundamental tradeoff
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textbf{Merit-based}: reduces favoritism, improves average quality, builds institutional trust
+\begin{itemize}\setlength\itemsep{3pt}
+\item Civil service exams, competitive hiring, transparent criteria
+\item But may not select for motivation, integrity, or adaptability
+\end{itemize}
+\item \textbf{Discretion-based}: allows flexibility in matching candidates to roles
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can select for unobservable traits — motivation, integrity, cultural fit
+\item But opens door to favoritism, patronage, and political interference
+\end{itemize}
+\end{itemize}\medskip
+Financial incentives shape who applies — but not always in the right direction
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher wages attract more and better candidates
+\item May signal wrong job characteristics and crowd out intrinsically motivated candidates
+\end{itemize}\medskip
+Manager selection is often the missing link
+\begin{itemize}\setlength\itemsep{3pt}
+\item Managers determine practices within organizations
+\item Yet managerial positions often exempt from meritocratic reforms
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Impact of management on the efficiency of public organizations}
+
+
+\subsection{Dal Bó, Finan, Folke, Persson, Rickne (2017): Who Becomes a Politician?}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dal Bó, Finan, Folke, Persson, Rickne (2017):\\ Who Becomes a Politician?
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How to attract competent leaders while being representative?} 
+Can democracies form competent and representative leadership (inclusive meritocracy)?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Voters want to elect leaders capable of efficiently implementing policies
+\item Voters also want policy-makers who represent diverse interests
+\item Classical economic models suggest that these two are in a trade-off relation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Market wage < Returns from office for low-quality individuals (low opportunity cost)
+\item Good politicians likely to `free-ride' on bad politicians $\to$ Supply of good politicians $\Downarrow$
+\item Even if good candidates can be selected, may make broad representation difficult
+\end{itemize}
+\end{itemize}\medskip
+This paper uses data on Swedish local politicians to identify patterns in inclusive democracy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Includes elected and \textit{nonelected}: Address selection bias 
+\item Detailed measures on quality and representation
+\item Identifies how both competent and representative leaders are selected in democracies
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Context and data} 
+Swedish National MPs and Municipal council members
+\begin{itemize}\setlength\itemsep{3pt}
+\item MPs are full-time, while most municipal council members have other work
+\begin{itemize}
+\item Mayors, selected among council members, are full-time and paid highly
+\end{itemize}
+  \item Low monetary cost to individuals running for local office
+  \item Key motives: Intrinsic concerns with policy, social interaction in policy circles
+  \item Left represents blue-collar, center-right represents white-collar workers
+\end{itemize}\medskip
+Data obtained from 
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Sample: All candidates from 1980-2010 
+\item Links candidates to admin registers (including military enlistment and tax records)
+\item Age, sex, education level, earnings, occupation, parental/sibling info, cognitive capacity 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Positive selection of politicians based on abilities} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{dffpr2017_f1.png}
+\end{figure}
+\begin{itemize}
+\item Beats classical prediction that there are more low-quality individuals entering politics
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Are they socially representative?}
+Determining source of positive selection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Privileged access? Ability should matter little once elite status is controlled for %$ By the heirs of rich families
+\item Exclusive meritocracy? Key abilities are strongly associated with social background
+\item Inclusive meritocracy? High ability individuals come from all social backgrounds
+\end{itemize}\medskip
+Empirical tests
+\begin{itemize}\setlength\itemsep{3pt}
+\item Compare with siblings: Same "elitist background" $\to$ Positive selection still appears
+\item Parental income: Social background of politicians is evenly distributed
+\item Social class: Politicians from wide range of occupations represented
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elitism unlikely to explain positive selection} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{dffpr2017_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Neither does exclusive meritocracy} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{dffpr2017_f3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways}
+What drives competence and representation? 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Weak trade-off between competence and social background
+\item Positive selection on ability even among those with poorer backgrounds
+\item Intrinsic motives: Positive selection even for low-paid municipal councils
+\item Screening by parties: Sorts more able people to higher positions
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item When and where do these findings hold outside 1980-2010 Sweden?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Intrinsically motived individuals may not enter politics elsewhere, how to attract them?
+\item Party incentives: Promote someone who can win vs. who has best policy
+\item Other democratic countries? Sweden now? 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Akhtari, Moreira, Trucco (2022): Political Turnover, Bureaucratic Turnover, and the Quality of Public Service}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Akhtari, Moreira, Trucco (2022):\\ Political Turnover, Bureaucratic Turnover, and the Quality of Public Service
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+\begin{frame}
+\frametitle{Q: How do changes in political leadership affect public service?} 
+Countries vary in the extent to which politicians control appointment of personnel
+\begin{itemize}\setlength\itemsep{3pt}
+\item East Asia: Only the top chiefs and vice chiefs are politically appointed
+\item On the other end, much more positions are appointed by the president
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Nearly all of top 500 government agency positions appointed in Brazil, Israel, Nigeria etc.
+  \item 26\% of all govt personnel work under some threat of removal by the president
+\end{itemize}
+\item Thus, politicaly motivated replacements are commonplace in the latter 
+\end{itemize}\medskip
+This paper examines the effects of such scope of politically motivated appointments
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Leverage bureaucratic turnover following close elections in public schools
+  \item Local politicians have significant influence over public school administration
+\item Turnovers in political leadership $\to$ New personnel $\to$ Education peformance $\downarrow$
+\item Documents trade-off between capability and loyalty 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Municipality-run schools in Brazil} 
+Municipal education in Brazil
+\begin{itemize}\setlength\itemsep{3pt}
+\item 5,565 decentralized municipalities are responsible for essential services
+\item Mayors are elected every 4 years, and can appoint $\sim$30\% of workers via `contract'
+\begin{itemize}\setlength\itemsep{3pt}
+\item Rest have passed civil service exams
+\end{itemize}
+\item Municipalities responsible for daily operations and personnel of primary schools
+\begin{itemize}\setlength\itemsep{3pt}
+\item 60\% of headmasters in public schools are politically appointed
+\item 35\% of teachers hired by contract (rest passed civil service exams)
+\end{itemize}
+\end{itemize}\medskip
+Why local politicians care about having loyalists in managerial positions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Managers can use control over public programs and resources politically
+\item Headmaster position used as means to provide contracts to political supporters
+\item Thus, public positions used as means to consolidate political support
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Data and empirical strategies}
+Data sources: Brazilian election and education data (`08-`12)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Municipal personnel changes from Registry of Social Information (RAIS)
+\item National exam score (Prova Brasil) and School Census for edu quality and personnel
+\item Electoral data (party, vote share) from Tribunal Superior Eleitoral (TSE)
+\item Municipal characteristics from various geographical sources and political atlas
+\end{itemize}\medskip
+Using municipalities with close election results in regression discontinuity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not just comparing places with turnovers vs without one
+\begin{itemize}\setlength\itemsep{3pt}
+\item Incompetent incumbent (bad public goods) $\to$ Voted out $\to$ reverse causality
+\end{itemize}
+\item Narrow down to places with and without turnovers AND small electoral margins
+\[
+Y_{imt+1}=\alpha + \beta I[\text{Turnover}]_{mt}+ \gamma \text{Margins}_{mt} + \delta  I[\text{Turnover}]_{mt}\times\text{Margins}_{mt} + \lambda X_{jmt} + e_{jmt}
+\]\vspace{-20pt}
+\item Municipalities included in RD similar except for turnover, and no sorting on margins
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Political turnover $\to$ Replacement of municipal personnel}
+  \begin{figure}
+    \centering
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{amt2022_f1.png}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Lower educational performance of students}
+  \begin{figure}
+    \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{amt2022_f2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Drastic changes in school personnel (managerial and frontline)}
+  \begin{figure}
+    \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{amt2022_f3.png}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Driving mechanisms and further questions} 
+What explains (or does not explain) these changes?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Possible confounders from municipality-wide forces? No effects on private schools
+\item No significant declines in educational spending in turnover municipalities
+\item Not related to political ideologies: Declines observed in both left/right wing parties
+\item Experience and capability of new personnel $\downarrow\to$ trade-off productivity and loyalty
+  \end{itemize}\medskip
+What remains unanswered?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Politically motivated replacements can be a costly byproduct on public services
+\begin{itemize}\setlength\itemsep{3pt}
+\item Even in closely-contested, fair elections
+\end{itemize}
+\item However, discretion may be needed to weed out low-performing, entrenched workers
+\item So what determines the relative strengths of these opposing forces?
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Fenizia (2022): Managers and Productivity in Public Sector}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Fenizia (2022):\\ Managers and Productivity in Public Sector
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: Do talented managers in public sector improve performance?} 
+How important are managers in public sectors?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Oversee day-to-day operations and supervise policy implementation 
+\item Limited tools available compared to private sector managers`'
+\begin{itemize}
+\item Limited discretion in firing and promoting workers
+\end{itemize}
+\item How to measure performance of government agencies?
+\end{itemize}\medskip
+This paper uses innovative measures of performance to study the role of managers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Italian Social Security Agency data (INPS): Covering varous welfare programs
+\item Uses welfare claims as measure of output (homogenous across different offices)
+\item All sites have same rules and physical capital$\to$ distinguish manager contributions
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Background and data} 
+Role of INPS 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Administers all social welfare and insurance programs in Italy 
+\item Claims are processed in local offices run by single managers 
+\item Managers allocate work, determine workplace practices, but cannot fire workers
+\item Managers selected among limited pool of candidates and rotate every 5 years 
+\end{itemize}\medskip
+Data sources on managers (2011Q1 - 2017Q2)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Output: $\sum$ claims weighed by complexity (procesing time) per worker
+\item Service quality: Timeliness and error rate
+\item Worker characteristics: Job title, age, office locations etc
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical strategies} 
+Do productive managers improve performance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fixed effects regression with office($i$), time($t$), and manager($m(i,t)$) fixed effects
+\[
+\log{P}_{it} = \alpha_i + \tau_t + \theta_{m(i,t)}+u_{it}
+\]\vspace{-20pt}
+\item Requires that manager moves are exogenous conditional on office and time effects
+\begin{itemize}
+  \item Observable characteristics should not predict manager quality
+\item Violated if better managers are assigned to worse offices
+\end{itemize}
+\item Compare adjusted $R^2$ to test how much of output variation is explained by managers 
+\end{itemize}\medskip
+What makes for a productive manager?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Regress changes in outcomes with quarter before manager change to talent changes
+\[
+y_{i,t+k}-y_{i,t-1} = \pi_0^k + \pi_1^k(\hat{\theta}_{i,new}^k-\hat{\theta}_{i,old})+\gamma^k X_{i}+ (e_{i,t+k}-e_{i,t-1})
+\]\vspace{-20pt}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Managers explain 10\% of variation in productivity } 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.57\textwidth]{f2022_t1.png}
+\end{figure}
+\begin{itemize}
+\item Adjusted $R^2$: 0.68 in (2) $\to$ 0.76 in (3): 8 p.p increase
+\item $0.08/0.762\simeq 0.104$: Manager explains 10\% of variation in productivity
+\item Robust to selective sorting, other ways of variance decomposition
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Talented managers improve productivity, with workers decreasing...} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.6\textwidth]{f2022_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Talented managers induced by retirement of older workers} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.6\textwidth]{f2022_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions}
+Other outcomes 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Trade-off in quality? Not observed
+\item Outcomes not driven by shifting towards easier claims to handle
+\item Thus managers do have a meaningful impact on productivity
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item The managers oversee relatively small teams with well-defined goals this context?
+\begin{itemize}\setlength\itemsep{3pt}
+\item What about large projects and teams?
+\item What about organization with no fixed roles and less structure?
+\end{itemize}
+\item Other factors may determine managers' role in productivity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ability to obtain inputs efficiently (no bribing, better communication)
+\item Ability to attract more talented workers under the command 
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\section{Recruiting capable bureaucrats to public sectors}
+\subsection{Dal Bó, Finan, Rossi (2013): Strengthening State Capablities: The Role of Financial Incentives in the Call to Public Service}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dal Bó, Finan, Rossi (2013):\\ Strengthening State Capablities: The Role of Financial Incentives in the Call to Public Service
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: Can fiscal incentives attract capable individuals to public sector?} 
+Professionalized bureaucracy require individuals with capabilities and integrity
+\begin{itemize}\setlength\itemsep{3pt}
+\item These do not always co-move
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capable individuals may seek opportunities in private sectror (higher pay)
+\item This may leave public sector with less able individuals
+\item Not all capable individuals have integrity:
+\end{itemize}
+\item So what makes up motivated agents and how to attract them to public sector?
+\end{itemize}\medskip
+This paper investigates role of incentives while investigating various aspects of quality
+\begin{itemize}\setlength\itemsep{3pt}
+\item How do monetary and non-monetary incentives attract candidates?
+\item Estimates if higher wages attract more candidates and those of higher quality
+\item Also estimates the labor supply elasticity facing public sector in Mexico
+\item Heterogeneity by locational characteristics (local crime rates)
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Context of the experiment}
+Mexico's regional development program (RDP) in 2011
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Network of 350 agents \& 50 coordinators to identify needs, report to federal govt
+\item Exogenously assign different wage offers across different posts (5000 vs 3750 MXP)
+\item Candidates screened to document various characteristics
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Aptitude: intelligence  (IQ) and other qualities known to determine market value
+  \item Motivation: Integrity, prosocial inclinations, public service motivation (interviews)
+  \item Attraction \& commitment to policy making, justice, civicness, compassion, self-sacrifice
+\end{itemize}
+\item Vacancies randomized to one of 4 strata $\to$ Offers randomized to indiv. in that stratum
+\begin{itemize}\setlength\itemsep{3pt}
+  \item High vs low wage, High ($>9$) vs normal IQ (7-9 Ravens matrix)
+\end{itemize}
+\end{itemize}\medskip
+Estimating causal effects: OLS (due to random assignment design)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Effect on character $Y$ in applicant pool (region): $Y_{icr}=\beta_1 T_c + \xi_r + e_{icr}$
+  \item Effect on acceptance $A$ among applicants (strata): $A_{ics}=\gamma_1 T_c + \beta X_i + \xi_s + e_{ics}$
+  \item Hetergeneity by municipalities: $A_{ics}=\gamma_1 T_c + \gamma_2 T_c \times W_m + \gamma_3 W_m + \beta X_i + \xi_s + e_{ics}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Higher wage $\to$ High ability applicants $\Uparrow$} 
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{dfr2013_t1_1.png}
+\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{dfr2013_t1_2.png}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Higher wage $\to$ Better motivated applicants $\Uparrow$} 
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{dfr2013_t2_1.png}
+\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{dfr2013_t2_2.png}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Higher wage $\to$ Applicants more likely to accept} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{dfr2013_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Higher wage needed to offset disadvantageous regional traits} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{dfr2013_t4.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Additional findings and takeaways}
+Labor supply elasticity $(\epsilon)$ for public sector with respect to wages 
+\begin{itemize}\setlength\itemsep{3pt}
+\item $\epsilon  = \epsilon_{\text{pool}}  + \epsilon_{\text{accept}}+\epsilon_{\text{pool}} \times \epsilon_{\text{accept}}\times\text{wage difference}$
+\item Wage difference: 33\% (=(5000-3750)/3750)
+\item Pool: 4.7 person $\uparrow$ from 18.1 person (26.3\%$\uparrow$) (Table 3) $\to$ Elasticity: 0.8 (=26.3/33)
+\item Acceptance:  15.1 p.p $\uparrow$ from 42.9\% (35.2\% $\uparrow$) (Table 5) $\to$ Elasticity: 1.07 (=35.2/33)
+\item $0.8+1.07+0.8\times1.07\times0.33=2.15$ ( 1\% $\uparrow$ in wages $\to$ Supply  2.15\% $\uparrow$)
+\end{itemize}\medskip
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Offering high wages attracts better and motivated candidates
+\item However, findings hold only if motivation and ability are positively correlated
+ \begin{itemize}
+\item What if service commitment is sacrificed for higher pay (prioritize superiors over citizens?)
+\end{itemize}
+\item Silent on post-acceptance performance: High pay to keep people motivated? 
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Desserano (2019): Financial Incentives as Signals: Experimental Evidence from the Recruitment of Village Promoters in Uganda}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Desserano (2019):\\ Financial Incentives as Signals: Experimental Evidence from the Recruitment of Village Promoters in Uganda
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: How does financial incentives shape perception on public posting?} 
+What does financial incentives signal to applicants when informaion is incomplete?
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Information about the job is incomplete in many instances
+\item Financial incentives may provide signal on the nature of the task and the organization
+ \begin{itemize}\setlength\itemsep{3pt}
+\item High pay $\to$ More demanding and less enjoyable
+\item May signal exploitative intentions
+\end{itemize}
+\item How does this apply to public positions that require pro-social characteristics?
+\end{itemize}\medskip
+This paper tests the effect of fiscal incentives on job perceptions and application decisions
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Experiment with new position involving social and business task in Uganda
+  \item Financial incentives signal the business-oriented nature
+  \item Affects composition and size of the appicant pool
+   \begin{itemize}\setlength\itemsep{3pt}
+\item More applicants, but discourage applicants with pro-social preferences
+\end{itemize}
+\item Thus, financial incentives may crowd out pro-social motives under incomplete info
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experimental setting}
+Recruitment of community health promoters (CHP) in Uganda
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Hire unskilled local agents and teach them how to serve their own villages
+    \item Social component: Promote health education
+    \item Business side: Sell household products at low prices
+    \item Completely new: No prior on relative importance, difficulty, recruiter's goals etc
+\end{itemize}\medskip
+The experiment creates variations in expected earnings (fix actual incentives)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Most CHPs talk together: Unequal actual incentives could cause problems
+  \item Observe how differences in expectations affect types of applicants at selection
+  \item How this was implemented
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Applicants are told that earnings vary across workers (profit margin for selling)
+  \item Randomly given a different point of the income distribution (max, avg, min)  
+  \item This defines high/medium/low-pay treatments
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Experiment details}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{d2019_f1.png}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Empirical strategy} 
+Recruitment and information experiments
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Recruitment: Advertised to 4,863 eligible candidates in 315 communities
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Treatment adminstered to microfinance groups and interviewed on intent to apply 
+\end{itemize}
+  \item Information: 6,844 respondents asked to report their perception of the job
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Gathered socioeconomic questions and pro-social preference information
+  \item 1/2 asked on their expected earnings, 1/2 asked on their perception
+\end{itemize}
+\item Prosociality: Volunteer experience, and job feature the applicant prioritizes
+\end{itemize}\medskip
+Regression analysis
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Information treatment
+    \[
+    Y_i = \alpha + \beta_1\text{Medium}_i+\beta_2\text{High}_i+X_i\eta + e_i
+    \]\vspace{-20pt}
+    \item Recruitment treatment: Interact Medium and High with pro-social traits
+    \begin{itemize}\setlength\itemsep{3pt}
+    \item One version with microfinance group FE
+    \item Other with NGO branch FE (with dummy for trait, non-trait)
+\end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Financial incentives signal priority on private goals (vs. communal)}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{d2019_t1.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Prosociality declines in high-pay treatment}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=1\textwidth]{d2019_t2.png}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Other findings and remaining questions} 
+Other findings: Financial incentives may crowd-out pro-social preferences
+\begin{itemize}\setlength\itemsep{3pt}
+  \item The size of the pool is largest in high-pay treatment
+  \item However, those recruited under high-pay remain less pro-social even after working
+\item Higher retention of CHP workers in low-pay treatment
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Financial incentives highlights business aspects of the work, even after recruitment
+    \begin{itemize}\setlength\itemsep{3pt}
+      \item Any way to enhance pro-social motives afterwards?
+    \end{itemize}
+    \item Different setting compared to Dal Bó, Finan, Rossi (2013)
+     \begin{itemize}\setlength\itemsep{3pt}
+      \item Known job of public workers vs uncertain characteristics of CHPs
+      \item Financial incentives may not have a signalling effect in the former
+      \item Thus, the crowding-out effect may not be observed in some cases
+    \end{itemize}
+\end{itemize}
+  
+\end{frame}
+
+
+\subsection{Moreira, Pérez (2024): Civil Service Exams and Organizational Performance: Evidence from the Pendleton Act}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Moreira, Pérez (2024):\\ Civil Service Exams and Organizational Performance: Evidence from the Pendleton Act
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do civil service exams affect organizational performance?}
+Professionalized bureaucracy increasingly seen as key for economic development
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many tries to achieve this by Introducing competitive exams
+\item The intention is to limit favoritism and help select more qualified empoyees
+\item But additional positions not covered by exams could distort hierarchical structure
+\item So the effect on performance may be ambiguous event with better selection
+\end{itemize}\medskip
+This paper studies impact of civil service exams on organizational performance in the US
+\begin{itemize}\setlength\itemsep{3pt}
+\item Using 1883 Pendleton Civil Service Reform Act (mandated exams for federal workers)
+\item Focus on Customs Service (responsible for large share of federal revenues)
+\item Despite improved selection and retention, organizational performance did not improve
+\item Increases in exam-exempted positions and retentions of managers explains findings
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Historical Background}
+Customs revenue collection in historic US
+\begin{itemize}\setlength\itemsep{3pt}
+\item Customs revenue accounted for more than half the federal revenues in 1880s
+\item Hiring was based on political and personal connections prior to reforms
+\item Inefficient practies: Cost of collecting \$1 larger in US than DEU, ENG, FRA 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Largely due to overstaffing and `errors and frauds' of these employees
+\end{itemize}
+\end{itemize}\medskip
+Implementation of the 1883 Pendleton reforms on customs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Applied to districts with 50+ employees and positions earning \$900+ by 1883
+  \begin{itemize}\setlength\itemsep{3pt}
+\item These districts are called `classified' positions
+\item Only allowed to select candidates among top 4 scores in open exams
+\end{itemize}
+\item Tested on practical knowledge relevant to the position rather than academic training
+\item Other components applied to ALL districts (making treated vs control comparable)
+  \begin{itemize}\setlength\itemsep{3pt}
+\item No political assessments and hiring individuals `using intoxicating bevarages to excess'
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Data and empirical strategy}
+Data sources: Covers 1871-1893 (Authors digitized the records themselves)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Personnel data: Official Registers of the US (biennial) linked to US population census
+\begin{itemize}\setlength\itemsep{3pt}
+\item Name, job title, state/country of birth, compensation, place of employment
+\end{itemize}
+\item Finance records: Annual Report of Secretary of the Treasury on State of the Finances
+\begin{itemize}\setlength\itemsep{3pt}
+\item Revenues and expenditures of different segments of government agencies
+\end{itemize}
+\end{itemize}\medskip
+Leverage difference-in-differences induced by 1883 reforms 
+\[
+Y_{ct}=\alpha_c +\alpha_t + \beta\text{Classified}_c\times\text{After}_t+\gamma X_{ct}+e_{ct}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item In some regressions, $\beta$ is broken down across different time periods
+\item Authors verify that outcomes evolve in parallel pattern pre-reform (parallel trends)
+\item No evidence of districts manipulating their size downward to avoid reforms
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Exams $\to$ Hiring of those with professional backgrounds} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{mp2024_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Less likely to leave after reform} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{mp2024_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{However, reforms did not lead to better cost-effectiveness} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.67\textwidth]{mp2024_f1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mechanisms and unanswered questions}
+The incomplete reach of the reforms
+\begin{itemize}\setlength\itemsep{3pt}
+\item Managers and positions with salaries below a threshold not subject to reforms
+\item The number of low-paid positions inflated following reforms (twice)
+\item Selection of managers were left unchanged 
+\end{itemize}\medskip
+
+Room for further research on other aspects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reducing favoritism in hiring can increase retention and quality in selection
+\item But does not automatically lead to better practices
+\begin{itemize}\setlength\itemsep{3pt}
+\item Need to prevent responses that can offset the effects of reforms
+\item Managers also matter - Need to minimize incomplete reach
+\end{itemize}
+\item How to design organizational reform that minimizes these side effects?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Remaining questions for future research}
+Attracting capable and intrinsically-motivated individuals 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher wages attract capability but may crowd out pro-social preferences
+\item Non-monetary incentives matter but hard to design at scale
+\end{itemize}\medskip
+ When does discretion improve selection vs. open the door to patronage?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Optimal mix of rule-based and discretionary selection likely varies by context
+\item How do political institutions shape this tradeoff?
+\end{itemize}\medskip
+
+ Does better selection translate into better performance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Selection is only one part: Need to ensure employees are incentivized afterwrads
+\item How to design organizational structure that maximizes incentives post-selection?
+\end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%
+\end{document}
