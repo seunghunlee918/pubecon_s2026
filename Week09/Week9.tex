@@ -1,0 +1,1000 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 9: Targeting beneficiaries of public goods and services}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{April 21st, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+
+\begin{frame}
+\frametitle{Social Protection: Scale and Composition}
+
+Growth of social protection programs (ILO World Social Protection Report 2024-26)
+
+\begin{itemize}\setlength\itemsep{4pt}
+    \item \textbf{Old-age pensions}: 79.6\% of people above retirement age receive a pension
+    \item \textbf{Disability benefits}: 38.9\% of people with severe disabilities receive a benefit
+    \item \textbf{Child/family benefits}: 28.2\% of children globally receive a family or child benefit
+    \item \textbf{Unemployment benefits}: only 16.7\% of unemployed people receive cash benefits 
+    \item \textbf{Others:} Insurance programs against climate change, Income support etc..
+\end{itemize}\medskip
+
+Overall, \textbf{52.4\%} of the world's population are covered by at least one program
+\begin{itemize}\setlength\itemsep{4pt}  
+\item But \textbf{3.8 billion people} remain uncovered
+  \item Most of the uncovered are in low-income countries
+  \begin{itemize}\setlength\itemsep{4pt}
+  \item Social protection spending averages only 3.7\% of GDP vs.\ 12.9\% globally.
+\end{itemize}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Variation in coverage under cash benefit programs}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Variation in population covered by social progreams}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{fig2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The Targeting vs.\ Universalism Debate}
+
+The case for targeting:
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Cost-effective: Concentrates resources on those who need them most 
+    \item Fiscal constraints make universal programs hard to sustain
+\end{itemize}\medskip
+
+The case for universalism:
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Identifying the poor can be administratively costly and error-prone
+    \item Standard measures of poverty can be uninformative about actual welfare
+\end{itemize}\medskip
+
+Reality: Theoretical advantage of targeting can erode in practice
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Corruption and misallocation: Intended beneficiaries may not receive benefits
+    \item Low-take up due to information gaps, stigma, or administrative barriers
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Why Don't Eligible Households Take Up Benefits? }
+
+Why take up is not complete among eligibles (Currie 2006)\medskip
+
+\begin{itemize}\setlength\itemsep{6pt}
+    \item \textbf{Stigma}: ``Shame'' of receiving benefits, 
+    \item \textbf{Information barriers}: Those legally eligible unaware of their status or the procedure
+    \item \textbf{Transaction costs}: Paperworks, or going to offices, can be costly and time-consuming 
+    \item \textbf{Social networks}: Fewer connections to prior recipients $\to$ less likely to participate
+\end{itemize}\medskip
+
+These costs may fall disproportionately on the neediest households
+\begin{itemize}\setlength\itemsep{6pt}
+\item Maybe even more time and cost constrained than typical households
+\item Could face higher barriers to the same information
+\end{itemize} \medskip
+
+$\Rightarrow$ Even a well-designed targeting rule may fail to reach its intended beneficiaries if these costs are ignored. \textit{So how can we lower them?}
+
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Theories on targeting transfers}
+\subsection{Nichols, Zeckhauser (1982): Targeting Transfers through Restrictions on Recipients}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Nichols, Zeckhauser (1982):\\ Targeting Transfers through Restrictions on Recipients
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How to model social programs in presence of unobservable traits? } 
+Government wants to redistribute to maximize social welfare
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ideally, we base lump-sum tax based on random (and un-distortable) characteristics
+\item In practice, only the partial indicators of such traits are observed
+\begin{itemize}\setlength\itemsep{3pt}
+\item Earnings: Is it because individuals are productive or they simply work long hours?
+\item Expenditure: Reflection of true preference or other factors leading up to purchase?
+\end{itemize}
+\item In such situations, we resort to second-best solutions using observable instruments
+\end{itemize}\medskip
+This paper provides a model on what instruments to use to target redistribution programs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Target efficiency vs productive efficiency
+\item Introduces model for restrictrions: Means-tested programs, in-kind transfers etc
+\item Compare its performance to programs solely relying on income tax and cash transfers
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the model: Income tax benchmark} 
+Setup of individual problems
+\begin{itemize}\setlength\itemsep{3pt}
+\item We want high-wage individual $A$ pay taxes to finance transfer to beneficiary $B$
+\item Each consume $C$ out of earned income $Y$ and transfer $T$, thus $C=Y+T$
+\item Each exert effort $E$, defined as earned income $Y$ divided by wage $W$
+\item Both individuals have same utility function $U(C,E)$
+\item Government only observes income, and cannot break it down to wage and effort
+\end{itemize}\medskip
+Solving the problem
+\begin{itemize}\setlength\itemsep{3pt}
+\item If $Y > \bar{Y}$, pay tax $T$ (otherwise, receive transfer $T$)
+\item But $A$ may choose to mimick $B$: Instead of $Y_A^*$, report $\bar{Y}$ (to receive transfer)
+\item Hence the incentive compatibility constraint (Mimick by reducing effort, not ability)
+\[
+U(Y_A^*-T, Y_A^*/W_A)> U(\bar{Y}+T, \bar{Y}/W_A)
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In income tax scheme, better to restrict eligiblity}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=\textwidth]{nz1982_f1.png}
+  \end{figure}    
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      Two utilities for $A$
+      \begin{itemize}\setlength\itemsep{7pt}
+        \item $\hat{U}_A$ is utility of $A$ mimicking $B$, $U_A$ is utility of being truthful
+        \item If $\bar{Y}=Y_B^*$, then $A$ is indifferent between truthfully earning $Y_A^*$ and mimicking $\bar{Y}$
+      \end{itemize}\medskip
+      Slightly lower $\bar{Y}$ to $\bar{Y}^1$
+      \begin{itemize}\setlength\itemsep{7pt}
+        \item $U_B$ is reduced slightly: Productive efficiency $\downarrow$
+        \item $\hat{U}_A$ significantly falls at $\bar{Y}^1$ $\to$ Better off at $Y_A^*$
+        \item Room to increase $T$ without $A$ mimicking and compensate loss in $U_B$: Targeting efficiency $\uparrow$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  
+\end{frame}
+
+
+\begin{frame}
+\frametitle{In-kind Transfers} 
+Is it optimal to give in-kind transfers instead of cash equivalent?
+\begin{itemize}\setlength\itemsep{3pt}
+\item In general, people (and economists) prefer cash transfers over in-kind
+\begin{itemize}\setlength\itemsep{3pt}
+\item This is true when demand only depends on price and income
+\item Exceptions: Commodity-specific externalities, paternalism etc
+\end{itemize}
+\item IRL, demand may also be determined by leisure, ability, medical conditions etc
+\begin{itemize}\setlength\itemsep{3pt}
+\item Even when income and price is held fixed, demand differs with the unobservable traits
+\item Medical care consumption higher for those with poor health (even w/ income controlled)
+\end{itemize}
+\item We refer to these goods as \textbf{indicator goods}
+\end{itemize}\medskip
+What are indicator goods in reality?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Necessary staples (rice, cooking oils)
+\item Low-quality version of a good (e.g. housing)
+\item Health services 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In-kind transfers can be used as deterrence}
+  \begin{columns}
+    \begin{column}{.45\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[keepaspectratio, width=\textwidth]{nz1982_f2.png}
+  \end{figure}    
+    \end{column}
+    \begin{column}{.55\textwidth}
+      Consumption of indicator good
+      \begin{itemize}\setlength\itemsep{5pt}
+        \item Out of B's income $\bar{Y}+T$, spend $X_B^*$
+        \item Mimicking A spend $\hat{X}_A^*$ with the same income
+      \end{itemize}\medskip
+      Change the transfer scheme
+      \begin{itemize}\setlength\itemsep{5pt}
+        \item $\bar{X}$ is given in-kind, rest $T-\bar{X}$ as cash
+        \item If $\bar{X}>\hat{X}_A^*$, $\hat{U}_A\downarrow$, and $U_B\uparrow$ until $\bar{X}=X_B^*$
+        \item Better to make $\bar{X}>X_B^*$: B's marginal utility loss is small, but that of A is large
+        \item This maximizes deterrence
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Ordeals and discussion} 
+What are ordeals in this context?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Deadweight loss that comes from eligilbity restrictions
+\item Think qualification tests, administrative procedures, work requirements
+\item Effective costs from ordeals vary inversely with benefits
+\item This is because it works as a sorting mechanism
+\end{itemize}\medskip
+Discussion
+\begin{itemize}\setlength\itemsep{3pt}
+\item First-best solution is generally not possible (unobservable ability)
+\item Here, sacrificing the benefits for intended recipient may improve social welfare
+\item While it reduces welfare for the poor, it prevents unintended recipients
+\item However, how much of this is acceptable still remains an open debate
+\end{itemize}
+\end{frame}
+
+
+
+
+\subsection{Kleven, Kopczuk (2011): Transfer Program Complexity and the Take-Up of Social Benefits }
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Kleven, Kopczuk (2011):\\ Transfer Program Complexity and the Take-Up of Social Benefits
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: Optimal trade-off between complexity, eligibility, and generosity?}
+Different dimensions of social programs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Targeting (eligibility): Who is the intended recipient?
+\item Complexity: What hassles are involved in receiving the benefit?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Eligibility criteria, document requirements, trips to the office etc. 
+\end{itemize}
+\item Take-up: How many eligible beneficiaries do not receive the benefit?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Significant variation across different programs (Medicare vs disability assistance)
+\end{itemize}
+\end{itemize}\medskip
+This paper provides a framework balancing these dimensions in designing welfare program
+\begin{itemize}\setlength\itemsep{3pt}
+\item Consider complexity as a program feature, rather than a side effect
+\item Complex programs w/ incomplete take-up can sometimes be desirable
+\item Study trade-off in false rejection (Type 1) and false awards (Type 2) error framework
+\begin{itemize}\setlength\itemsep{3pt}
+\item Screen out undeserving recipients vs not deterring (and dropping) deserving applicants
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the model} 
+Definitions of classification errors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Type 1a (1b) error: Eligible individuals do not apply (apply but wrongly rejected)
+\item Type 2 error: Ineligible individuals apply and accepted
+\end{itemize}\medskip
+Other underlying parameters for individuals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Each have ability $a$, with $\sigma$ capturing precision by which this can be obsesrved
+\item There is an indicator $\tilde{a}$, a signal of $a$ defined as
+\[
+\tilde{a} = a + \epsilon/\alpha \ \ \ \epsilon\sim N(0,\sigma^2)\implies \epsilon/\sigma \sim N(0,1)
+\]
+where $\epsilon$ is a noise $\alpha$ represent complexity
+\item If eligilbility criteria is $\bar{a}$ and $P(\cdot)$ represent distribution of $\epsilon/\sigma$, chance of receipt is
+\[
+a + \epsilon/\alpha < \bar{a} \implies \epsilon / \sigma < \frac{\alpha (\bar{a}-a)}{\sigma}\implies P\left(\frac{\alpha (\bar{a}-a)}{\sigma}\right) = \bar{P}
+\]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Modeling decision to apply} 
+Individual's decision to apply
+\begin{itemize}\setlength\itemsep{3pt}
+\item Utility depends on $a$, benefit $B$, and cost $f(\alpha)$
+\item We can derive cutoff probability $\tilde{P}$ that determines application
+\begin{footnotesize}
+\[
+\bar{P} u(a+B-f(\alpha)) + (1-\bar{P}) u (a-f(\alpha)) > u(a) \iff \bar{P} > \frac{u(a)-u(a-f(\alpha))}{u(a+B-f(\alpha))-u(a-f(\alpha))} \equiv \tilde{P}_a (\alpha, B)
+\]
+\end{footnotesize}
+\item Individual applies when $\bar{P}>\tilde{P}$
+\item Rise in $\bar{a}$ always increases application, rise in $a$ does the opposite
+ \item Higher benefit $B$ lowers $\tilde{P}$ (easier to justify applying)
+\item When $\bar{a}>a$, rise in $\alpha$ (complexity) and fall in $\sigma$ (better precision) increase $\bar{P}$
+\item When $\bar{a}<a$ opposite conditions on $\alpha$ and $\sigma$ increase $\bar{P}$
+\end{itemize}\medskip
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Government problem} 
+Starting point 
+\begin{itemize}\setlength\itemsep{3pt}
+\item At first, those with zero type 2 and type 1a error seems ideal
+\item But there is type 1b error: Imperfect testing $\to$ eligible ones may be wrongly rejected
+\item We can reduce 1b error by increasing complexity, but increase 1a error
+\item Raising benefits can mitigate 1a error, but induces high fiscal burden
+\end{itemize}\medskip
+Government goals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provide at least minimum income $\bar{B}$ to as many eligible population on limited budget
+\begin{gather*}
+  \max_{\alpha, \bar{a}, B} N_L(\alpha, \bar{a}, B) \\
+  \text{s.t. } [N_L(\alpha, \bar{a}, B)+N_H(\alpha, \bar{a}, B)]B\leq R \ \ \text{and } B\geq \bar{B}
+\end{gather*}
+\item $L$ types have low ability (otherwise $H$ type)
+\item Not every $L$ types (intended recipients) get suport, and some $H$ types get support
+\end{itemize}\medskip
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Key result 1: If ability is identified precisely}
+Suppose we observe both $a$ and $\sigma$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Full separation is possible in principle: No $H$ types and only $L$ types receive benefit
+\item If budget is small, provide $\bar{B}$ to $L$ groups with $B=\bar{B}$, $a_L<\bar{a}\leq a_H$
+\item If very large, set $\bar{a}$ large and move towards universal provision and $B\geq \bar{B}$
+\end{itemize}\medskip
+If budget is intermediate (first-best not achievable):
+\begin{itemize}\setlength\itemsep{3pt}
+\item Full separation requires $B>\bar{B}$, $\bar{a}=a_H$, and high $\alpha$ (Proposition 2)
+    \begin{itemize}\setlength\itemsep{3pt}
+        \item $\alpha\uparrow$ to screen out $H$ types +  $B\uparrow$  to compensate $L$ types for the complexity (1a, 1b error $\uparrow$)
+    \end{itemize}
+    \item But high $\alpha$ $\to$ $L$ types deterred or wrongly rejected
+    \item Forgoing full separation (let some $H$ types in) strictly 
+    improves outcomes (Lemma 3)
+    \begin{itemize}\setlength\itemsep{3pt}
+        \item Lower $\alpha\to$ $L$ types less discouraged + $B$ no longer high to compensate for complexity
+        \item Savings from lower $B$ outweigh the cost of the additional $H$ type recipients
+        \item More $L$ types can be served overall (at low benefits)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Key result 2: Optimal programs feature all three errors}
+In intermediate budget, government has three tools to screen $L$ from $H$ types: $\bar{a}$, $\alpha$, $B$
+\begin{itemize}\setlength\itemsep{6pt}
+    \item \textbf{Set eligibility $\bar{a}$ leniently}: $H$ types allowed, but prevents discouragement of $L$ types
+    \begin{itemize}\setlength\itemsep{3pt}
+        \item Since full separation is no longer the goal, $B$ can be set lower
+        \item Trades off: fewer Type 1a/1b errors, but more Type 2 errors
+    \end{itemize}\medskip
+    \item \textbf{Use high complexity $\alpha$} to deter $H$ types from applying
+    \begin{itemize}\setlength\itemsep{3pt}
+        \item But this unavoidably discourages $L$ types too
+        \item Trades off: fewer Type 2 errors, but more Type 1a and 1b errors
+    \end{itemize}\medskip
+    \item \textbf{Raise benefits $B$} to persuade deterred $L$ types back in to reduce type 1a error
+    \begin{itemize}\setlength\itemsep{3pt}
+        \item Only worth doing when $\bar{a}$ is set leniently - so that both $H$ \textit{and} $L$ types are induced to join
+        \item Must be balanced against the budget cost of a higher $B$
+    \end{itemize}
+\end{itemize}\medskip
+
+\textbf{Takeaway}: All three errors coexist in the optimum\\ ($\because$ each tool that reduces one type of error worsens another.)
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Key Takeaways}
+High complexity and incomplete take-up can be \textit{optimal} policy outcomes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Complexity is a screening tool, not merely a deadweight cost
+\item All three classification errors (Type 1a, 1b, Type 2) coexist in optimal programs
+    \item Eliminating one type of error worsens another: trade-offs are unavoidable
+\end{itemize}\medskip
+Policy implication: Is it good to keep transaction costs high?
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Reducing transaction costs can increase take-up (we will see later)
+  \item But the government may \textit{rationally} have chosen not to do so
+  \item Screening benefits of complexity may outweigh the cost of incomplete take-up
+  \item This justification weakens when factoring utility cost that complexity imposes
+    \begin{itemize}\setlength\itemsep{3pt}
+      \item Likely discourage deserving applicants (who are also poor)
+      \item Note that no utility maximization is carried out here
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\section{Empirical Evidence on targeting redistribution}
+\subsection{Alatas, Banerjee,Hanna, Olken, Tobias (2012): Targeting the Poor: Evidence from a Field Experiment in Indonesia}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Alatas, Banerjee,Hanna, Olken, Tobias (2012): \\Targeting the Poor: Evidence from a Field Experiment in Indonesia
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\begin{frame}
+\frametitle{Q: How do different targeting mechanisms identify the beneficiaries?} 
+Targeted social safety nets are increasingly becomming common
+\begin{itemize}\setlength\itemsep{3pt}
+\item In developed countries, this is usually done through means testing
+\item Many developing countries lack credible records to implement such mechanism 
+\item Targeting that does not rely on observable income is in place
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Proxy means test (PMT): Gathers info on assets and demographics that proxy income 
+  \item Community-based targeting (CBT): Beneficiaries are selected by community members
+\end{itemize}
+\item Prevent elite capture in communities vs better utilize local knowledge
+\end{itemize}\medskip
+This paper uses randomized experiments to examine which methods work better
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Compare PBT with different extent of CBT on 640 villages in Indonesia
+  \item Measure performance on per capita expenditures and satisfaction with targeting
+  \item Examine where the errors in judgement is from
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Institutional context} 
+Cash transfer program in Indonesia (Bantuan Langsung Tunai)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Largest cash transfer in the developing world, started in `05 and renewed in `08
+\item Targeting done based on PMT and CBT methods
+\item Known to be targeted badly: 45\% of nonpoor receives it, 47\% of poor excluded
+\item Many were dissatisfied with the beneficiary lists (protests)
+
+\end{itemize}\medskip
+Details of the experiment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provide INR 30,000 ($=\$3$) to households below location-specific poverty line
+\item Government implemented the PMT in 1/3, CBT in 1/3, and hybrid in the rest
+\item In CBT villages, govt surveyed only selected househods for means testing
+\item Overall number of beneficiaries set in advanced, revealed later
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experimental design}
+  Main intervention
+\begin{itemize}\setlength\itemsep{3pt}
+\item T1: PMT villages - based on 49 indicators (housing attributes, assets, education etc) 
+\item T2: CBT villages - Community meeting to rank hh by poverty, quota revealed later
+\item T3: Hybrid villages - Community ranking + verified by government officials
+\item Stratified randomization based on geography
+\end{itemize}\medskip
+Subtreatments within CBT: Why do CBT differ from PMT?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Elite capture: Compare mechanism with all community members vs elites only
+\item Effort: Randomize order in which households are ranked to test if fatigue hurts efforts
+\item Preferences: Ranks determined by broadly shared preferences or particular ones
+\begin{itemize}
+\item Vary meeting times (morning - women, evening - men, some meeting emphasize poverty)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Errors included in CBT and hybrid treatments} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{abhot2012_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{CBT does poor in capturing households just near the cutoff} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{abhot2012_f1.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Elite capture does not(!) explain error rates} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.69\textwidth]{abhot2012_t2.png}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Key takeaways and discussion} 
+So what is happening with the CBT methods?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Preference also does not play a role: no difference in outcomes due to meeting timing
+  \item Communities apply standard of welfare different from per capita consumption
+\item Instead, villages use different metrics
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Education, widowhood, presence of members not in the household, household size
+  \item Make guesses on households' ability to smooth consumption based on observables
+\end{itemize}
+\end{itemize}\medskip
+Discussions
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Little reason to advocate hybrid: Worse of the two worlds
+  \item PMT matches poverty based on consumption better
+  \item CBT captures measures of ability to absorb shocks not reflected in consumption
+  \item Satisfication in targeting higher in CBT - result of reciprocity or other channels?
+  \end{itemize}
+\end{frame}
+
+\subsection{Niehaus, Atanassova, Bertrand, Mullainathan (2013): Targeting with Agents}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Niehaus, Atanassova, Bertrand, Mullainathan (2013):\\ Targeting with Agents
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How to achieve optimal targeting under corruptible agency?} 
+Proxy means test (PMT) is used in places where reliable data on income is absent
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Ideally: Marginal reduction in poverty = Marginal admin cost
+ \item However, many PMT departs from this rule in practice
+ \item Leading explanation behind such deviation is corruption
+\begin{itemize}\setlength\itemsep{3pt}
+\item Diverting transfers from intended recipients
+\item Inflate claims about program participation
+\item Demand bribes to issue permits to eligible or ineligible recipients
+\end{itemize}
+\end{itemize}\medskip
+This paper provides a framework on targeting rule with possible corruption
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Principal define a targeting rule to be implemented by an agent
+  \item Agents may have allocative preference, and possibly prefer bribes
+  \item Principal cannot fully discipline these agents
+  \item The paper provides properties of optimal targeting rules in this context
+ \item Finds that more conditioning may \textit{worsen} targeting
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Model Setup: Principal, Agent, and Households}
+
+Households are characterized by:
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Income $y_i \in \{\underline{y}, \bar{y}\}$ (poor or rich) and observable characteristics $\mathbf{x}_i \in X$ (e.g. own TV?)
+    \item Willingness to pay $v_i$ for a program slot
+\end{itemize}\medskip
+
+Principal sets a targeting rule $R \subseteq X$:
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Household $i$ is eligible iff $\mathbf{x}_i \in R$ ($R$: Eligible if no TV and no brick walls  )
+    \item Cannot observe income directly; must rely on proxy characteristics
+    \item Has progressive preferences: values transfers to poor more than rich
+\end{itemize}\medskip
+
+Agent implements the rule and may deviate:
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Observes $(y_i, \mathbf{x}_i)$ and sets household-specific bribe prices $p_i \geq 0$
+    \item Has own allocative preferences over poor and rich households
+    \item Rule violations detected with probability $\pi$ and punished by fine $f$
+    \item Principal cannot make $f$ arbitrarily large --- enforcement is bounded
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{More Targeting Can Backfire: The Key Intuition}
+
+Adding an eligibility indicator has \textit{two} effects that pull in opposite directions:\medskip
+
+\begin{itemize}\setlength\itemsep{6pt}
+    \item[\textbf{(+)}] \textbf{Statistical effect}: the rule better separates poor from rich households
+    \item[\textbf{(-)}] \textbf{Enforcement effect}: verifying \textit{ineligibility} becomes harder when it requires checking more criteria --- officials grow less afraid of breaking the rule (i.e. become corrupt)
+\end{itemize}\medskip
+
+\textbf{Concrete example}: Suppose households with paved floors are ineligible.
+\begin{itemize}\setlength\itemsep{3pt}
+    \item A third party can verify ineligibility by simply observing the floor $\Rightarrow$ official is deterred
+    \item Now refine the rule: ineligible only if paved floor \textit{and} a television
+    \item Statistically better, but verifying ineligibility now requires checking \textit{two} things
+    \item Official is less deterred $\Rightarrow$ more rule violations among ineligible households
+\end{itemize}\medskip
+
+If the enforcement effect is strong enough, it can \textit{more than offset} the statistical gain.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{When Conditions Fail: Simpler Rules Can Dominate}
+Typical setup in capable countries
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Strong enforcement: More tools available to verify eligibility
+  \item Preference aligned: Principal and agent have same incentives
+  \item Thus, gap in principal and agent objectives can be ignored
+\end{itemize}\medskip
+
+When none of these hold, the implications are stark:\medskip
+
+\begin{itemize}\setlength\itemsep{6pt}
+    \item Fewer, easier-to-verify criteria $>$ statistically optimal rule
+    \item Sacrifices some statistical accuracy, but gains in enforceability can compensate
+    \item At the extreme, universal eligiblity can provide better welfare than accurate rule
+\end{itemize}\medskip
+
+\textbf{Key policy implication}: When implementation is corruptible, more information may hurt
+\begin{itemize}\setlength\itemsep{6pt}
+    \item Trade-off between statistical vs. enforcement effect
+\end{itemize}\medskip
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical testing: India's BPL card} 
+History of public programs in India
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Originally universal public distribution system
+ \item Switched to poverty targeting in 1997 citing fiscal costs
+ \item Houses are now categorized into below the poverty line (BPL) or not
+ \begin{itemize}\setlength\itemsep{3pt}
+ \item If BPL, given cards providing access to various public services
+\end{itemize}
+\end{itemize}\medskip
+Eligibility to BPL cards in Karnataka (research setting)
+ \begin{itemize}\setlength\itemsep{3pt}
+ \item Income, telephone, automobile, gas, color TV, own land, water pump etc
+ \item State runs survey to check eligiblity, implemented by village officials
+ \item Researchers observe statutory eligiblity + BPL receipt across 14,000 households
+ \item Finds widespread rulebreaking: 48\% of households misclassified
+ \begin{itemize}\setlength\itemsep{3pt}
+ \item 70\% of ineligible households have BPL
+ \item 13\% of eligible households do not have BPL
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Actual distribution not progressive as statutory eligibility} 
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.55\textwidth]{nabm2013_f1.png}
+\end{figure}
+ \begin{itemize}\setlength\itemsep{3pt}
+ \item Correlation with log income: -0.55 for statutory vs -0.23 for actual
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key findings and discussion} 
+Key messages
+\begin{itemize}\setlength\itemsep{3pt}
+    \item Using more indicators can backfire when implementation can be corruptible
+    \item Rule simplicity has value: Simpler rules are harder to manipulate
+    \item In such settings, trade-offs between accurately capturing poverty and enforcing rules
+\end{itemize}\medskip
+
+Discussion
+\begin{itemize}\setlength\itemsep{3pt}
+    \item  The case for targeting over universalism is weaker than standard analysis suggests
+    \item Particularly when enforcing complex rules are difficult
+    \item Corruptible or incapable agency unravels benefits of accurate targeting
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\subsection{Castell, Gurgand, Imbert, Tochev (2025): Take-up of Social Benefits: Experimental Evidence from France}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Castell, Gurgand, Imbert, Tochev (2025):\\ Take-up of Social Benefits: Experimental Evidence from France
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How to increase take-up of welfare programs?}
+Many social programs suffer from low take-up
+\begin{itemize}\setlength\itemsep{3pt}
+\item 25\% of eligible EITC beneficiaries do not receive them
+\item France: 36\% of those eligible for out-of-work minimum income do not claim it
+\item Lack of information, transaction costs, welfare stigma often cited as reasons
+\item Also, does alleviating barriers attract poorer or richer claimants?
+\end{itemize}\medskip
+This paper uses 2 nationwide experiments to study barriers to take-up of welfare programs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Focusing on job-seekers in France
+\item Experiment 1: Meet social workers to learn about eligibility and help with applications
+\item Experiment 2: Job-seekers learn about eligiblity from online simulator
+\item Experiment 1 increased take-up far more than experiment 2
+\begin{itemize}
+  \item Suggesting that transaction cost is a bigger barrier than lack of information
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Experiment design}
+Experiment 1: Meeting with social workers (RDVDE)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Sample: 60,000 job-seekers with small or no claims to unemployment benefits
+\item Randomly select half of them to meeting with social services - 21\% of them joined
+\item Discuss eligibility to 15 different benefits and support in applications
+\item Additional variation: Mode (In-person vs phone), Content (anti-stigma, info flyer)
+\end{itemize}\medskip
+Experiment 2: Internet simulator on benefit eligibility
+\begin{itemize}\setlength\itemsep{3pt}
+\item Implemented one year before Experiment 1
+\item Sample: Randomly select among 40,000 job-seekers - 18\% of treated group joined
+\item Provide personalized guidance on eligibility to same range of benefits
+\item Provides information, but do not lower transaction costs (no application help)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Additional data and regression}
+Additional data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Job seekers' demographics from Pôle Emploi and CNAF
+\item Benefit receipt status from RNCPS and CNAF source
+\item Meeting outcomes and phone surveys conducted with French government
+\end{itemize}\medskip
+Regression leverages the randomized variation in treatment assignment status
+\begin{itemize}\setlength\itemsep{3pt}
+\item Intent-to treat regression (purely based on assignment)
+\[
+Y_i = \beta T_i + \delta X_i + \pi_s + e_i
+\]
+\item Actual effect of attendance ($M_i$): 2SLS regression
+ \[
+ \begin{aligned}
+ M_i &= \gamma T_i + \alpha X_i + \pi_s + u_i\\
+ Y_i &=\beta_{2SLS}\widehat{M}_i + \delta X_i + \pi_s + \varepsilon_i
+ \end{aligned}
+ \] 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Meetings increase takeup of benefits}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{cgit2025_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Simulator has little effects}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=1\textwidth]{cgit2025_t2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Drop in claim size $\to$ Higher share of relatively richer beneficiaries}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{cgit2025_t3.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Other key findings and discussion}
+  To whom were the intervention the most effective?
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Those who were least likely to attend meetings on their own
+    \begin{itemize}
+      \item Estimated using marginal treatment effects (MTE) - not covered in 1st class
+  \end{itemize}
+  \item Effects of meeting large for components with large application costs (items to fill)
+    \begin{itemize}
+      \item But not too large - health benefits require going through a completely different branch
+  \end{itemize}
+  \item Overall, results point to transaction cost being the biggest barrier to take-up
+    \end{itemize}\medskip
+  Discussion on targeting
+   \begin{itemize}\setlength\itemsep{3pt}
+     \item The intervention did not improve targeting (claim size smaller)
+     \begin{itemize}
+  \item Marginal claimants induced by meetings are relatively richer (smaller claims)
+\end{itemize}
+\item The very poor --- most deterred by transaction costs --- remained hard to reach
+     \item Targeting is a supply-side problem from the welfare provider
+     \item Whereas take-up is a demand-side problem (beneficiaries)
+     \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Unanswered questions} 
+Targeting deserving recipients and delivering services are tricky
+\begin{itemize}\setlength\itemsep{3pt}
+\item If information on income and preference is available, targeting income support is ideal
+\item Very rarely the case: Many misclassification errors exist
+\item For developing countries: Patchy information on income and monitoring agents
+\begin{itemize}\setlength\itemsep{3pt}
+\item Use proxy means test or community based measures: imperfect information
+\item Difficult to monitor agents who mishandle allocation
+\item How to improve information and personnel capacities in this setup?
+\end{itemize}
+\item Even if targeting is appropriate, take-up of welfare may be low
+\begin{itemize}\setlength\itemsep{3pt}
+\item High transaction costs for the recipient
+\item Others document lack of information and welfare stigma
+\item How do you increase take-up of welfare among those eligible?
+\end{itemize}\medskip
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%
+\end{document}
