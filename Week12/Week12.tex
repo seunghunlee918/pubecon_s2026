@@ -1,0 +1,1054 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Public Economics and Development} % Change this regularly
+\subtitle[]{Week 12: Allocation of Authority Across Bureaucrats and Managers, and Corruption}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{May 12th, 2026}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview setup of the topic}
+
+\begin{frame}
+\frametitle{Why does the public sector personnel matter?} 
+Take up huge roles: In principle and in data
+\begin{itemize}\setlength\itemsep{3pt}
+\item As in other sectors, they embody human capital of the state
+\item They determine provision of public services and implementation of policies
+\item Takes up nearly 20\% of all employment  and 35\% of formal employment (World Bank)
+\item Responsible for the public sector that takes up approximately 45\% of GDP (OECD)
+\end{itemize}\medskip
+However, the quality of public sector workers varies across countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item 20-35\% of front-line workers (teachers, health care) absent in developing countries
+\item Lack institutional structures to incentivize, monitor existing workers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Poor structure $\to$ Absenteeism and inefficiencies $\to$ Bad public services (repeat)
+\end{itemize}
+\item Finding motivated and capable individuals to work is difficult
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lower pay, more rigid mobility than private sector
+\end{itemize}
+\item Bureaucratic quality is also clustered with development 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Public sector takes up huge share of employment globally} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{fig1.png}
+\caption{Share of public sector employment in total employment, 2019}
+\end{figure}
+\begin{footnotesize}
+Source: Our World in Data (\hyperlink{https://ourworldindata.org/grapher/public-sector-employment-as-a-share-of-total-employment?time=2019}{link}), reprocessed from World Bank and ILO data 
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clustering of development and bureaucratic quality} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{fig2.png}
+\end{figure}
+\begin{footnotesize}
+Source: Besley, Burgess, Khan, Xu (2022) ``Bureaucracy and Development", \textit{Annual Review of Economics}, 14, 397-424 
+\end{footnotesize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Corruption: A Global Development Challenge}
+Corruption is rampant — especially in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Over 2/3 of countries score below 50 on the Corruption Perceptions Index (CPI)
+\begin{itemize}\setlength\itemsep{3pt}
+\item CPI ranges from 0 (highly corrupt) to 100 (very clean)
+\item Global average CPI score stuck at 43 for over a decade — little progress
+\item 148 out of 180 countries have stagnated or worsened since 2012
+\end{itemize}
+\item Undermines public service delivery, economic growth, and trust in government
+\item Diverts public resources away from those who need them most
+\end{itemize}\medskip
+Yet research has lagged policy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Hidden by definition — actors actively invest resources to conceal it
+\item Often associated with nonstate actors who capture state apparatus and media
+\begin{itemize}\setlength\itemsep{3pt}
+\item Thus, difficult to get accurate estimates
+\item Reliance on corruption perception as measurement, but it can be very subjective
+\end{itemize}
+\item Theoretically difficult to model: Manifestation can vary in form across environments
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Corruption Perceptions Index: Little Progress Over Two Decades}
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{fig3.png}
+\caption*{\footnotesize Source: Transparency International. CPI scale: 0 (highly corrupt) to 100 (very clean).}
+\end{figure}
+\end{frame}
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+
+
+
+
+
+
+
+\section{Allocating authority across bureaucrats and politicians}
+
+
+\subsection{Aghion, Tirole (1997): Formal and Real Authority in Organizations}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Aghion, Tirole (1997):\\ Formal and Real Authority in Organizations
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: What decides the allocation of authorities within organizations?} 
+What do we mean by authority
+\begin{itemize}\setlength\itemsep{3pt}
+\item Formal authority: Legal right to select actions (who owns the decision, final say)
+\item Real authority: Effective control over decisions (who shapes the agenda)
+\item  It is commonplace for these authorities to be held by different individuals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Those who hold formal authority may delegate to better-informed agents
+\item Shareholders/Presidents (formal) vs Board of directors/Executive branch (real)
+\end{itemize}
+\item Optimal decision-making structure when not everyone is equally informed?
+\end{itemize}\medskip
+This paper discusses optimal allocation and  separation of different types of authorities
+\begin{itemize}\setlength\itemsep{3pt}
+\item A principal delegates a task (project selection) to an agent
+\item Both independently collect information about potential projects (at a cost)
+\item The agent recommends a project; the principal approves or vetoes
+\item Key question: When should the principal \textbf{retain} or \textbf{delegate} formal authority?
+ \end{itemize}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Model setup} 
+Principal-agent can implement 0 or 1 among $n\geq 3$ projects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Project $k$ has profit $B_k$ to principal and private benefit $b_k$ to agent
+\item Principal's favorite project: $B$ to the principal and $\beta b$ to the agent $(\beta\in(0,1])$
+\item Agent's favorite project: $b$ to the agent and $\alpha B$ to the principal  $(\alpha\in(0,1])$
+\item Payoffs of the project initially unknown (perceived as identical)
+\end{itemize}\medskip 
+Utility and cost to principal and agent
+\begin{itemize}\setlength\itemsep{3pt}
+\item Principal pays wage $w$ to agent: Thus has utility $B_k-w$
+\item Agent has income $w$ and private payoff $b_k$: Thus utility $u(w)+b_k$
+\item Gathering information is costly (even if effort is exerted may not learn anything at all)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Agent: Spend $g_A(e)$ to learn payoffs of all projects with probability $e$ 
+\item Principal: Spend $g_P(E)$ to learn payoffs of all projects with probability $E$ 
+\end{itemize}
+\end{itemize}\medskip 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Model setup} 
+Timing of the decision structure
+\begin{itemize}\setlength\itemsep{3pt}
+\item Contract: Specifies wage and allocation of formal authority
+\item Principal and agent simultaneously choose information acquisition efforts ($E$ and $e$)
+\item Agent observes own information and recommends a project (or stays silent)
+\item Principal observes own information and approves or vetoes the recommendation
+\item If no project is approved, status quo payoff of 0 is realized
+\end{itemize}\medskip
+Utility (from project selection) depending on who has formal authority
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Principal has formal authority (integration)\vspace{-10pt}
+  \[
+  u_P =  EB + (1-E)e\alpha B - g_P(E) \quad u_A = E\beta b + (1-E)eb-g_A(e)
+  \]\vspace{-20pt}
+  \item Agent has formal authority (delegation)\vspace{-10pt}
+\[
+  u_P^d =  e\alpha B + (1-e)EB - g_P(E) \quad u_A^d = e b + (1-e)E\beta b-g_A(e)
+  \]\vspace{-20pt}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Key trade-off: Principal's control vs. Agent's initiative} 
+Efforts of principal and agents are \textit{strategic substitutes}: Principal's $E\uparrow\to$ Agent's $e\downarrow$
+\begin{itemize}\setlength\itemsep{3pt}
+  \item The first order conditions in the integration case is \vspace{-10pt}
+  \[
+  \text{P : } (1-e\alpha)B = g_P'(E) \quad \text{A : } (1-E)b=g_A'(e)
+  \]\vspace{-20pt}
+  \item FOC under delegation \vspace{-10pt}
+  \[
+  \text{P : } (1-e)B = g_P'(E) \quad \text{A : } (1-E\beta)b=g_A'(e)
+  \]\vspace{-20pt}
+
+  \item For instance, suppose that MC of searching increases in integrated case  ($g_p'\uparrow$)
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Probability of being informed about payoffs decreases $E\downarrow$ $\to$ Principal loses control
+  \item But it can encourage agent to take initiative ($e\uparrow$)
+\end{itemize}
+\item You can argue similarly for delegation case (A loses initiative $\to$ P takes control)
+\item Effort to collect information increases with the following factors..
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Principal: Lower congruence ($\alpha$), higher stakes ($B$), lower agent effort ($e$)
+  \item Agent:  Lower congruence ($\beta$), higher private gains ($b$), lower principal interference ($E$)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Optimal formal authority: When should principal delegate?}
+Comparing equilibrium under integration $\{E, e\}$ and delegation $\{E^d, e^d\}$
+\begin{itemize}\setlength\itemsep{3pt}
+\item $e^d > e$: Agent exerts \textbf{greater initiative} under delegation
+\item $E^d < E$: Principal exerts \textbf{less effort} — loses both formal and real authority
+\item Agent more likely to find preferred project $\Rightarrow$ higher payoff $b_k$ $\Rightarrow$ accepts lower wage
+\end{itemize}\medskip
+Principal prefers to delegate over integration when initiative gains outweigh loss of control
+\begin{itemize}\setlength\itemsep{3pt}
+\item High congruence ($\alpha \uparrow$): Agent's preferred project less costly to principal
+\item High private gains ($b \uparrow$): Agent more motivated to acquire information
+\item High cost of principal's information acquisition ($g_P' \uparrow$): Retaining control is costly
+\end{itemize}\medskip
+Principal is fine with losing control if agents can find and implement good projects 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Especially when principal is overloaded, there are many superiors, and matter is urgent
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Span of control: Optimal \# of agents and degree of overload?}
+Suppose that 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Principal retains formal authority 
+  \item Hires $m$ identical agents, and monitoring them is costlier
+\end{itemize}\medskip
+Adding an extra agent has two opposing effects:
+\begin{itemize}\setlength\itemsep{3pt}
+\item Overload cost: Extra agent costs more in attention than revenue gained
+\item Initiative effect: $e\uparrow$ $\Rightarrow$ agents find better projects $\Rightarrow$ principal's revenue increases
+\end{itemize}\medskip
+At the optimum, overload cost exactly offsets initiative effect
+\begin{itemize}\setlength\itemsep{3pt}
+\item Principal overhires beyond the point where marginal profit is zero 
+\item The extra cost is made up for by gains from increased initiative
+\item Busy principal cannot micromanage  $\to$ Overload as commitment not to stifle initiatives
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key takeaways and discussions}
+Other findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Participation view: delegate decisions that matter more to agent than principal 
+\item Higher wages increase agent's real authority 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Stronger incentives $\to$ agent more likely to make recommendations
+  \item High wage reduce principal's net profit $\Rightarrow$ Monitor less $\Rightarrow$ less likely to overrule agent
+\end{itemize}
+\item Integration may jeopardize communication 
+\begin{itemize}\setlength\itemsep{3pt}
+\item When congruence is low, agent more likely to withhold information
+\end{itemize}
+\end{itemize}\medskip
+Open questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item How does optimal authority allocation change with multilayered hierarchies?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Many middle managers or many levels of subnational government
+  \end{itemize}
+\item Authority or monetary incentives: what attracts and motivates agents?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Agents whose decisions are not overruled may be more motivated to stay
+\item But others may value monetary incentives over decision rights
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\subsection{Bandiera, Best, Khan, Prat (2021): The Allocation of Authority in Organizations: A Field Experiment with Bureaucrats}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Bandiera, Best, Khan, Prat (2021):\\ The Allocation of Authority in Organizations: A Field Experiment with Bureaucrats
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+\begin{frame}
+\frametitle{Q: How does allocation of authority to bureaucrats affect outcomes?} 
+Organization bring together people with different interests and skills
+\begin{itemize}\setlength\itemsep{3pt}
+\item Working towards a common goal challenging: Principal-agent problem and monitoring
+\item How to allocate decision rights at different layers of hierarchy?
+\item How to monitor and incentivize agents' behavior?
+\item Many work on effects of performance pay, few look at decision-making structure
+\end{itemize}\medskip
+This paper designs an experiment in Pakistan procurement sector that combines the two
+\begin{itemize}\setlength\itemsep{3pt}
+\item Strict rules and monitoring vs. simplification and more autonomy?
+\item Procurement officers (PO, make purchases) and Monitors (approve purchase) 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Monitors: Approve purchases quickly vs Delay purchase until end of fiscal year
+\end{itemize}
+\item Experiment: Control + Autonomy + Performance pay + Both 
+\item Different policy instrument works in different structures
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Procurement structure in Pakistan and theoretical framework} 
+Procurement structure
+\begin{itemize}\setlength\itemsep{3pt}
+\item Experiment took place in 26 / 36 districts in Punjab (80\% of population)
+\item Each office has 1 PO with allocated budgets
+\item POs submit purchase for pre-audit approval to a monitor in each district
+\begin{itemize}\setlength\itemsep{3pt}
+\item This monitor can ask for extra paperwork (withhold) or approve the purchase
+\end{itemize}
+\end{itemize}\medskip
+Conceptual framework: Expected effects of autonomy vs incentives by type of monitors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Aligned PO and monitors behave in the interest of citizens (low price, little delays)
+\item Misaligned PO raises price (bribes, little effort to find low-price)
+\item Misaligned monitor delays purchase (exert power on PO)
+\item Autonomy: Price$\downarrow$ if PO more aligned then monitor (opposite if PO more misaligned)
+\item Incentives: Motivate PO, but dampened with misaligned monitors (higher costs)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Experimental design} 
+Measuring bureaucratic performance with value for money (with online platform)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Price conditional on quantity, nature of purchased goods, and net of transaction costs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Items: Consumables such as papers, toners, pen, banners, light bulbs etc
+\item Price is adjusted for delivery speed, cost of delivery
+\end{itemize}
+\item Others: Expected price, good-bad purchase categorization(based on attributes), ML
+\end{itemize}\medskip
+Experimental design
+\begin{itemize}\setlength\itemsep{3pt}
+\item Autonomy: Remove the role of monitors in purchasing decisions
+\item Incentive: Range of bonus for improving value for money ($\times2$  - $\times1/2$ of monthly wage)
+\item Another group that receives both
+\item Stratified by district-department level\vspace{-10pt}
+ \[
+ y_{igto} = \alpha + \sum_{k=1}^3\eta_k \text{Treatment}_o^k + \rho_g q_{igto}+\delta_s +\gamma_g + e_{igto}
+ \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Overall, autonomy $\to$ lower prices paid but not incentives} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{bbkp2021_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Effects differ by type of monitors} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bbkp2021_f1.png}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Better monitors (low delays, AG June share $\downarrow$): Incentive lower price (not autonomy)
+\item Worse monitors (more delays, AG June share $\uparrow$): Autonomy lower price (not incentives)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Treatment $\to$ large savings, but heterogenous by monitor types} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bbkp2021_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Incentives and autonomy work in different situations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Incentives to low-level agents mean little if their supervisors are misaligned
+\item In such case, giving low-level agents more autonomy improves performance
+\item If supervisors are aligned, incentives improve effort of angents
+\item On the other hand, autonomy does not change much from status quo in this case
+\end{itemize}\medskip
+Remaining questions on the organizational Economics
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can stringent rules, not autonomy, be an optimal choice?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Could still be worthwhile to prevent misaligned agents imposing high costs
+\end{itemize}
+\item How does autonomy affect \textit{who becomes a bureaucrat}?
+\begin{itemize}\setlength\itemsep{3pt}
+\item How to bring in more aligned agents (make efficient decisions for public) than misaligned agents (extract personal benefits with autonomy)?
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\section{Analysis of Corruption}
+\subsection{Banerjee, Mullainathan, Hanna (2012): Corruption}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Banerjee, Mullainathan, Hanna (2012):\\ Corruption
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: What are the causes and consequences of corruption?}
+Despite rampant corruption, research has lagged reality
+\begin{itemize}\setlength\itemsep{3pt}
+\item Corruption is empirically difficult to measure
+\item Theoretical analysis focused exclusively on moral hazard in organizations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Emphasis on corruption as a criminal action requiring monitoring and strict penalties 
+  \item In practice, corruption can manifest in many different forms across different environment
+\end{itemize}
+\item Need to understand corruption from a different standpoint
+\end{itemize}\medskip
+This paper provides a novel framework for analyzing corruption in public organizations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Corruption as result of tasks, private incentives, and organizational environment
+\item Highlight how discretion (vs. rules) affects corruption in different environments
+\item Also study other distortions that ccur with corruption 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Red-tape, inefficiencies in service provision
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{What is corruption} 
+\textbf{Rule-breaking} by a bureaucrat (or elected official) for \textbf{private gain}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Overt monetary bribe to bend a rule and provide service to unintended recipient
+\item Nepotism as opposed to competitive hiring / selection
+\item Not showing up to work (`steal' time)
+
+\item These are defined by rules specific to a context
+\end{itemize}\medskip
+How this definition differs from other approaches
+\begin{itemize}\setlength\itemsep{3pt}
+\item Emphasis on breaking the rules (previous definitions emphasize personal gain)
+\begin{itemize}\setlength\itemsep{3pt}
+\item A boss \textit{with final say} hiring his nephew: Not corruption if no other rules broken
+\item Previous definitions would count this as corruption (personal gain)
+\end{itemize}
+\item Advantages of this definition:
+\begin{itemize}\setlength\itemsep{3pt}
+\item Avoids subjective ethical judgements — rules define what is corrupt
+\item Encompasses non-monetary gains (nepotism, time theft)
+\item Rule-breaking is easier to measure than bribes
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Model setup}
+A bureaucrat assigns a limited number of slots to a population of size $N$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individuals differ in social value, private value, and ability to pay
+\item Individuals announce their types (private value is hidden)
+\end{itemize}\medskip
+Bureaucrat announces mechanism specifying testing, prices, and assignment probabilities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Testing: screen individual's types at a cost to both bureaucrat and individual
+\item Assignment: probability of receiving a slot given test outcome
+\item Prices: what individuals pay for a slot
+\end{itemize}\medskip
+Government sets rules that constrain the mechanism (and define what is corrupt)
+\begin{itemize}\setlength\itemsep{3pt}
+\item If rules don't pin down a unique mechanism $\Rightarrow$ bureaucrat has \textbf{discretion}
+\item Various dimensions of malfeasance beyond corruption
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Overcharging price (bribe), excessive testing (red-tape), no testing (shirking)
+  \item Misallocation (allocative inefficiency): slots assigned to wrong types or left unassigned
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The task approach to corruption}
+Corruption arises from the nature of the task itself
+\begin{itemize}\setlength\itemsep{3pt}
+\item Same bureaucrat, same incentives — different tasks generate different corruption
+\item Can we eliminate corruption by changing the rules without affecting anything else?
+\end{itemize}\medskip
+Key tradeoff between setting strict rules and allowing discretion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Strict rules limit corruption but generates red tape and misallocation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Could ensure that public services are allocated based on needs (welfare)
+\item Strict rules bind honest bureaucrats but corrupt ones find ways around them
+\end{itemize}
+\item Full discretion reduces red tape but opens door to corruption
+\begin{itemize}\setlength\itemsep{3pt}
+\item Italian procurement: Fixed budget with full discretion reduced waste and corruption
+\item Hospital bed allocation: May lead to allocation to who can pay, not need-based
+\end{itemize}
+\end{itemize}\medskip
+Optimal response: redesign the task (rules \& discretion), not just increase punishment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Goal is to improve public service provision (punishment is one of the tools)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Manifestations of corruption}
+The form corruption takes depends on rules and gap between social and private values
+\begin{itemize}\setlength\itemsep{3pt}
+\item Bribes: Bureaucrat has pricing discretion $\Rightarrow$ overcharges those who can pay
+\begin{itemize}\setlength\itemsep{3pt}
+\item Arises when private value exceeds social value — bureaucrat exploits the gap
+\end{itemize}
+\item Red tape: Bureaucrat cannot price freely $\Rightarrow$ imposes excessive testing costs
+\item Misallocation: Bureaucrat has assignment discretion $\Rightarrow$ slots go to those who can pay
+\begin{itemize}\setlength\itemsep{3pt}
+\item Arises when social value is high but ability to pay is low (e.g. poor patient, small farmer)
+\end{itemize}
+\end{itemize}\medskip
+These distortions arise simultaneously and reducing one dimension may worsen others
+\begin{itemize}\setlength\itemsep{3pt}
+\item Restrict pricing $\Rightarrow$ Bribes fall but red tape rises
+\item Restrict testing $\Rightarrow$ Red tape falls but misallocation rises
+\item Restrict assignment $\Rightarrow$ Misallocation falls but bribes rise (value in bending rules)
+\item Optimal policy: redesign the task so that corruption causes the least harm
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Measuring corruption: Empirical strategies used in the literature}
+
+Perception-based measures (old approach): surveys of participants
+\begin{itemize}\setlength\itemsep{3pt}
+\item Problems: subjective, culturally biased, hard to compare across settings
+\end{itemize}\medskip
+Objective measures (new approach): direct measurement or administrative data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Price comparisons (procurement): Price discrepancies for identical goods
+\item Audit studies: Send trained auditors to measure bribes and red tape directly
+\item Absenteeism: Photograph or timestamp bureaucrat presence — captures time theft
+\item Leakage studies: Track whether public resources actually reach intended recipients
+\end{itemize}\medskip
+Key challenge: Measurement itself changes behavior (Hawthorne effect)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Actors reduce illicit behavior during measurement or find new ways to obscure it
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Policy Implications and Open Questions}
+What works against corruption?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Monitoring / punishment: Effective but limited — bureaucrats adapt and hide behavior
+\item Task redesign: Change rules and discretion to minimize the most costly distortion
+\item Wages: Higher wages may reduce corruption by raising cost of job loss
+\item Competition: Multiple providers reduces bureaucrat's monopoly over slots
+\item Nonmonetary benefits: Attract intrinsically motivated, prosocial bureaucrats
+\end{itemize}\medskip
+Open questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item How to recruit intrinsically motivated individuals to public sector?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public sector competes with private sector
+\item Higher wages \textit{could} work, but may also attract undesirable individuals
+\end{itemize}
+\item How does allowing discretion deter corruption in practice?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Could increase initiative and overrule corruptible middle managers
+\item But also increase scope for corruption due to less interventions
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\subsection{Dal Bó, Dal Bó, and Di Tella (2006): Plata o Plomo? Bribe and Punishment in a Theory of Political Influence}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dal Bó, Dal Bó, and Di Tella (2006):\\ Plata o Plomo? Bribe and Punishment in a Theory of Political Influence
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: How do state capture affect quality of public officials} 
+In weak states, politicians are subject to punishments by private entities and bribes
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Many private entities seek to influence politicians through bribes and coercion
+\item Punishments and bribes complement: Threat of punishment makes bribing easier
+\item Yet, there are things where models with only corruption cannot explain
+\begin{itemize}
+\item Why give officials more discretion and immunity?
+\end{itemize}
+\end{itemize}\medskip
+This paper updates framework of political influence to include bribes and coercion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Investigates how possibility of coercion affects quality of public workers 
+\item Explains why political immunities exist in contexts where private coercion is prevalent
+\item Explains how discretion actually makes public work less attractive
+\begin{itemize}\setlength\itemsep{3pt}
+\item In model with bribes only, immunities are rarely justified (weaken monitoring mechanisms)
+\item Also in the old model, discretion increases corruption and appeal of public work
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Model setup: Decision to join public work}
+First stage: Citizens decide to enter public office or not 
+\begin{itemize}\setlength\itemsep{3pt}
+
+\item Citizens endowed with ability $a\in[0,\infty)$ (a probability distribution)
+\item Alternative is to choose private sector (which gives wage $a$, equivalent to their ability)
+\item Return from public work: public sector wage ($w$) + behavior of pressure group 
+\item Citizens with $a\leq w$ apply (and $w$ types selected, assuming recruiters observe types)
+\end{itemize} \medskip
+Second stage: Pressure group has an opportunity to influence officials
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public workers provide public good, whose quality positively correlates with ability
+\item Have discretion to allocate ($\pi$) towards pressure group, with cost $c$ if caught
+\item With probability $\gamma$, officials decide to accept bribes or face punishments
+\begin{itemize}
+  \item $1-\gamma$: Only punishment (no possibility to accept bribes) - when bribes are infeasible
+\end{itemize}
+\item Pressure groups can either bribe ($b$) or punish ($p$) at costs $\beta\Phi(b)$ and $\rho\Psi(p)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of payoffs} 
+Decision on accepting (and handing out) bribes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Officials facing pressure groups accept bribes (share $\gamma$) if \vspace{-5pt}
+\[
+w+b-c \geq w-p
+\]
+\vspace{-20pt}
+\item Pressure groups sets $b$ and $p$ to maximize the following profits\vspace{-5pt}
+\[
+\Pi(b,p)=\gamma(\pi-\beta\Phi(b))-(1-\gamma)\rho\Psi(p) \quad \text{s.t.  }\quad b\geq c-p
+\]
+\vspace{-20pt}
+\item $\tilde{\pi}$: Minimal discretion required for pressure groups to influence officials
+\begin{itemize}\setlength\itemsep{3pt}
+\item $\pi$ that makes $\Pi(b^*,p^*)=0$ ($\pi$ that makes profits when groups optimize $0$)
+\item Inversely related to state capture: $\tilde{\pi}\Uparrow$ $\to$ Cost of bribing an official $\Uparrow$ $\to$ State capture  $\Downarrow$
+\end{itemize}
+\end{itemize}\medskip
+If only bribes are available ($p=0$ for all cases)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Solve $\gamma(\pi-\beta\Psi(b))$ subject to $b\geq c$ $\to$Bribe just enough to cover $c$, ($b=c$)
+\item Official payoffs/skill is $w$, and $\tilde{\pi}^0=\beta\Phi(c)$
+\item Drop in bribe costs ($\beta\downarrow$) $\to$ Higher state capture ($\tilde{\pi}\Downarrow$), no effect on quality of officials
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What happens when both bribes and coercion are possible?} 
+Problem when both $b$ and $p$ are active
+\begin{itemize}\setlength\itemsep{3pt}
+\item Pay bribes just enough to cover $b=c-p$ (Bribes become cheaper)
+\item The shortfall is made up with nonzero punishment $p^*$, such that $b+p^*=c$
+\item $\tilde{\pi}^p$ satisfies $\frac{1-\gamma}{\gamma}\rho\Psi(p^*)+\beta\Phi(c-p^*)$ $\to$ Any discretion $\pi$ larger than this, then influence 
+\item Resulting equilibrium payoff of official if pressure groups are active
+\begin{itemize}\setlength\itemsep{3pt}
+\item If official refuses bribe, payoff is $w-p^*$ (lower due to nonzero punishments)
+\item If bribes are accepted, payoff is $w+b-c = w+c-p^* -c = w-p^*$
+\end{itemize}
+\item When pressure groups are inactive: payoff is $w>w-p^*$
+\item Thus, the quality of bureaucrats fall in this scenario
+\item Furthermore, $\tilde{\pi}^p<\tilde{\pi}^0$ $\to$ When threats are usable, more state capture!  
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Negative effects amplified with cheaper ways to influence officials} 
+Exogenous changes in cost of influence (Suppose that $\beta$ and $\rho$ drops)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Recall that $\tilde{\pi}^p=\frac{1-\gamma}{\gamma}\rho\Psi(p^*)+\beta\Phi(c-p^*)$ and $\Pi(b,p)=\gamma(\pi-\beta\Phi(b))-(1-\gamma)\rho\Psi(p)$
+\item Fall in any one of $\beta$  and $\rho$ raises profits and decreases $\tilde{\pi}^p$
+\begin{itemize}\setlength\itemsep{3pt}
+\item State capture will be more rampant 
+\item Existing pressure groups ramp up activity + new pressure groups enter
+\end{itemize}
+\item If primarily driven by $\rho\Downarrow$, then payoff of officials (and quality) definitely falls
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Usage of coercion increases in any case
+\end{itemize}
+\item If primarily driven by $\beta\Downarrow$, change to pay off ambiguous (but definitely not increase)
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Existing groups shift away from coercion $\to$ Minimal effect on wages
+\item New entrants that use both coercion and bribes $\to$ lower payoffs
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implication on discretions}
+How do discretion affect quality of politicians 
+\begin{itemize}\setlength\itemsep{3pt}
+\item If discretion $\pi<\tilde{\pi}^p$, less incentives for pressure groups to influence officials
+\item Higher discretion could lead to more waste (more corrupt decision)
+\item As more groups with coercion decrease payoffs, quality of officials worsened
+\end{itemize}\medskip
+Immunity of officials (in principle)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can insulate honest officials from outside pressures, mitigate false accusations
+\item But can mask corrupt officials
+\item In setting with rampant coercion from pressure groups
+\begin{itemize}\setlength\itemsep{3pt}
+\item There are greater effect of protection to officials with immunity
+\item This can overweigh bad effects of masking corrupt officials
+\end{itemize}
+\item When legal system is effective, masking effects outweigh pressure effects
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Threat of coercion imposes negative effects on governance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduces payoff for officials $\to$ lower quality of officials
+\item More influence from private pressure groups $\to$ Increased state capture
+\item Augments effects of bribes: Cheaper to bribe officials
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ultimately, need to improve legal capacity 
+\begin{itemize}\setlength\itemsep{3pt}
+\item To prevent pressure groups and detect corruption
+\item But transitioning to better legal system is tough
+\end{itemize}
+\item Incentives of bureaucrats: How to attract incorruptible moral officials?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Under what conditions can governments bring them in (what sort of incentives?)
+\item Topic of Dal Bó et al (2013)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+
+\subsection{Xu (2018): The Costs of Patronage: Evidence from the British Empire}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Xu (2018):\\ The Costs of Patronage: Evidence from the British Empire
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does patronage affect allocation of positions \& performance?} 
+How personnel are promoted and incentivized determines organizational performance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Past: patronage widely used to appoint public sector positions
+\begin{itemize}
+\item Discretionary appointments based on network and ties to the ruler
+\end{itemize}
+\item In theory, discretion can align incentives between principal and angents
+\item However, it can worsen performance if favoritism disincentivizes capable subordinates
+\end{itemize}\medskip
+This paper uses historical data to identify how patronage affects performance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Colonial governors of British empire: 1854-1966 across 70 colonies
+\item Connection determined by genealogy and biological data
+\item Within-governor variation: Change in secretary of state $\to$ Change in connections
+\item Across-time variation: Discretion (1854-1930) vs. Independent appointment (1930 -)
+\item Test who gets assigned to richer colonies and how tax returns are affected
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Organization of British colonies}
+Assignment of colonial governors 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Handled by Colonial Office under Secretary of State for the Colonies in London
+\item Secretary of State in charge for around 3 years
+\item 1930 Reform replace Secretary of State's discretion with open recruitment
+\end{itemize}\medskip
+Role of the governors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fixed 6-year term
+\item Responsible for public finance, legislation, and personnel appointments
+\item Discretion over executive and finances: Widely different policies across colonies
+\item Direct monitoring impossible due to distance
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy}
+Digitalized (by Guo Xu himself!) archival data 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Sources: Colonial Blue Books, Colonial Office List, Who's Who, The Peerage
+\item Postings (and their wages), background of governors, genealogy 
+\begin{itemize}
+\item Connection determined by ancestry, membership at aristocratic clubs, and schools
+\end{itemize}
+\item Colonial statistics (revenue, expenditure, demographics etc)
+\end{itemize}\medskip
+Empirical strategy leverages differences in connectedness across different periods\vspace{-10pt}
+\[
+y_{it} = \beta c_{it}+\theta_i + \gamma X_{it}+\tau_t + e_{it}
+\]\vspace{-15pt}
+\[
+y_{it} = \beta_0 c_{it} + \beta_1 c_{it}\times I[t\geq1930]+\theta_i + \gamma X_{it}+\tau_t + e_{it}
+\]\vspace{-10pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Connection $c_{it}$ used with various criterion
+\item $c_{it}$ is predetermined and driven by secretary of state changes
+\begin{itemize}
+  \item No reverse causality: Unlikely to attend Oxbridge to be connected to current governor
+  \item Secretary of state turnover generates common shocks to all serving governors
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Connected governor salaries are higher! } 
+    \begin{figure}
+    \includegraphics[keepaspectratio, width=0.8\textwidth]{x2018_t1.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Salary gap washed away post-1930} 
+    \begin{figure}
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{x2018_f1.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Patronage worsens performance, which is offset following reforms} 
+\begin{columns}
+  \begin{column}{0.65\textwidth}
+    \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{x2018_t2_1.png}
+    \end{figure}
+  \end{column}
+  \begin{column}{0.3\textwidth}
+    \begin{figure}
+       \includegraphics[keepaspectratio, width=\textwidth]{x2018_t2_2.png}
+       \end{figure}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+What the findings say about organizational performance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Connection $\to$ Positions that yield higher wages
+\item Lower revenue collection: Due to higher tax exemptions, high reliance on customs
+\item Reforms washed salary gaps and shortfalls in performance
+\end{itemize}\medskip
+Discussions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Favoritism can lead to worse organizational performance, even in public institutions
+\item But how does it affect recruitment into the pool of governor candidates?
+\begin{itemize}\setlength\itemsep{3pt}
+\item If people know connections matter, talented individuals with no connection discouraged
+\item Leaving pool of candidates with less talented individuals
+\item Ways to look for `outsiders' with talent?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Remaining questions} 
+How to attract talented individuals to the public sector?
+\begin{itemize}\setlength\itemsep{3pt}
+\item In a lot of places, they have lower pay
+\item But public sector offers different perks: Stability, social respect, instrinsic motivation
+\item How can these individuals be recruited?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Does financial incentives work?
+\item Are these individuals different from the general public?
+\end{itemize}
+\end{itemize}\medskip
+How to design a healthy public organizations?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Healthy balance of incentives and authority that prevents misallocation and corruption
+\item Monitoring and incentives are still often used
+\item But are there other aspects of public organizations that can be used to improve performance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Career progression: Initial and subsequent posting to different positions
+\item Middle managers: Can they bridge the gap between agents and the principal (the people)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%
+\end{document}
